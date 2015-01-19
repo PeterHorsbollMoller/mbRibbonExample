@@ -1,0 +1,720 @@
+'*******************************************************************************
+'**   Created by Peter Horsbøll Møller, Pitney Bowes Software
+'** 	Program:
+'** 	Modul:
+'**
+'*******************************************************************************
+
+'-------------------------------------
+Include "MapBasic.def"
+Include "Enums.def"
+Include "Icons.def"
+Include "IMapInfoPro.def"
+Include "Menu.def"
+'**default constants...
+Include "Library\Defaults.def"
+
+Define xProgram 		"Ribbon Example"
+Define xProgramMenu		"RibbonExample"
+Define xVersion 		"0.4"
+Define xYear			"2015"
+
+Define FILE_INI			GetFolderPath$(FOLDER_MI_PREFERENCE) & xProgram & ".ini"
+Define FILE_DBG			ApplicationDirectory$() & xProgram & ".dbg"
+'Define FILE_DLL			ApplicationDirectory$() & xProgram & ".dll"
+Define FILE_PAD			GetFolderPath$(FOLDER_MI_PREFERENCE) & xProgram & ".btp"
+Define PATH_IMAGES			ApplicationDirectory$() & "Images\"
+
+'-------------------------------------
+Include "Library\ProgramInfo.def"
+Include "Library\DEBUGLib.def"
+Include "Library\ERRORLib.def"
+Include "Library\MAPPERLib.def"
+Include "Library\RIBBONLib.def"
+Include "Library\TABLELib.def"
+
+'-----------------------------------------------------------------------------------------
+Declare Sub Main
+Declare Sub EndProgram
+
+Declare Sub Endhandler
+Declare Sub WinFocusChangedHandler
+Declare Sub WinClosedHandler
+Declare Sub MENUTableOpenedHandler(ByVal args as This)
+Declare Sub MENUTableClosedHandler(ByVal args as This)
+
+Declare Sub AddIn_DefaultCommand
+
+Declare Sub MENUCreateRibbonInterface
+Declare Sub MENUEnableDisableGUI
+Declare Sub MENUSubscribeToEvents
+
+Declare Sub MENUShowMapperInfo
+Declare Sub MENUShowBrowserInfo
+Declare Sub MENUShowTablesInfo
+
+Declare Sub MENUOpenSkaermkort
+Declare Sub MENUOpenSkaermkortDaempet
+Declare Sub MENUOpenSkaermkortGraa
+
+Declare Sub MENUSelectWithinMap
+
+'**********************************************************************************************''
+'**   Created by Peter Horsbøll Møller, Pitney Bowes Software
+'
+'**********************************************************************************************''
+Sub Main
+
+OnError GoTo ErrorOccured
+
+	'***Initializing ApplicationInfo
+	Call PRGISetApplicationName(xProgram)
+	Call PRGISetApplicationVersion(xVersion)
+	Call PRGISetApplicationCopyrightYear(xYear)
+	Call PRGISetApplicationDevelopedBy("Peter Horsbøll Møller")
+	Call PRGISetApplicationImageUri(PATH_IMAGES & "Skærmkort_32x32.png")
+	Call PRGISetDescription("This tools shows how you can integrate your basic application into the ribbon using the Ribbon library")
+
+	'***Enabling Debug
+	Call DEBUGEnable(TRUE)
+
+	If SystemInfo(SYS_INFO_MAPINFO_INTERFACE) = MIINTERFACE_RIBBON Then
+		Call MENUCreateRibbonInterface
+		Call MENUEnableDisableGUI
+
+		Call MENUSubscribeToEvents
+
+		Call RBNNotificationShow(xProgram, xProgram & " has now been loaded into MapInfo Pro x64", Notify_Info, 5000)
+	Else
+		Note "This tool is designed for the versions of MapInfo Pro that are using the Ribbon Interface!"
+		End Program
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "Main")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUCreateRibbonInterface
+
+Dim	nCtrlIdx As Integer,
+	sTabName, sGroupName As String
+
+OnError GoTo ErrorOccured
+
+	'**Checking for the existence of a TAB named TabTools
+	sTabName	= "TabTools"
+	If NOT RBNTabExists(sTabName) Then
+		'**Adding the TAB named TabTools with the caption of TOOLS
+		'**nCtrlIdx is a reference to the element in the RibbonLib
+		'**I could store this and use it later
+		nCtrlIdx	= RBNAddTab(sTabName, "TOOLS", "X")
+
+		If NOT nCtrlIdx > 0 Then
+			Exit Sub
+		End If
+	End If
+
+	If NOT RBNTabGroupExists(sTabName, xProgramMenu) Then
+		nCtrlIdx = RBNTabAddGroup(xProgramMenu, xProgramMenu, sTabName)
+		If NOT nCtrlIdx > 0 Then
+			Exit Sub
+		End If
+	End If
+
+	nCtrlIdx = RBNGroupAddButton("showTablesInfo", "Table Info", "T", sTabName, xProgramMenu)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Table Info"
+									, "This will give you some basic information about open tables"
+									, "Open one or more tables to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Tables_Info_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowTablesInfo")
+	End If
+
+	nCtrlIdx = RBNGroupAddButton("showMapperInfo", "Mapper Info", "M", sTabName, xProgramMenu)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Mapper Info", "This will give you some basic information about a mapper window", "Make a mapper window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Mapper_Info_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowMapperInfo")
+	End If
+
+	nCtrlIdx = RBNGroupAddButton("showBrowserInfo", "Browser Info", "B", sTabName, xProgramMenu)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Browser Info", "This will give you some basic information about a browser window", "Make a browser window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Browser_Info_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowBrowserInfo")
+	End If
+
+	'**************************************************************************************************
+	nCtrlIdx = RBNGroupAddButton("showMapperInfo", "Mapper Info", "M", "TabMap", "MapFile")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Mapper Info", "This will give you some basic information about a mapper window", "Make a mapper window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_SMALL, "", PATH_IMAGES & "Mapper_Info_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowMapperInfo")
+	End If
+
+	'**************************************************************************************************
+	nCtrlIdx = RBNGroupInsertButtonBefore("showBrowserInfo", "Browser Info", "B", "TabTable", "TableData", "ExportButton")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Browser Info"
+								, "This will give you some basic information about a browser window"
+								, "Make a browser window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_SMALL, "", PATH_IMAGES & "Browser_Info_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowBrowserInfo")
+	End If
+
+	'**************************************************************************************************
+	nCtrlIdx = RBNSplitButtonGroupAddControl("selectWithinMap", "Within Map", ""
+				, ControlType_Button, "TabMap", "MapSelection", "MapSelectionToolsSplitButton", "SelectionDownMenuGroup")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Select Within Map", "This will select from the top most layer in the map", "")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "SelectWithinMap_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0.0)
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUSelectWithinMap")
+	End If
+
+	'**************************************************************************************************
+	sGroupName	= "BaseMaps"
+	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapSkaermkort", "Coloured", ""
+						, ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Skærmkort"
+								, "This will open the base map 'Skærmkort' into your map window"
+								, "")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Skærmkort_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenSkaermkort")
+	End If
+
+	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapSkaermkortDaempet", "Less Coloured", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Skærmkort", "This will open the base map 'Skærmkort Dæmpet' into your map window", "")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Skærmkort_Dæmpet_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenSkaermkortDaempet")
+	End If
+
+	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapSkaermkortGrey", "Grey", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Skærmkort Grå", "This will open the base map 'Skærmkort Grå' into your map window", "")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Skærmkort_Grå_32x32.png")
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenSkaermkortGraa")
+	End If
+
+	'**************************************************************************************************
+	nCtrlIdx	= RBNToolContextMenuAddMenuItem("showTablesInfo", "Table Info", "T")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Table Info"
+									, "This will give you some basic information about open tables"
+									, "Open one or more tables to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_EXTRASMALL, "", PATH_IMAGES & "Tables_Info_16x16.png")
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0)
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowTablesInfo")
+	End If
+	nCtrlIdx	= RBNToolContextMenuAddMenuItem("showMapperInfo", "Mapper Info", "M")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Mapper Info"
+									, "This will give you some basic information about a mapper window"
+									, "Make a mapper window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_EXTRASMALL, "", PATH_IMAGES & "Mapper_Info_16x16.png")
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0)
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowMapperInfo")
+	End If
+	nCtrlIdx	= RBNToolContextMenuAddMenuItem("showBrowserInfo", "Browser Info", "B")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Browser Info"
+									, "This will give you some basic information about a browser window"
+									, "Make a browser window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_EXTRASMALL, "", PATH_IMAGES & "Browser_Info_16x16.png")
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0)
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowBrowserInfo")
+	End If
+	nCtrlIdx	= RBNToolContextMenuAddMenuItem("loopRibbon", "Loop Ribbon", "L")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Loop Ribbon and print names"
+									, "This will loop thru the Ribbon element and print the names"
+									, "")
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0)
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "RBNLoop")
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUCreateRibbonInterface")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUEnableDisableGUI
+
+OnError GoTo ErrorOccured
+
+	If SystemInfo(SYS_INFO_MAPINFO_INTERFACE) = MIINTERFACE_RIBBON Then
+		If NumWindows() = 0 Then
+			Call RBNGroupEnableControls("", "", "showBrowserInfo", FALSE)
+			Call RBNGroupEnableControls("", "", "showMapperInfo", FALSE)
+		Else
+			Do Case WindowInfo(FrontWindow(), WIN_INFO_TYPE)
+				Case WIN_MAPPER
+					Call RBNGroupEnableControls("", "", "showMapperInfo", TRUE)
+					Call RBNGroupEnableControls("", "", "showBrowserInfo", FALSE)
+				Case WIN_BROWSER
+					Call RBNGroupEnableControls("", "", "showMapperInfo", FALSE)
+					Call RBNGroupEnableControls("", "", "showBrowserInfo", TRUE)
+				Case Else
+					Call RBNGroupEnableControls("", "", "showMapperInfo", FALSE)
+					Call RBNGroupEnableControls("", "", "showBrowserInfo", FALSE)
+			End Case
+		End If
+
+		If NumTables() = 0 Then
+			Call RBNGroupEnableControls("", "", "showTablesInfo", FALSE)
+		Else
+			Call RBNGroupEnableControls("", "", "showTablesInfo", TRUE)
+		End If
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUEnableDisableGUI")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUSubscribeToEvents
+
+OnError GoTo ErrorOccured
+
+	If NOT RBNEventSubscribe(AddInEvents_TableOpened, "MENUTableOpenedHandler") Then
+		Call DEBUGPrint("MENUTableOpenedHandler was not subscribed!")
+	End If
+	If NOT RBNEventSubscribe(AddInEvents_TableClosed, "MENUTableClosedHandler") Then
+		Call DEBUGPrint("MENUTableClosedHandler was not subscribed!")
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUSubscribeToEvents")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub EndHandler
+
+OnError GoTo ErrorOccured
+
+	Call RBNEndHandler
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "EndHandler")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub WinFocusChangedHandler
+
+OnError GoTo ErrorOccured
+
+	Call DEBUGPrint("WinFocusChangedHandler")
+	Call MENUEnableDisableGUI
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "WinFocusChangedHandler")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub WinClosedHandler
+
+OnError GoTo ErrorOccured
+
+	Call DEBUGPrint("WinClosedHandler")
+	Call MENUEnableDisableGUI
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "WinClosedHandler")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub AddIn_DefaultCommand
+
+OnError GoTo ErrorOccured
+
+	Call MENUShowTablesInfo
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "AddIn_DefaultCommand")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUOpenSkaermkort
+
+Dim	nMID As Integer,
+	sTabFile As String
+
+OnError GoTo ErrorOccured
+
+	sTabFile	= ApplicationDirectory$() & "GST Skærmkort.TAB"
+	Open Table sTabFile
+
+	nMID = MAPFrontMostWindow()
+	If nMID = 0 Then
+		Map From PathToTableName$(sTabFile)
+	Else
+		Add Map
+			Window nMID
+			Auto
+			Layer PathToTableName$(sTabFile)
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUOpenSkaermkort")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUOpenSkaermkortDaempet
+
+Dim	nMID As Integer,
+	sTabFile As String
+
+OnError GoTo ErrorOccured
+
+	sTabFile	= ApplicationDirectory$() & "GST Skærmkort Dæmpet.TAB"
+	Open Table sTabFile
+
+	nMID = MAPFrontMostWindow()
+	If nMID = 0 Then
+		Map From PathToTableName$(sTabFile)
+	Else
+		Add Map
+			Window nMID
+			Auto
+			Layer PathToTableName$(sTabFile)
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUOpenSkaermkortDaempet")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUOpenSkaermkortGraa
+
+Dim	nMID As Integer,
+	sTabFile As String
+
+OnError GoTo ErrorOccured
+
+	sTabFile	= ApplicationDirectory$() & "GST Skærmkort Grå.TAB"
+	Open Table sTabFile
+
+	nMID = MAPFrontMostWindow()
+	If nMID = 0 Then
+		Map From PathToTableName$(sTabFile)
+	Else
+		Add Map
+			Window nMID
+			Auto
+			Layer PathToTableName$(sTabFile)
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUOpenSkaermkortGraa")
+	Call ERRShow()
+
+End Sub
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUTableOpenedHandler(ByVal args as This)
+
+Dim	sTableName As String
+
+OnError GoTo ErrorOccured
+
+	Call DEBUGPrint("MENUTableOpenedHandler:")
+	sTableName	= GetTableEventArgsTableAlias(args)
+	Call DEBUGPrint("   Table Opened: " & sTableName)
+	Call MENUEnableDisableGUI
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUTableOpenedHandler")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUTableClosedHandler(ByVal args as This)
+
+Dim	sTableName As String
+
+OnError GoTo ErrorOccured
+
+	sTableName	= GetTableEventArgsTableAlias(args)
+	Call DEBUGPrint("   Table Closed: " & sTableName)
+	Call MENUEnableDisableGUI
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUTableClosedHandler")
+	Call ERRShow()
+
+End Sub
+
+'****************************************
+'**   Created by Peter Horsbøll Møller, Pitney Bowes Software
+'**   Ending MapBasic application
+'****************************************
+Sub EndProgram
+
+OnError GoTo ErrorOccured
+
+	End Program
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "EndProgram")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUShowMapperInfo
+
+Dim	sText As String
+
+OnError GoTo ErrorOccured
+
+	sText = "Mapper Info: "
+			& lf & "Name: " & WindowInfo(FrontWindow(), WIN_INFO_NAME)
+			& lf & "Num Layers: " & MapperInfo(FrontWindow(), MAPPER_INFO_LAYERS)
+			& lf & "Num Group Layers: " & MapperInfo(FrontWindow(), MAPPER_INFO_GROUPLAYERS)
+	Call RBNNotificationShow(xProgram, sText, Notify_Info, 5000)
+	Note sText
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUShowMapperInfo")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUShowBrowserInfo
+
+Dim	sText As String
+
+OnError GoTo ErrorOccured
+
+	sText = "Browser Info: "
+		& lf & "Name: " & WindowInfo(FrontWindow(), WIN_INFO_NAME)
+		& lf & "Table Shown: " & WindowInfo(FrontWindow(), WIN_INFO_TABLE)
+	Call RBNNotificationShow(xProgram, sText, Notify_Info, 5000)
+	Note sText
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUShowBrowserInfo")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUShowTablesInfo
+
+Dim	sText As String
+
+OnError GoTo ErrorOccured
+
+	sText = "Tables Info: "
+		& lf & "Num Tables: " & NumTables()
+	Call RBNNotificationShow(xProgram, sText, Notify_Info, 5000)
+	Note sText
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUShowTablesInfo")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUSelectWithinMap
+
+Dim	nMID, nLayer As Integer,
+	oExtent As Object,
+	sText, sLayer As String
+
+OnError GoTo ErrorOccured
+
+	nMID	= MAPFrontMostWindow()
+	If nMID = 0 Then
+		Call RBNNotificationShow(xProgram, "Please open a map window", Notify_Error, 10000)
+		Exit Sub
+	End If
+
+	For nLayer = 1 To MapperInfo(nMID, MAPPER_INFO_LAYERS)
+		If LayerInfo(nMID, nLayer, LAYER_INFO_TYPE) = LAYER_INFO_TYPE_NORMAL Then
+			If NOT LayerInfo(nMID, nLayer, LAYER_INFO_DISPLAY) = LAYER_INFO_DISPLAY_OFF Then
+				If LayerInfo(nMID, nLayer, LAYER_INFO_SELECTABLE) Then
+					sLayer = LayerInfo(nMID, nLayer, LAYER_INFO_NAME)
+				End If
+			End If
+		End If
+	Next
+
+	If sLayer = "" Then
+		Call RBNNotificationShow(xProgram, "Please make at least one layer selectable in the map", Notify_Error, 10000)
+		Exit Sub
+	End If
+
+	sText = "Selecting from the table " & sLayer
+		& lf & "Where the objects are within the extent of the map " & WindowInfo(nMID, WIN_INFO_NAME)
+	Call RBNNotificationShow(xProgram, sText, Notify_Info, 10000)
+
+	oExtent	= MAPGetExtent(nMID)
+	Select * From sLayer
+		Where OBJ Within oExtent
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUSelectWithinMap")
+	Call ERRShow()
+
+End Sub
+
+
+
+
