@@ -16,7 +16,7 @@ Include "Library\Defaults.def"
 
 Define xProgram 		"Ribbon Example"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.4"
+Define xVersion 		"0.5"
 Define xYear			"2015"
 
 Define FILE_INI			GetFolderPath$(FOLDER_MI_PREFERENCE) & xProgram & ".ini"
@@ -53,9 +53,9 @@ Declare Sub MENUShowMapperInfo
 Declare Sub MENUShowBrowserInfo
 Declare Sub MENUShowTablesInfo
 
-Declare Sub MENUOpenSkaermkort
-Declare Sub MENUOpenSkaermkortDaempet
-Declare Sub MENUOpenSkaermkortGraa
+Declare Sub MENUOpenBaseMap
+Declare Sub MENUOpenBaseMapSubdued
+Declare Sub MENUOpenBaseMapGrey
 
 Declare Sub MENUSelectWithinMap
 
@@ -72,7 +72,7 @@ OnError GoTo ErrorOccured
 	Call PRGISetApplicationVersion(xVersion)
 	Call PRGISetApplicationCopyrightYear(xYear)
 	Call PRGISetApplicationDevelopedBy("Peter Horsbøll Møller")
-	Call PRGISetApplicationImageUri(PATH_IMAGES & "Skærmkort_32x32.png")
+	Call PRGISetApplicationImageUri(PATH_IMAGES & "BaseMap_32x32.png")
 	Call PRGISetDescription("This tools shows how you can integrate your basic application into the ribbon using the Ribbon library")
 
 	'***Enabling Debug
@@ -201,37 +201,37 @@ OnError GoTo ErrorOccured
 
 	'**************************************************************************************************
 	sGroupName	= "BaseMaps"
-	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapSkaermkort", "Coloured", ""
+	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMap", "Coloured", ""
 						, ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
 	If nCtrlIdx > 0 Then
 		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "Skærmkort"
-								, "This will open the base map 'Skærmkort' into your map window"
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "BaseMap"
+								, "This will open the base map 'BaseMap' into your map window"
 								, "")
 		'Set the button icon
-		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Skærmkort_32x32.png")
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_32x32.png")
 		'Set Custom MapBasic Handle to the button
-		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenSkaermkort")
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMap")
 	End If
 
-	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapSkaermkortDaempet", "Less Coloured", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapBaseMapSubdued", "Subdued", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
 	If nCtrlIdx > 0 Then
 		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "Skærmkort", "This will open the base map 'Skærmkort Dæmpet' into your map window", "")
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "BaseMap Subdued", "This will open the base map 'BaseMap Subdued' into your map window", "")
 		'Set the button icon
-		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Skærmkort_Dæmpet_32x32.png")
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_Subdued_32x32.png")
 		'Set Custom MapBasic Handle to the button
-		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenSkaermkortDaempet")
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapSubdued")
 	End If
 
-	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapSkaermkortGrey", "Grey", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapBaseMapGrey", "Grey", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
 	If nCtrlIdx > 0 Then
 		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "Skærmkort Grå", "This will open the base map 'Skærmkort Grå' into your map window", "")
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Basemap Grey", "This will open the base map 'BaseMap Grey' into your map window", "")
 		'Set the button icon
-		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Skærmkort_Grå_32x32.png")
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_Grey_32x32.png")
 		'Set Custom MapBasic Handle to the button
-		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenSkaermkortGraa")
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapGrey")
 	End If
 
 	'**************************************************************************************************
@@ -435,14 +435,14 @@ End Sub
 'Parameters:
 '
 '**********************************************************************************************''
-Sub MENUOpenSkaermkort
+Sub MENUOpenBaseMap
 
 Dim	nMID As Integer,
 	sTabFile As String
 
 OnError GoTo ErrorOccured
 
-	sTabFile	= ApplicationDirectory$() & "GST Skærmkort.TAB"
+	sTabFile	= ApplicationDirectory$() & "BaseMap.TAB"
 	Open Table sTabFile
 
 	nMID = MAPFrontMostWindow()
@@ -458,7 +458,7 @@ OnError GoTo ErrorOccured
 	Exit Sub
 '-------------------------
 ErrorOccured:
-	Call ERRCreate(Err(), Error$(), "MENUOpenSkaermkort")
+	Call ERRCreate(Err(), Error$(), "MENUOpenBaseMap")
 	Call ERRShow()
 
 End Sub
@@ -468,14 +468,14 @@ End Sub
 'Parameters:
 '
 '**********************************************************************************************''
-Sub MENUOpenSkaermkortDaempet
+Sub MENUOpenBaseMapSubdued
 
 Dim	nMID As Integer,
 	sTabFile As String
 
 OnError GoTo ErrorOccured
 
-	sTabFile	= ApplicationDirectory$() & "GST Skærmkort Dæmpet.TAB"
+	sTabFile	= ApplicationDirectory$() & "BaseMap Subdued.TAB"
 	Open Table sTabFile
 
 	nMID = MAPFrontMostWindow()
@@ -491,7 +491,7 @@ OnError GoTo ErrorOccured
 	Exit Sub
 '-------------------------
 ErrorOccured:
-	Call ERRCreate(Err(), Error$(), "MENUOpenSkaermkortDaempet")
+	Call ERRCreate(Err(), Error$(), "MENUOpenBaseMapSubdued")
 	Call ERRShow()
 
 End Sub
@@ -501,14 +501,14 @@ End Sub
 'Parameters:
 '
 '**********************************************************************************************''
-Sub MENUOpenSkaermkortGraa
+Sub MENUOpenBaseMapGrey
 
 Dim	nMID As Integer,
 	sTabFile As String
 
 OnError GoTo ErrorOccured
 
-	sTabFile	= ApplicationDirectory$() & "GST Skærmkort Grå.TAB"
+	sTabFile	= ApplicationDirectory$() & "BaseMap Grey.TAB"
 	Open Table sTabFile
 
 	nMID = MAPFrontMostWindow()
@@ -524,7 +524,7 @@ OnError GoTo ErrorOccured
 	Exit Sub
 '-------------------------
 ErrorOccured:
-	Call ERRCreate(Err(), Error$(), "MENUOpenSkaermkortGraa")
+	Call ERRCreate(Err(), Error$(), "MENUOpenBaseMapGrey")
 	Call ERRShow()
 
 End Sub
