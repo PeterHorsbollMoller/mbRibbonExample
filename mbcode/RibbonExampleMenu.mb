@@ -14,22 +14,24 @@ Include "Menu.def"
 '**default constants...
 Include "Library\Defaults.def"
 
-Define xProgram 		"Ribbon Example"
+Define xProgram 		"RibbonExample"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.5"
+Define xVersion 		"0.6"
 Define xYear			"2015"
 
-Define FILE_INI			GetFolderPath$(FOLDER_MI_PREFERENCE) & xProgram & ".ini"
+Define FILE_INI			ApplicationDirectory$() & xProgram & ".ini"
 Define FILE_DBG			ApplicationDirectory$() & xProgram & ".dbg"
 'Define FILE_DLL			ApplicationDirectory$() & xProgram & ".dll"
 Define FILE_PAD			GetFolderPath$(FOLDER_MI_PREFERENCE) & xProgram & ".btp"
 Define PATH_IMAGES			ApplicationDirectory$() & "Images\"
 
 '-------------------------------------
-Include "Library\ProgramInfo.def"
+Include "Library\CONFIGFILELib.def"
 Include "Library\DEBUGLib.def"
 Include "Library\ERRORLib.def"
+Include "Library\FILELib.def"
 Include "Library\MAPPERLib.def"
+Include "Library\ProgramInfo.def"
 Include "Library\RIBBONLib.def"
 Include "Library\TABLELib.def"
 
@@ -45,6 +47,8 @@ Declare Sub MENUTableClosedHandler(ByVal args as This)
 
 Declare Sub AddIn_DefaultCommand
 
+Declare Sub MENUReadConfigFile
+
 Declare Sub MENUCreateRibbonInterface
 Declare Sub MENUEnableDisableGUI
 Declare Sub MENUSubscribeToEvents
@@ -53,12 +57,21 @@ Declare Sub MENUShowMapperInfo
 Declare Sub MENUShowBrowserInfo
 Declare Sub MENUShowTablesInfo
 
+Declare Sub MENUOpenBaseMapType
 Declare Sub MENUOpenBaseMap
 Declare Sub MENUOpenBaseMapSubdued
 Declare Sub MENUOpenBaseMapGrey
 
 Declare Sub MENUSelectWithinMap
 
+Type T_BASE_MAP
+	sName 		As String
+	sImageFile	As String
+	sTabFile		As String
+End Type
+
+Dim	marrBaseMaps() As T_BASE_MAP,
+	mnFirstBaseMapControlID As Integer
 '**********************************************************************************************''
 '**   Created by Peter Horsbøll Møller, Pitney Bowes Software
 '
@@ -73,10 +86,13 @@ OnError GoTo ErrorOccured
 	Call PRGISetApplicationCopyrightYear(xYear)
 	Call PRGISetApplicationDevelopedBy("Peter Horsbøll Møller")
 	Call PRGISetApplicationImageUri(PATH_IMAGES & "BaseMap_32x32.png")
+'	Call PRGISetApplicationImageUri("pack://RibbonExample;Resources/Images/BaseMap_32x32.png")
 	Call PRGISetDescription("This tools shows how you can integrate your basic application into the ribbon using the Ribbon library")
 
 	'***Enabling Debug
 	Call DEBUGEnable(TRUE)
+
+	Call MENUReadConfigFile
 
 	If SystemInfo(SYS_INFO_MAPINFO_INTERFACE) = MIINTERFACE_RIBBON Then
 		Call MENUCreateRibbonInterface
@@ -99,13 +115,63 @@ ErrorOccured:
 End Sub
 
 '**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Business Insight
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUReadConfigFile
+
+Dim	nFile, nCount, nNoneFound As Integer,
+	sName, sImageFile, sTabFile As String
+
+OnError GoTo ErrorOccured
+
+	Call DEBUGPrint("MENUReadConfigFile:" & FILE_INI)
+	Do While TRUE
+		nFile		= nFile + 1
+		sName		= CONFIGReadKey(FILE_INI, "BASEMAPS", "NAME" & nFile)
+		sImageFile	= CONFIGReadKey(FILE_INI, "BASEMAPS", "IMAGEFILE" & nFile)
+		sTabFile		= CONFIGReadKey(FILE_INI, "BASEMAPS", "TABFILE" & nFile)
+
+'		Call DEBUGPrint(nCount & ": '" & sName & "', '" & sImageFile & "', '" & sTabFile & "'")
+		If sName <> "" AND sImageFile <> "" AND sTabFile <> "" Then
+			nCount = nCount + 1
+			Redim marrBaseMaps(nCount)
+
+			marrBaseMaps(nCount).sName		= sName
+			marrBaseMaps(nCount).sImageFile	= FILEGetAbsolutePath(ApplicationDirectory$(), sImageFile)
+			marrBaseMaps(nCount).sTabFile		= FILEGetAbsolutePath(ApplicationDirectory$(), sTabFile)
+
+'			Call DEBUGPrint(nCount & ": '" & marrBaseMaps(nCount).sImageFile & "'")
+
+			nNoneFound = 0
+		Else
+'			Call DEBUGPrint(nFile & ": Not Found!")
+			nNoneFound = nNoneFound + 1
+
+			If nNoneFound > 3 Then
+				Exit Do
+			End If
+		End If
+	Loop
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUReadConfigFile")
+	Call ERRShow()
+
+End Sub
+
+
+'**********************************************************************************************''
 'Created by Peter Horsbøll Møller, Pitney Bowes Software
 'Parameters:
 '
 '**********************************************************************************************''
 Sub MENUCreateRibbonInterface
 
-Dim	nCtrlIdx As Integer,
+Dim	nCtrlIdx, i As Integer,
 	sTabName, sGroupName As String
 
 OnError GoTo ErrorOccured
@@ -200,39 +266,61 @@ OnError GoTo ErrorOccured
 	End If
 
 	'**************************************************************************************************
-	sGroupName	= "BaseMaps"
-	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMap", "Coloured", ""
+	sGroupName			= "BaseMaps"
+	mnFirstBaseMapControlID	= 0
+	For i = 1 To Ubound(marrBaseMaps)
+		Call DEBUGPrint("Adding base maps: " &  marrBaseMaps(i).sName)
+		nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMap_" & i, marrBaseMaps(i).sName, ""
 						, ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
-	If nCtrlIdx > 0 Then
-		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "BaseMap"
-								, "This will open the base map 'BaseMap' into your map window"
-								, "")
-		'Set the button icon
-		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_32x32.png")
-		'Set Custom MapBasic Handle to the button
-		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMap")
-	End If
+		If nCtrlIdx > 0 Then
+			'Create & Set the button tooltip
+			Call RBNControlSetToolTipIdx(nCtrlIdx, xProgram
+									, "This will open the base map '" & marrBaseMaps(i).sName & "' into your map window"
+									, "")
+			'Set the button icon
+			Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", marrBaseMaps(i).sImageFile)
+			'Set Custom MapBasic Handle to the button
+			Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapType")
 
-	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapBaseMapSubdued", "Subdued", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
-	If nCtrlIdx > 0 Then
-		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "BaseMap Subdued", "This will open the base map 'BaseMap Subdued' into your map window", "")
-		'Set the button icon
-		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_Subdued_32x32.png")
-		'Set Custom MapBasic Handle to the button
-		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapSubdued")
-	End If
+			If mnFirstBaseMapControlID = 0 Then
+				mnFirstBaseMapControlID = RBNControlGetControlIDIdx(nCtrlIdx)
+			End If
+		End If
+	Next
 
-	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapBaseMapGrey", "Grey", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
-	If nCtrlIdx > 0 Then
-		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "Basemap Grey", "This will open the base map 'BaseMap Grey' into your map window", "")
-		'Set the button icon
-		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_Grey_32x32.png")
-		'Set Custom MapBasic Handle to the button
-		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapGrey")
-	End If
+
+'	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMap", "Coloured", ""
+'						, ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+'	If nCtrlIdx > 0 Then
+'		'Create & Set the button tooltip
+'		Call RBNControlSetToolTipIdx(nCtrlIdx, "BaseMap"
+'								, "This will open the base map 'BaseMap' into your map window"
+'								, "")
+'		'Set the button icon
+'		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_32x32.png")
+'		'Set Custom MapBasic Handle to the button
+'		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMap")
+'	End If
+'
+'	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapBaseMapSubdued", "Subdued", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+'	If nCtrlIdx > 0 Then
+'		'Create & Set the button tooltip
+'		Call RBNControlSetToolTipIdx(nCtrlIdx, "BaseMap Subdued", "This will open the base map 'BaseMap Subdued' into your map window", "")
+'		'Set the button icon
+'		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_Subdued_32x32.png")
+'		'Set Custom MapBasic Handle to the button
+'		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapSubdued")
+'	End If
+'
+'	nCtrlIdx = RBNSplitButtonGroupAddControl("openBaseMapBaseMapGrey", "Grey", "", ControlType_Button, "TabHome", "HomeFile", "HomeFileOpenGallerySplitButton", sGroupName)
+'	If nCtrlIdx > 0 Then
+'		'Create & Set the button tooltip
+'		Call RBNControlSetToolTipIdx(nCtrlIdx, "Basemap Grey", "This will open the base map 'BaseMap Grey' into your map window", "")
+'		'Set the button icon
+'		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "BaseMap_Grey_32x32.png")
+'		'Set Custom MapBasic Handle to the button
+'		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUOpenBaseMapGrey")
+'	End If
 
 	'**************************************************************************************************
 	nCtrlIdx	= RBNToolContextMenuAddMenuItem("showTablesInfo", "Table Info", "T")
@@ -459,6 +547,41 @@ OnError GoTo ErrorOccured
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "MENUOpenBaseMap")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Business Insight
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUOpenBaseMapType
+
+Dim	nMID As Integer,
+	nItem As Integer
+
+OnError GoTo ErrorOccured
+
+	nItem	= (CommandInfo(CMD_INFO_TOOLBTN) - mnFirstBaseMapControlID) + 1
+	Call RBNNotificationShow(xProgram, "Opening Base Map '" & marrBaseMaps(nItem).sName & "'", Notify_Info, 5000)
+
+	Open Table marrBaseMaps(nItem).sTabFile
+
+	nMID = MAPFrontMostWindow()
+	If nMID = 0 Then
+		Map From PathToTableName$(marrBaseMaps(nItem).sTabFile)
+	Else
+		Add Map
+			Window nMID
+			Auto
+			Layer PathToTableName$(marrBaseMaps(nItem).sTabFile)
+	End If
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUOpenBaseMapType")
 	Call ERRShow()
 
 End Sub

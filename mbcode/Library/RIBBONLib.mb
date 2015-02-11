@@ -188,7 +188,7 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 							If nCntrlType = ControlType_DropDownMenuGroup Then
 								rbnDropDownControlsColl	= GetCtrlGrpCtrls(rbnSplitCtrlControlItem)
 								nNumDropDownCtrls		= GetMICtrlCollCount(rbnDropDownControlsColl)
-								Call DEBUGPrint("         DropDown Control has " & nNumDropDownCtrls & " Controls")
+								Call DEBUGPrint("            DropDown Control has " & nNumDropDownCtrls & " Controls")
 
 								For m = 0 To (nNumDropDownCtrls - 1)
 									rbnDropDownControlItem	= GetMICtrlCollItemInt(rbnDropDownControlsColl, m)
@@ -196,7 +196,7 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 									nCntrlType	= GetMICtrlCtrlType(rbnDropDownControlItem)
 									sName		= GetMICtrlName(rbnDropDownControlItem)
 									sCaption		= GetMICtrlCaption(rbnDropDownControlItem)
-									Call DEBUGPrint("         DropDown Control " & m & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
+									Call DEBUGPrint("            DropDown Control " & m & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
 								Next
 
 							End If
@@ -3759,6 +3759,87 @@ End Sub
 'Parameters:
 '
 '**********************************************************************************************''
+Sub RBNControlSetCmdIDThs(	  ByVal rbnControl As This
+						, ByVal nCmdID As Integer)
+
+OnError GoTo ErrorOccured
+
+	Do Case GetMICtrlCtrlType(rbnControl)
+		Case ControlType_Button
+			Call SetRbnBtnCtrlCmdId(rbnControl, nCmdID)
+
+		Case ControlType_ToolButton
+			Call SetRbnToolBtnCtrlCmdId(rbnControl, nCmdID)
+
+		Case ControlType_RibbonMenuItem
+			Call SetRbnMenuItemCtrlCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_RibbonButtonPanel
+		'Case ControlType_RibbonSeparator
+
+		Case ControlType_ContextMenuItem
+			Call SetICntxtMnuMenuItemCmdId(rbnControl, nCmdID)
+
+		'Case ControlType_ContextMenuSeparator
+		'Case ControlType_MenuItemSeparator
+'		Case ControlType_DropDownButton
+
+		Case ControlType_SplitButton
+			Call SetRbnSplitCtrlCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_DropDownMenuGroup
+'		Case ControlType_GalleryControl
+
+		Case ControlType_GalleryItem
+			Call SetRbnGalleryItemCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_GalleryGroup
+'		Case ControlType_CustomControl
+'		Case ControlType_TextBlock
+'		Case ControlType_Image
+'		Case ControlType_BackStageTabItem
+
+		Case ControlType_BackStageButton
+			Call SetIBackStageBtnCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_BackStageTabSection
+'		Case ControlType_BackStageSeparator
+'		Case ControlType_StackPanel
+	End Case
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlSetCmdIDThs")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RBNControlSetCmdIDIdx(	  ByVal nElementIdx As Integer
+						, ByVal nCmdID As Integer
+						)
+
+OnError GoTo ErrorOccured
+
+	Call RBNControlSetCmdIDThs(marrControls(nElementIdx), nCmdID)
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlSetCmdIDIdx")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
 Sub RBNControlEnableThs(	  ByVal rbnControl As This
 					, ByVal bEnabled As Logical)
 
@@ -3907,6 +3988,103 @@ ErrorOccured:
 	Call ERRShow()
 
 End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Business Insight
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNControlGetControlIDThs(	  ByVal rbnControl As This
+								)  As Integer	'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
+
+OnError GoTo ErrorOccured
+
+	Do Case GetMICtrlCtrlType(rbnControl)
+		Case ControlType_Button
+			RBNControlGetControlIDThs	= GetMICtrlCtrlId(rbnControl)
+
+		Case ControlType_ToolButton
+			RBNControlGetControlIDThs	= GetRbnToolBtnCtrlCtrlId(rbnControl)
+
+		Case ControlType_RibbonMenuItem
+			RBNControlGetControlIDThs	= GetRbnMenuItemCtrlCtrlId(rbnControl)
+
+		Case ControlType_RibbonButtonPanel
+			RBNControlGetControlIDThs	= GetRbnBtnPnlCtrlId(rbnControl)
+		'Case ControlType_RibbonSeparator
+
+		Case ControlType_ContextMenuItem
+			RBNControlGetControlIDThs	= GetICntxtMnuMenuItemCtrlId(rbnControl)
+
+		'Case ControlType_ContextMenuSeparator
+		'Case ControlType_MenuItemSeparator
+
+		Case ControlType_DropDownButton
+			RBNControlGetControlIDThs	= GetRbnDropDownCtrlCtrlId(rbnControl)
+
+		Case ControlType_SplitButton
+			RBNControlGetControlIDThs	= GetRbnSplitCtrlCtrlId(rbnControl)
+
+'		Case ControlType_DropDownMenuGroup
+		Case ControlType_GalleryControl
+			RBNControlGetControlIDThs	= GetRbnGalleryCtrlCtrlId(rbnControl)
+
+		Case ControlType_GalleryItem
+			RBNControlGetControlIDThs	= GetRbnGalleryItemCtrlId(rbnControl)
+
+		Case ControlType_GalleryGroup
+			RBNControlGetControlIDThs	= GetRbnGalleryGrpCtrlId(rbnControl)
+
+		Case ControlType_CustomControl
+			RBNControlGetControlIDThs	= GetRbnCustomCtrlCtrlId(rbnControl)
+
+		Case ControlType_TextBlock
+			RBNControlGetControlIDThs	= GetITextBlockCtrlId(rbnControl)
+
+		Case ControlType_Image
+			RBNControlGetControlIDThs	= GetIImageCtrlId(rbnControl)
+
+		Case ControlType_BackStageTabItem
+			RBNControlGetControlIDThs	= GetIBackStageTabItemCtrlId(rbnControl)
+
+		Case ControlType_BackStageButton
+			RBNControlGetControlIDThs	= GetIBackStageBtnCtrlId(rbnControl)
+
+'		Case ControlType_BackStageTabSection
+'		Case ControlType_BackStageSeparator
+		Case ControlType_StackPanel
+			RBNControlGetControlIDThs	= GetIStackPanelCtrlId(rbnControl)
+
+	End Case
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlGetControlIDThs")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Business Insight
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNControlGetControlIDIdx(  nElementIdx As Integer
+								)  As Integer	'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
+OnError GoTo ErrorOccured
+
+	RBNControlGetControlIDIdx = RBNControlGetControlIDThs(marrControls(nElementIdx))
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "PleaseEnterNameOfFunctionHere")
+	Call ERRShow()
+
+End Function
 
 '**********************************************************************************************''
 'Created by Peter Horsbøll Møller, Pitney Bowes Software

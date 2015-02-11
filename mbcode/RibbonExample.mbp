@@ -11,4 +11,5 @@ Module=Library\RESSTRNGLib.MBO
 Module=Library\RibbonLib.mbo
 Module=Library\STRINGLib.mbo
 Module=Library\TABLELib.mbo
+Module=Library\Types\T_ERROR.mbo
 Module=RibbonExampleMenu.mbo

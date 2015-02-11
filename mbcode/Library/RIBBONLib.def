@@ -195,6 +195,11 @@
 '							- RBNGroupSetToolTipThs(...)
 '						- Removed:
 '							- RBNGetTableEventArgsTableAlias
+'	08-02-2015 16:11:22		- Added:
+'							- RBNControlSetCmdIDThs(...)	'For setting the ID of the control, used by CommandInfo
+'							- RBNControlSetCmdIDIdx(...)	'For setting the ID of the control, used by CommandInfo
+'							- RBNControlGetControlIDThs(...) 'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
+'							- RBNControlGetControlIDIdx(...) 'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
 '*****************************************************************************************************************************
 
 
@@ -590,14 +595,17 @@ Declare Sub RBNControlSetLeftMarginIdx(	  ByVal nElementIdx As Integer
 								)
 
 Declare Sub RBNControlSetCustomMBXHandlerThs(  ByVal rbnControl As This
-									, ByVal sMBXHandler As String)
+									, ByVal sMBXHandler As String
+									)
 Declare Sub RBNControlSetCustomMBXHandlerIdx(  ByVal nElementIdx As Integer
-									, ByVal sMBXHandler As String)
+									, ByVal sMBXHandler As String
+									)
 Declare Sub RBNControlSetDrawModeThs(	  ByVal rbnControl As This
-								, ByVal nDrawMode As Integer)
+								, ByVal nDrawMode As Integer
+								)
 Declare Sub RBNControlSetDrawModeIdx(	  ByVal nElementIdx As Integer
-								, ByVal nDrawMode As Integer)
-'
+								, ByVal nDrawMode As Integer
+								)
 Declare Sub RBNControlSetMICursorThs(	  ByVal rbnControl As This
 								, ByVal nCursor As Integer
 								, ByVal sFile As String
@@ -606,14 +614,29 @@ Declare Sub RBNControlSetMICursorIdx(	  ByVal nElementIdx As Integer
 								, ByVal nCursor As Integer
 								, ByVal sFile As String
 								)
+Declare Sub RBNControlSetCmdIDThs(	  ByVal rbnControl As This
+							, ByVal nCmdID As Integer
+							)
+Declare Sub RBNControlSetCmdIDIdx(	  ByVal nElementIdx As Integer
+							, ByVal nCmdID As Integer
+							)
 Declare Sub RBNControlEnableThs(	  ByVal rbnControl As This
-							, ByVal bEnabled As Logical)
+							, ByVal bEnabled As Logical
+							)
 Declare Sub RBNControlEnableIdx(	  ByVal nElementIdx As Integer
-							, ByVal bEnabled As Logical)
+							, ByVal bEnabled As Logical
+							)
 Declare Sub RBNControlCheckThs(	  ByVal rbnControl As This
-							, ByVal bChecked As Logical)
+							, ByVal bChecked As Logical
+							)
 Declare Sub RBNControlCheckIdx(	  ByVal nElementIdx As Integer
-							, ByVal bChecked As Logical)
+							, ByVal bChecked As Logical
+							)
+Declare Function RBNControlGetControlIDThs(	  ByVal rbnControl As This
+									) As Integer	 'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
+Declare Function RBNControlGetControlIDIdx(	  nElementIdx As Integer
+									) As Integer	'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
+
 Declare Function RBNControlGetIndex(	  ByVal sTabName As String
 								, ByVal sGroupName As String
 								, ByVal sControlName As String

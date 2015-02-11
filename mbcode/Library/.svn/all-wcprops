@@ -1,0 +1,605 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/mapinfo_mblibrary/!svn/ver/103
+END
+FILELib.dll
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/94/FILELib.dll
+END
+ARRAYLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/112/ARRAYLib.MBO
+END
+COLUMNLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/68/COLUMNLib.mb
+END
+XMLTypes.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/147/XMLTypes.def
+END
+EXCELLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/139/EXCELLib.mb
+END
+STYLELib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/143/STYLELib.mb
+END
+SystemLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/110/SystemLib.MBO
+END
+DEBUGLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/125/DEBUGLib.MBO
+END
+ConfigFileLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/28/ConfigFileLib.mb
+END
+STRINGLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/119/STRINGLib.def
+END
+RESSTRNGLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/142/RESSTRNGLib.def
+END
+RESSTRNGLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mapinfo_mblibrary/!svn/ver/142/RESSTRNGLib.mb
+END
+Colors.def
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mapinfo_mblibrary/!svn/ver/5/Colors.def
+END
+OBJLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/132/OBJLib.mb
+END
+RIBBONLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/149/RIBBONLib.def
+END
+RIBBONLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/149/RIBBONLib.mb
+END
+LAYERLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/130/LAYERLib.def
+END
+HTTPTypes.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/147/HTTPTypes.def
+END
+ARRAYLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/112/ARRAYLib.mb
+END
+FILELib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/97/FILELib.mb
+END
+FILELib.def
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/97/FILELib.def
+END
+RibbonElements.def
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mapinfo_mblibrary/!svn/ver/149/RibbonElements.def
+END
+STRINGLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/119/STRINGLib.MBO
+END
+DEBUGLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/125/DEBUGLib.mb
+END
+RESSTRNGLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/142/RESSTRNGLib.MBO
+END
+DBMSMapCatalog.def
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mapinfo_mblibrary/!svn/ver/90/DBMSMapCatalog.def
+END
+DBMSMapCatalog.mb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mapinfo_mblibrary/!svn/ver/90/DBMSMapCatalog.mb
+END
+ERRORLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/140/ERRORLib.mb
+END
+MathLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/107/MathLib.mb
+END
+RIBBONLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/149/RIBBONLib.MBO
+END
+LAYERLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/130/LAYERLib.MBO
+END
+IMapInfoPro.def
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/147/IMapInfoPro.def
+END
+DATETIMELib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mapinfo_mblibrary/!svn/ver/126/DATETIMELib.mb
+END
+ProgramInfo.mb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mapinfo_mblibrary/!svn/ver/137/ProgramInfo.mb
+END
+ReadRecordsLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mapinfo_mblibrary/!svn/ver/141/ReadRecordsLib.mb
+END
+FILELib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/97/FILELib.MBO
+END
+EXCELLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/139/EXCELLib.def
+END
+STYLELib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/143/STYLELib.def
+END
+DBMSInfoLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/135/DBMSInfoLib.def
+END
+DBMSInfoLib.MB
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mapinfo_mblibrary/!svn/ver/135/DBMSInfoLib.MB
+END
+TOOLBARLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/8/TOOLBARLib.def
+END
+DBMSMapCatalog.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mapinfo_mblibrary/!svn/ver/90/DBMSMapCatalog.MBO
+END
+STRINGLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/119/STRINGLib.mb
+END
+DATETIMELib.dll
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/6/DATETIMELib.dll
+END
+DBMSUtilityLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mapinfo_mblibrary/!svn/ver/134/DBMSUtilityLib.def
+END
+EXCELLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/139/EXCELLib.MBO
+END
+STYLELib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/143/STYLELib.MBO
+END
+HTTPLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/147/HTTPLib.def
+END
+DBMSInfoLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/135/DBMSInfoLib.MBO
+END
+TOOLBARLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/8/TOOLBARLib.MBO
+END
+MAPPERLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/74/MAPPERLib.mb
+END
+TABLELib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/144/TABLELib.def
+END
+TABLELib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/144/TABLELib.mb
+END
+DBMSUtilityLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mapinfo_mblibrary/!svn/ver/134/DBMSUtilityLib.MBO
+END
+GroupLayerLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mapinfo_mblibrary/!svn/ver/129/GroupLayerLib.def
+END
+ConfigFile.dll
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/1/ConfigFile.dll
+END
+DATETIMELib.def
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/126/DATETIMELib.def
+END
+ProgramInfo.def
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/137/ProgramInfo.def
+END
+COLUMNLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/138/COLUMNLib.def
+END
+TOOLBARLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/1/TOOLBARLib.mb
+END
+ConfigFileLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mapinfo_mblibrary/!svn/ver/28/ConfigFileLib.def
+END
+TABLELib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/144/TABLELib.MBO
+END
+WINDOWLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/120/WINDOWLib.mb
+END
+WINDOWLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/120/WINDOWLib.def
+END
+GroupLayerLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mapinfo_mblibrary/!svn/ver/129/GroupLayerLib.MBO
+END
+OverrideStyle.mb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/mapinfo_mblibrary/!svn/ver/1/OverrideStyle.mb
+END
+DATETIMELib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/126/DATETIMELib.MBO
+END
+ProgramInfo.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/mapinfo_mblibrary/!svn/ver/137/ProgramInfo.MBO
+END
+COLUMNLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/68/COLUMNLib.MBO
+END
+MAPPERLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/74/MAPPERLib.def
+END
+ConfigFileLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mapinfo_mblibrary/!svn/ver/28/ConfigFileLib.MBO
+END
+SystemLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/110/SystemLib.mb
+END
+WINDOWLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/120/WINDOWLib.MBO
+END
+ERRORLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/140/ERRORLib.def
+END
+ReadRecordsLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mapinfo_mblibrary/!svn/ver/108/ReadRecordsLib.def
+END
+Colours.def
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/5/Colours.def
+END
+XMLLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/147/XMLLib.def
+END
+WINAPI.def
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/48/WINAPI.def
+END
+Enums.def
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/147/Enums.def
+END
+SystemLib.dll
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/83/SystemLib.dll
+END
+DATETIMELib.cs
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/6/DATETIMELib.cs
+END
+MAPPERLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/74/MAPPERLib.MBO
+END
+MathLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/107/MathLib.MBO
+END
+ERRORLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/140/ERRORLib.MBO
+END
+DBMSUtilityLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/mapinfo_mblibrary/!svn/ver/134/DBMSUtilityLib.mb
+END
+OBJLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/132/OBJLib.def
+END
+PaperSize.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/147/PaperSize.def
+END
+LAYERLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/130/LAYERLib.mb
+END
+ReadRecordsLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/mapinfo_mblibrary/!svn/ver/141/ReadRecordsLib.MBO
+END
+MENU.DEF
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/mapinfo_mblibrary/!svn/ver/147/MENU.DEF
+END
+ARRAYLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/112/ARRAYLib.def
+END
+defaults.def
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/mapinfo_mblibrary/!svn/ver/99/defaults.def
+END
+ConfigFileLibDotNet.def
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/mapinfo_mblibrary/!svn/ver/29/ConfigFileLibDotNet.def
+END
+ICONS.DEF
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/147/ICONS.DEF
+END
+SystemLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/mapinfo_mblibrary/!svn/ver/110/SystemLib.def
+END
+DEBUGLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/102/DEBUGLib.def
+END
+MAPBASIC.DEF
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/mapinfo_mblibrary/!svn/ver/147/MAPBASIC.DEF
+END
+GroupLayerLib.mb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/mapinfo_mblibrary/!svn/ver/129/GroupLayerLib.mb
+END
+MATHLib.def
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/mapinfo_mblibrary/!svn/ver/8/MATHLib.def
+END
+OBJLib.MBO
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/mapinfo_mblibrary/!svn/ver/132/OBJLib.MBO
+END
