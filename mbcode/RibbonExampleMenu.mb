@@ -16,7 +16,7 @@ Include "Library\Defaults.def"
 
 Define xProgram 		"RibbonExample"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.6"
+Define xVersion 		"0.7"
 Define xYear			"2015"
 
 Define FILE_INI			ApplicationDirectory$() & xProgram & ".ini"
@@ -199,9 +199,7 @@ OnError GoTo ErrorOccured
 	nCtrlIdx = RBNGroupAddButton("showTablesInfo", "Table Info", "T", sTabName, xProgramMenu)
 	If nCtrlIdx > 0 Then
 		'Create & Set the button tooltip
-		Call RBNControlSetToolTipIdx(nCtrlIdx, "Table Info"
-									, "This will give you some basic information about open tables"
-									, "Open one or more tables to use this feature")
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Table Info", "This will give you some basic information about open tables", "Open one or more tables to use this feature")
 		'Set the button icon
 		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Tables_Info_32x32.png")
 		'Set Custom MapBasic Handle to the button
@@ -226,6 +224,39 @@ OnError GoTo ErrorOccured
 		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Browser_Info_32x32.png")
 		'Set Custom MapBasic Handle to the button
 		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowBrowserInfo")
+	End If
+
+	'**Adding a new SplitButton to the TOOLS tab
+	nCtrlIdx = RBNGroupAddControl("allInfoToolsSplitButton", "Info Tools", "", ControlType_SplitButton, sTabName, xProgramMenu)
+	If nCtrlIdx > 0 Then
+		'*Setting the image sizes to large
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Tables_Info_32x32.png")
+
+		'**Adding a Group to the new SplitButton
+		nCtrlIdx	= RBNSplitButtonAddGroup("allInfoToolsGroup", "", sTabName, xProgramMenu, "allInfoToolsSplitButton")
+		If nCtrlIdx > 0 Then
+			'**Adding a Control to the Group on the SplitButton
+			nCtrlIdx = RBNSplitButtonGroupAddControl("showTablesInfo", "Table Info", "T", ControlType_Button, sTabName, xProgramMenu, "allInfoToolsSplitButton", "allInfoToolsGroup")
+			If nCtrlIdx > 0 Then
+				'Create & Set the button tooltip
+				Call RBNControlSetToolTipIdx(nCtrlIdx, "Table Info", "This will give you some basic information about open tables", "Open one or more tables to use this feature")
+				'Set the button icon
+				Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Tables_Info_32x32.png")
+				'Set Custom MapBasic Handle to the button
+				Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowTablesInfo")
+			End If
+
+			'**Adding another Control to the Group on the SplitButton
+			nCtrlIdx = RBNSplitButtonGroupAddControl("showMapperInfo", "Mapper Info", "M", ControlType_Button, sTabName, xProgramMenu, "allInfoToolsSplitButton", "allInfoToolsGroup")
+			If nCtrlIdx > 0 Then
+				'Create & Set the button tooltip
+				Call RBNControlSetToolTipIdx(nCtrlIdx, "Mapper Info", "This will give you some basic information about a mapper window", "Make a mapper window active to use this feature")
+				'Set the button icon
+				Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Mapper_Info_32x32.png")
+				'Set Custom MapBasic Handle to the button
+				Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowMapperInfo")
+			End If
+		End If
 	End If
 
 	'**************************************************************************************************
