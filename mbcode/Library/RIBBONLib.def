@@ -200,6 +200,15 @@
 '							- RBNControlSetCmdIDIdx(...)	'For setting the ID of the control, used by CommandInfo
 '							- RBNControlGetControlIDThs(...) 'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
 '							- RBNControlGetControlIDIdx(...) 'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
+'	30-03-2015 21:07:19		- Added:
+'							- RBNDropDButtonNumGroups(...) As Integer
+'							- RBNDropDButtonAddGroup(...) As Integer
+'							- RBNDropDButtonGroupRemove(...) As Integer
+'							- RBNDropDButtonGetGroupThs(...) As Logical
+'							- RBNDropDButtonGetGroupIndexThs(...) As Integer
+'							- RBNDropDButtonGroupExistsThs(...) As Logical
+'							- RBNDropDButtonGroupAddControl(...) As Integer
+'							- RBNDropDButtonGroupRemoveControl(...) As Integer
 '*****************************************************************************************************************************
 
 
@@ -485,6 +494,51 @@ Declare Function RBNSplitButtonGroupRemoveControl(  ByVal sControlName As String
 										, ByVal sGroupName As String
 										, ByVal sSplitButtonName As string
 										, ByVal sSplitButtonGroupName As string
+										) As Integer
+
+'** WORKING WITH DROPDOWNBUTTONS ***************************************************************************
+Declare Function RBNDropDButtonNumGroups( ByVal sTabName As String
+								, ByVal sGroupName As String
+								, ByVal sDropDButtonName As String
+								) As Integer
+
+Declare Function RBNDropDButtonAddGroup(  ByVal sDropDButtonGroupName As String
+								, ByVal sCaption As String
+								, ByVal sTabName As String
+								, ByVal sGroupName As String
+								, ByVal sDropDButtonName As String
+								) As Integer					'Returns the modular Idx of the group or 0, if it wasn't created
+Declare Function RBNDropDButtonGroupRemove(	  ByVal sDropDButtonGroupName As String
+									, ByVal sTabName As String
+									, ByVal sGroupName As String
+									, ByVal sDropDButtonName As String
+									) As Integer
+Declare Function RBNDropDButtonGetGroupThs(	  rbnDropDButton As This
+									, ByVal sGroupName As String
+									, rbnGroupFound As RefPtr
+									) As Logical
+Declare Function RBNDropDButtonGetGroupIndexThs(  rbnDropDButton As This
+									, ByVal sGroupName As String
+									) As Integer
+Declare Function RBNDropDButtonGroupExistsThs(	  rbnDropDButton As This
+									, ByVal sGroupName As String
+									) As Logical
+
+'** WORKING WITH CONTROLS ON DROPDOWNBUTTON GROUPS **********************************************************
+Declare Function RBNDropDButtonGroupAddControl(	  ByVal sControlName As String
+										, ByVal sCaption As String
+										, ByVal sKeytip As String
+										, ByVal nControlType As Integer
+										, ByVal sTabName As String
+										, ByVal sGroupName As String
+										, ByVal sDropDButtonName As string
+										, ByVal sDropDButtonGroupName As string
+										) As Integer					'Returns the modular Idx of the control or 0, if it wasn't created
+Declare Function RBNDropDButtonGroupRemoveControl(  ByVal sControlName As String
+										, ByVal sTabName As String
+										, ByVal sGroupName As String
+										, ByVal sDropDButtonName As string
+										, ByVal sDropDButtonGroupName As string
 										) As Integer
 
 '** WORKING WITH CONTEXTGROUPS *************************************************************************

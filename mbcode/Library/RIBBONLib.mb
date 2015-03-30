@@ -83,7 +83,7 @@ Sub RBNLoop
 
 OnError GoTo ErrorOccured
 
-Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumSplitCtrlCtrls, nNumDropDownCtrls, nNumStackPanelCtrls As Integer,
+Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumSplitCtrlCtrls, nNumDropDownMenuCtrls, nNumDropDownCtrlCtrls, nNumStackPanelCtrls As Integer,
 	i, j, k, l, m As Integer,
 	sName, sCaption As String,
 	nCntrlType As Integer,
@@ -98,8 +98,10 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 	rbnGalleryControlItem As This,
 	rbnSplitCtrlControlsColl As This,
 	rbnSplitCtrlControlItem As This,
-	rbnDropDownControlsColl As This,
-	rbnDropDownControlItem As This,
+	rbnDropDownMenuControlsColl As This,
+	rbnDropDownMenuControlItem As This,
+	rbnDropDownCtrlControlsColl As This,
+	rbnDropDownCtrlControlItem As This,
 	rbnStackPanelControlsColl As This,
 	rbnStackPanelControlItem As This,
 	rbnStatusbarControlsColl As This
@@ -149,7 +151,7 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 					Case ControlType_GalleryControl
 						rbnGalleryGroupsColl = GetRbnGalleryCtrlGrps(rbnControlItem)
 						nNumGalleryGroups 	 = GetMIGalleryGrpCollCount(rbnGalleryGroupsColl)
-'						Call DEBUGPrint("      Gallery has " & nNumGalleryGroups & " Groups")
+						Call DEBUGPrint("      Gallery has " & nNumGalleryGroups & " Groups/controls")
 
 						For l = 0 To (nNumGalleryGroups - 1)
 							rbnGalleryGroupItem		= GetMIGalleryGrpCollItemInt(rbnGalleryGroupsColl, l)
@@ -176,6 +178,7 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 					Case ControlType_SplitButton
 						rbnSplitCtrlControlsColl	= GetRbnSplitCtrlCtrls(rbnControlItem)
 						nNumSplitCtrlCtrls		= GetMICtrlCollCount(rbnSplitCtrlControlsColl)
+						Call DEBUGPrint("      SplitButton has " & nNumSplitCtrlCtrls & " Groups/controls")
 
 						For l = 0 To (nNumSplitCtrlCtrls - 1)
 							rbnSplitCtrlControlItem	= GetMICtrlCollItemInt(rbnSplitCtrlControlsColl, l)
@@ -186,16 +189,46 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 							Call DEBUGPrint("         SplitButton Control " & l & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
 
 							If nCntrlType = ControlType_DropDownMenuGroup Then
-								rbnDropDownControlsColl	= GetCtrlGrpCtrls(rbnSplitCtrlControlItem)
-								nNumDropDownCtrls		= GetMICtrlCollCount(rbnDropDownControlsColl)
-								Call DEBUGPrint("            DropDown Control has " & nNumDropDownCtrls & " Controls")
+								rbnDropDownMenuControlsColl	= GetCtrlGrpCtrls(rbnSplitCtrlControlItem)
+								nNumDropDownMenuCtrls		= GetMICtrlCollCount(rbnDropDownMenuControlsColl)
+								Call DEBUGPrint("            DropDownMenu Control has " & nNumDropDownMenuCtrls & " Controls")
 
-								For m = 0 To (nNumDropDownCtrls - 1)
-									rbnDropDownControlItem	= GetMICtrlCollItemInt(rbnDropDownControlsColl, m)
+								For m = 0 To (nNumDropDownMenuCtrls - 1)
+									rbnDropDownMenuControlItem	= GetMICtrlCollItemInt(rbnDropDownMenuControlsColl, m)
 
-									nCntrlType	= GetMICtrlCtrlType(rbnDropDownControlItem)
-									sName		= GetMICtrlName(rbnDropDownControlItem)
-									sCaption		= GetMICtrlCaption(rbnDropDownControlItem)
+									nCntrlType	= GetMICtrlCtrlType(rbnDropDownMenuControlItem)
+									sName		= GetMICtrlName(rbnDropDownMenuControlItem)
+									sCaption		= GetMICtrlCaption(rbnDropDownMenuControlItem)
+									Call DEBUGPrint("            DropDownMenu Control " & m & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
+								Next
+
+							End If
+						Next
+
+					Case ControlType_DropDownButton
+						rbnDropDownCtrlControlsColl	= GetRbnDropDownCtrlCtrls(rbnControlItem)
+						nNumDropDownCtrlCtrls		= GetMICtrlCollCount(rbnDropDownCtrlControlsColl)
+						Call DEBUGPrint("      DropDownButton has " & nNumDropDownCtrlCtrls & " Groups/controls")
+
+						For l = 0 To (nNumDropDownCtrlCtrls - 1)
+							rbnDropDownCtrlControlItem	= GetMICtrlCollItemInt(rbnDropDownCtrlControlsColl, l)
+
+							nCntrlType	= GetMICtrlCtrlType(rbnDropDownCtrlControlItem)
+							sName		= GetMICtrlName(rbnDropDownCtrlControlItem)
+							sCaption		= GetMICtrlCaption(rbnDropDownCtrlControlItem)
+							Call DEBUGPrint("         DropDownButton Control " & l & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
+
+							If nCntrlType = ControlType_DropDownMenuGroup Then
+								rbnDropDownMenuControlsColl	= GetCtrlGrpCtrls(rbnDropDownCtrlControlItem)
+								nNumDropDownMenuCtrls		= GetMICtrlCollCount(rbnDropDownMenuControlsColl)
+								Call DEBUGPrint("            DropDownMenu Control has " & nNumDropDownMenuCtrls & " Controls")
+
+								For m = 0 To (nNumDropDownMenuCtrls - 1)
+									rbnDropDownMenuControlItem	= GetMICtrlCollItemInt(rbnDropDownMenuControlsColl, m)
+
+									nCntrlType	= GetMICtrlCtrlType(rbnDropDownMenuControlItem)
+									sName		= GetMICtrlName(rbnDropDownMenuControlItem)
+									sCaption		= GetMICtrlCaption(rbnDropDownMenuControlItem)
 									Call DEBUGPrint("            DropDown Control " & m & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
 								Next
 
@@ -245,7 +278,7 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 		Call DEBUGPrint("      Statusbar Control " & k & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabItem 				= NULL_PTR
 	rbnGroupsColl				= NULL_PTR
@@ -258,8 +291,10 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 	rbnGalleryControlItem		= NULL_PTR
 	rbnSplitCtrlControlsColl		= NULL_PTR
 	rbnSplitCtrlControlItem		= NULL_PTR
-	rbnDropDownControlsColl		= NULL_PTR
-	rbnDropDownControlItem		= NULL_PTR
+	rbnDropDownMenuControlsColl	= NULL_PTR
+	rbnDropDownMenuControlItem	= NULL_PTR
+	rbnDropDownCtrlControlsColl	= NULL_PTR
+	rbnDropDownCtrlControlItem	= NULL_PTR
 	rbnStackPanelControlsColl	= NULL_PTR
 	rbnStackPanelControlItem		= NULL_PTR
 	rbnStatusbarControlsColl		= NULL_PTR
@@ -330,7 +365,7 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, i, j, k As Integer,
 		Next
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabItem		= NULL_PTR
 	rbnTabsColl		= NULL_PTR
@@ -542,7 +577,7 @@ RBNRemoveTab = 0
 		RBNRemoveTab = nCtrl
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab		= NULL_PTR
 
@@ -597,7 +632,7 @@ OnError GoTo ErrorOccured
 		Call RBNTabSetToolTipThs(rbnTab, sText, sDescription, sDisabledText)
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabFound 	= NULL_PTR
 	rbnTab		= NULL_PTR
@@ -695,7 +730,7 @@ RBNGetTab = FALSE
 		RBNGetTab		= TRUE
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 '	rbnTabItem	= NULL_PTR
 
@@ -748,7 +783,7 @@ RBNGetTabIndex = RBN_ELEMENT_NOT_FOUND
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabItem		= NULL_PTR
 
@@ -845,7 +880,7 @@ RBNTabGetNameFromCaption = ""
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabItem		= NULL_PTR
 	Exit Function
@@ -885,7 +920,7 @@ RBNTabNumGroups = 0
 		RBNTabNumGroups	= GetRbnCtrlGrpCollCount(rbnGroupsColl)
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabFound	= NULL_PTR
 	rbnTab		= NULL_PTR
@@ -940,7 +975,7 @@ RBNTabAddGroup = 0
 		RBNTabAddGroup = nCtrl
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl	= NULL_PTR
 	rbnTabFound	= NULL_PTR
@@ -994,7 +1029,7 @@ RBNTabGroupRemove = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroup		= NULL_PTR
 	rbnGroupsColl	= NULL_PTR
@@ -1040,7 +1075,7 @@ RBNTabGetGroupThs = FALSE
 		RBNTabGetGroupThs	= TRUE
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl	= NULL_PTR
 '	rbnGroupItem	= NULL_PTR
@@ -1078,7 +1113,7 @@ RBNTabGetGroup = FALSE
 		RBNTabGetGroup	= RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound)
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab		= NULL_PTR
 	rbnTabFound	= NULL_PTR
@@ -1115,7 +1150,7 @@ RBNTabGetGroupIndex = RBN_ELEMENT_NOT_FOUND
 		RBNTabGetGroupIndex	= RBNTabGetGroupIndexThs(rbnTab, sGroupName)
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabFound	= NULL_PTR
 	rbnTab		= NULL_PTR
@@ -1163,7 +1198,7 @@ RBNTabGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		If sName = sGroupName Then
 			RBNTabGetGroupIndexThs	= i
 
-			'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 			'This is necessary to avoid memory leaks and unnecessary variable references.
 			rbnGroupsColl		= NULL_PTR
 			rbnGroupItem		= NULL_PTR
@@ -1171,7 +1206,7 @@ RBNTabGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl	= NULL_PTR
 	rbnGroupItem	= NULL_PTR
@@ -1261,7 +1296,7 @@ RBNGroupNumControls = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabFound		= NULL_PTR
 	rbnGroupFound		= NULL_PTR
@@ -1326,7 +1361,7 @@ OnError GoTo ErrorOccured
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTabFound	= NULL_PTR
 	rbnGroupFound	= NULL_PTR
@@ -1452,7 +1487,7 @@ RBNGroupAddControl = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroup		= NULL_PTR
 	rbnGroupsColl	= NULL_PTR
@@ -1517,7 +1552,7 @@ RBNGroupRemoveControl = 0
 		Call DEBUGPrint("RBNGroupRemoveControl: Tab not found: " & sTabName)
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroup		= NULL_PTR
 	rbnGroupsColl	= NULL_PTR
@@ -1585,7 +1620,7 @@ RBNGroupInsertControl = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroup 		= NULL_PTR
 	rbnGroupsColl	= NULL_PTR
@@ -1869,7 +1904,7 @@ RBNGroupGetControlThs = FALSE
 		RBNGroupGetControlThs	= TRUE
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnControlsColl	= NULL_PTR
 '	rbnControlItem		= NULL_PTR
@@ -1916,7 +1951,7 @@ RBNGroupGetControlIndexThs = RBN_ELEMENT_NOT_FOUND
 		If sName = sControlName Then
 			RBNGroupGetControlIndexThs	= i
 
-			'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 			'This is necessary to avoid memory leaks and unnecessary variable references.
 			rbnControlsColl		= NULL_PTR
 			rbnControlItem			= NULL_PTR
@@ -1925,7 +1960,7 @@ RBNGroupGetControlIndexThs = RBN_ELEMENT_NOT_FOUND
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnControlsColl	= NULL_PTR
 	rbnControlItem		= NULL_PTR
@@ -1987,7 +2022,7 @@ RBNSplitButtonNumGroups = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab			= NULL_PTR
 	rbnGroup			= NULL_PTR
@@ -2069,7 +2104,7 @@ RBNSplitButtonAddGroup = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab 			= NULL_PTR
 	rbnGroup 			= NULL_PTR
@@ -2146,7 +2181,7 @@ RBNSplitButtonGroupRemove = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab				= NULL_PTR
 	rbnGroup				= NULL_PTR
@@ -2195,7 +2230,7 @@ RBNSplitButtonGetGroupThs = FALSE
 		RBNSplitButtonGetGroupThs	= TRUE
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl 	= NULL_PTR
 '	rbnGroupItem 	= NULL_PTR
@@ -2242,7 +2277,7 @@ RBNSplitButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		If sName = sGroupName AND nCtrlType = ControlType_DropDownMenuGroup Then
 			RBNSplitButtonGetGroupIndexThs	= i
 
-			'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 			'This is necessary to avoid memory leaks and unnecessary variable references.
 			rbnGroupsColl				= NULL_PTR
 			rbnGroupItem				= NULL_PTR
@@ -2251,7 +2286,7 @@ RBNSplitButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl	= NULL_PTR
 	rbnGroupItem	= NULL_PTR
@@ -2353,7 +2388,7 @@ RBNSplitButtonGroupAddControl = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab 				= NULL_PTR
 	rbnGroup 				= NULL_PTR
@@ -2434,7 +2469,7 @@ RBNSplitButtonGroupRemoveControl = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab				= NULL_PTR
 	rbnGroup				= NULL_PTR
@@ -2451,6 +2486,521 @@ RBNSplitButtonGroupRemoveControl = 0
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "RBNSplitButtonGroupRemoveControl: " & sControlName & " from " & sSplitButtonGroupName & " on " & sSplitButtonName & " - tab | group: " & sTabName & "|" & sGroupName)
+	Call ERRShow()
+
+End Function
+
+'*******************************************************************************************************
+'** WORKING WITH DROPDOWNBUTTONS **************************************************************************
+'*******************************************************************************************************
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonNumGroups(	  ByVal sTabName As String
+							, ByVal sGroupName As String
+							, ByVal sDropDButtonName As String
+							) As Integer
+
+
+Dim	rbnTab As This,
+	rbnGroup As This,
+	rbnDropDButton As This,
+	rbnGroupsColl as This,
+	rbnTabFound As RefPtr,
+	rbnGroupFound As RefPtr,
+	rbnControlFound As RefPtr
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonNumGroups = 0
+
+	Call RBNInitiate
+
+	If RBNGetTab(sTabName, rbnTabFound) Then
+		rbnTab = rbnTabFound
+
+		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
+			'Get the ribbon group collection.
+			rbnGroup		= rbnGroupFound
+
+			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
+				rbnDropDButton = rbnControlFound
+
+				'Get Group controls collection
+				rbnGroupsColl 			= GetRbnDropDownCtrlCtrls(rbnDropDButton)
+				'Get the number of groups
+				RBNDropDButtonNumGroups	= GetMICtrlCollCount(rbnGroupsColl)
+			End If
+		End If
+	End If
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnTab			= NULL_PTR
+	rbnGroup			= NULL_PTR
+	rbnDropDButton		= NULL_PTR
+	rbnGroupsColl		= NULL_PTR
+	rbnTabFound		= NULL_PTR
+	rbnGroupFound		= NULL_PTR
+	rbnControlFound	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonNumGroups")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonAddGroup(	  ByVal sDropDButtonGroupName As String
+							, ByVal sCaption As String
+							, ByVal sTabName As String
+							, ByVal sGroupName As String
+							, ByVal sDropDButtonName As String
+							) As Integer					'Returns the modular Idx of the group or 0, if it wasn't created
+
+
+Dim	rbnTab As This,
+	rbnGroup As This,
+	rbnDropDButton As This,
+	rbnGroupsColl as This,
+	rbnTabFound As RefPtr,
+	rbnGroupFound As RefPtr,
+	rbnControlFound As RefPtr,
+	nCtrl As Integer
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonAddGroup = 0
+
+	Call RBNInitiate
+
+	Call DEBUGPrint("RBNDropDButtonAddGroup")
+	If RBNGetTab(sTabName, rbnTabFound) Then
+		Call DEBUGPrint("   Tab found: " & sTabName)
+		rbnTab = rbnTabFound
+
+		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
+			Call DEBUGPrint("   Group found: " & sGroupName)
+			'Get the ribbon group collection.
+			rbnGroup		= rbnGroupFound
+
+			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
+				Call DEBUGPrint("   DropDownButton found: " & sDropDButtonName)
+				rbnDropDButton = rbnControlFound
+
+				nCtrl = RBNAddElement(sTabName, sGroupName, sDropDButtonName, sDropDButtonGroupName, "", ControlType_DropDownMenuGroup)
+				Call DEBUGPrint("   Adding as element: " & nCtrl)
+
+				Call DEBUGPrint("   Getting the Group Collection")
+				'Get Group controls collection
+				rbnGroupsColl = GetRbnDropDownCtrlCtrls(rbnDropDButton)
+
+				'Add a new group.
+				Call DEBUGPrint("   Adding the new Group " & sDropDButtonGroupName)
+				marrControls(nCtrl)		= MICtrlCollAddStrStrInt(rbnGroupsColl, sDropDButtonGroupName, sCaption, ControlType_DropDownMenuGroup)
+
+				Call DEBUGPrint( "GetRbnDropDownCtrlHorzAlign: " & GetRbnDropDownCtrlHorzAlign(marrControls(nCtrl)))
+				Call DEBUGPrint( "GetRbnDropDownCtrlVertAlign: " & GetRbnDropDownCtrlVertAlign(marrControls(nCtrl)))
+				Call SetRbnDropDownCtrlHorzAlign(marrControls(nCtrl), Horiz_Align_Stretch)
+				Call SetRbnDropDownCtrlVertAlign(marrControls(nCtrl), Vert_Align_Stretch)
+				RBNDropDButtonAddGroup = nCtrl
+			End If
+		End If
+	End If
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnTab 			= NULL_PTR
+	rbnGroup 			= NULL_PTR
+	rbnDropDButton 	= NULL_PTR
+	rbnGroupsColl 		= NULL_PTR
+	rbnTabFound 		= NULL_PTR
+	rbnGroupFound 		= NULL_PTR
+	rbnControlFound 	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonAddGroup: " & sDropDButtonGroupName & " on DropDownButton " & sDropDButtonName)
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonGroupRemove(  ByVal sDropDButtonGroupName As String
+							, ByVal sTabName As String
+							, ByVal sGroupName As String
+							, ByVal sDropDButtonName As String
+							) As Integer
+
+Dim	rbnGroup As This,
+	rbnGroupsColl as This,
+	rbnDropDButton As This,
+	rbnTabFound As RefPtr,
+	rbnGroupFound As RefPtr,
+	rbnControlFound As RefPtr,
+	rbnControlGroupFound As RefPtr,
+	rbnTab As This,
+	nCtrl, nGroupItem As Integer
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonGroupRemove = 0
+
+	Call RBNInitiate
+
+	Call DEBUGPrint("RBNDropDButtonGroupRemove from " & sTabName)
+	If RBNGetTab(sTabName, rbnTabFound) Then
+		Call DEBUGPrint("   Tab found: " & sTabName & " searching for Group " & sGroupName)
+		rbnTab = rbnTabFound
+
+		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
+			Call DEBUGPrint("   Group found: " & sGroupName & " searching for DropDButton " & sDropDButtonName)
+			'Get the ribbon group collection.
+			rbnGroup		= rbnGroupFound
+
+			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
+				Call DEBUGPrint("   DropDownButton found: " & sDropDButtonName & " searching for Group " & sDropDButtonGroupName)
+				rbnDropDButton = rbnControlFound
+
+				nGroupItem = RBNDropDButtonGetGroupIndexThs(rbnDropDButton, sDropDButtonGroupName)
+				If nGroupItem > RBN_ELEMENT_NOT_FOUND Then
+					Call DEBUGPrint("   Group found: " & sDropDButtonGroupName)
+					'Get Group controls collection
+					rbnGroupsColl = GetRbnDropDownCtrlCtrls(rbnDropDButton)
+
+					Call MICtrlCollRemoveAt(rbnGroupsColl, nGroupItem)
+					nCtrl = RBNRemoveElement(sTabName, sGroupName, sDropDButtonName, sDropDButtonGroupName, "")
+					RBNDropDButtonGroupRemove = nCtrl
+				Else
+					Call DEBUGPrint("RBNDropDButtonGroupRemove: Control not found: " & sDropDButtonGroupName)
+				End If
+			End If
+		End If
+	End If
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnTab				= NULL_PTR
+	rbnGroup				= NULL_PTR
+	rbnGroupsColl			= NULL_PTR
+	rbnDropDButton			= NULL_PTR
+	rbnTabFound			= NULL_PTR
+	rbnGroupFound			= NULL_PTR
+	rbnControlFound		= NULL_PTR
+	rbnControlGroupFound	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonGroupRemove: " & sDropDButtonGroupName & " on tab " & sTabName)
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonGetGroupThs(  rbnDropDButton As This
+							, ByVal sGroupName As String
+							, rbnGroupFound As RefPtr
+							) As Logical
+
+Dim	nGroupIndex As Integer,
+	rbnGroupsColl As This,
+	rbnGroupItem As This
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonGetGroupThs = FALSE
+
+	nGroupIndex	= RBNDropDButtonGetGroupIndexThs(rbnDropDButton, sGroupName)
+	If nGroupIndex > RBN_ELEMENT_NOT_FOUND Then
+		rbnGroupsColl			= GetRbnDropDownCtrlCtrls(rbnDropDButton)
+
+		rbnGroupItem 				= GetMICtrlCollItemInt(rbnGroupsColl, nGroupIndex)
+		rbnGroupFound				= rbnGroupItem
+
+		RBNDropDButtonGetGroupThs	= TRUE
+	End If
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnGroupsColl 	= NULL_PTR
+'	rbnGroupItem 	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonGetGroupThs")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonGetGroupIndexThs(  rbnDropDButton As This
+								, ByVal sGroupName As String
+								) As Integer
+
+Dim	i, nNumGroups, nCtrlType As Integer,
+	sName, sCaption As String,
+	rbnGroupsColl As This,
+	rbnGroupItem As This
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
+
+	rbnGroupsColl = GetRbnDropDownCtrlCtrls(rbnDropDButton)
+	nNumGroups = GetMICtrlCollCount(rbnGroupsColl)
+	Call DEBUGPrint("   RBNDropDButtonGetGroupIndexThs: Number of DropDownButton Groups " & nNumGroups)
+	For i = 0 To (nNumGroups - 1)
+		rbnGroupItem = GetMICtrlCollItemInt(rbnGroupsColl, i)
+
+		nCtrlType	= GetMICtrlCtrlType(rbnGroupItem)
+		sName	= GetMICtrlName(rbnGroupItem)
+		sCaption	= GetMICtrlCaption(rbnGroupItem)
+		Call DEBUGPrint("   DropDownButton Group " & i & " is named " & sName & " but shown as " & sCaption)
+
+		If sName = sGroupName AND nCtrlType = ControlType_DropDownMenuGroup Then
+			RBNDropDButtonGetGroupIndexThs	= i
+
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'This is necessary to avoid memory leaks and unnecessary variable references.
+			rbnGroupsColl				= NULL_PTR
+			rbnGroupItem				= NULL_PTR
+
+			Exit Function
+		End If
+	Next
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnGroupsColl	= NULL_PTR
+	rbnGroupItem	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonGetGroupIndexThs: GroupName: " & sGroupName)
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonGroupExistsThs(	  rbnDropDButton As This
+								, ByVal sGroupName As String
+								) As Logical
+
+OnError GoTo ErrorOccured
+
+	RBNDropDButtonGroupExistsThs = (RBNDropDButtonGetGroupIndexThs(rbnDropDButton, sGroupName) > RBN_ELEMENT_NOT_FOUND)
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonGroupExistsThs")
+	Call ERRShow()
+
+End Function
+
+'*******************************************************************************************************
+'** WORKING WITH CONTROLS ON DROPDOWNBUTTONS ***************************************************************
+'*******************************************************************************************************
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonGroupAddControl(	  ByVal sControlName As String
+								, ByVal sCaption As String
+								, ByVal sKeytip As String
+								, ByVal nControlType As Integer
+								, ByVal sTabName As String
+								, ByVal sGroupName As String
+								, ByVal sDropDButtonName As string
+								, ByVal sDropDButtonGroupName As string
+								) As Integer					'Returns the modular Idx of the control or 0, if it wasn't created
+Dim	rbnTab As This,
+	rbnGroup As This,
+	rbnDropDButton As This,
+	rbnDropDButtonGroup As This,
+	rbnControlsColl as This,
+	rbnTabFound As RefPtr,
+	rbnGroupFound As RefPtr,
+	rbnControlFound As RefPtr,
+	rbnControlGroupFound As RefPtr,
+	nCtrl As Integer
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonGroupAddControl = 0
+
+	Call RBNInitiate
+
+	If RBNGetTab(sTabName, rbnTabFound) Then
+		rbnTab = rbnTabFound
+
+		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
+			rbnGroup = rbnGroupFound
+
+			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
+				rbnDropDButton = rbnControlFound
+
+				If RBNDropDButtonGetGroupThs(rbnDropDButton, sDropDButtonGroupName, rbnControlGroupFound) Then
+					rbnDropDButtonGroup	= rbnControlGroupFound
+
+					'Get Group controls collection
+					rbnControlsColl = GetCtrlGrpCtrls(rbnDropDButtonGroup)
+
+					nCtrl 			= RBNAddElement(GetRbnTabName(rbnTab), GetRbnCtrlGrpName(rbnGroup), sDropDButtonName, sDropDButtonGroupName, sControlName, nControlType)
+					marrControls(nCtrl) = MICtrlCollAddStrStrInt(rbnControlsColl, sControlName, sCaption, nControlType)
+
+					If sKeytip <> "" Then
+						'Set the KeyTip for the Control. KeyTip: The keyboard shortcut for the Control.
+						'A KeyTip must have from 1 to 3 uppercase characters.
+						Call SetMICtrlKeyTip(marrControls(nCtrl), sKeytip)
+					End If
+				End If
+
+				RBNDropDButtonGroupAddControl = nCtrl
+			End If
+		End If
+	End If
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnTab 				= NULL_PTR
+	rbnGroup 				= NULL_PTR
+	rbnDropDButton 		= NULL_PTR
+	rbnDropDButtonGroup 	= NULL_PTR
+	rbnControlsColl 		= NULL_PTR
+	rbnTabFound 			= NULL_PTR
+	rbnGroupFound 			= NULL_PTR
+	rbnControlFound 		= NULL_PTR
+	rbnControlGroupFound 	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonGroupAddControl: " & sControlName & " to " & sDropDButtonGroupName & " on " & sDropDButtonName & " - tab | group: " & sTabName & "|" & sGroupName)
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNDropDButtonGroupRemoveControl(	  ByVal sControlName As String
+									, ByVal sTabName As String
+									, ByVal sGroupName As String
+									, ByVal sDropDButtonName As string
+									, ByVal sDropDButtonGroupName As string
+									) As Integer
+
+Dim	rbnTab As This,
+	rbnGroup As This,
+	rbnDropDButton As This,
+	rbnDropDButtonGroup As This,
+	rbnControlsColl as This,
+	rbnControlItem As This,
+	rbnTabFound As RefPtr,
+	rbnGroupFound As RefPtr,
+	rbnControlFound As RefPtr,
+	rbnControlGroupFound As RefPtr,
+	nItem, nCtrl, nNumCntrls As Integer
+
+OnError GoTo ErrorOccured
+
+RBNDropDButtonGroupRemoveControl = 0
+
+	Call RBNInitiate
+
+	If RBNGetTab(sTabName, rbnTabFound) Then
+		rbnTab = rbnTabFound
+
+		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
+			rbnGroup = rbnGroupFound
+
+			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
+				rbnDropDButton = rbnControlFound
+
+				If RBNDropDButtonGetGroupThs(rbnDropDButton, sDropDButtonGroupName, rbnControlGroupFound) Then
+					rbnDropDButtonGroup	= rbnControlGroupFound
+
+					'Get Group controls collection
+					rbnControlsColl	= GetCtrlGrpCtrls(rbnDropDButtonGroup)
+					nNumCntrls 		= GetMICtrlCollCount(rbnControlsColl)
+
+					For nItem = 0 To (nNumCntrls - 1)
+						rbnControlItem	= GetMICtrlCollItemInt(rbnControlsColl, nItem)
+						If sControlName = GetMICtrlName(rbnControlItem) Then
+							Call MICtrlCollRemoveAt(rbnControlsColl, nItem)
+							nCtrl 						= RBNRemoveElement(sTabName, sGroupName, sDropDButtonName, sDropDButtonGroupName, sControlName)
+							RBNDropDButtonGroupRemoveControl	= nCtrl
+						End If
+					Next
+				End If
+			End If
+		End If
+	End If
+
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'This is necessary to avoid memory leaks and unnecessary variable references.
+	rbnTab				= NULL_PTR
+	rbnGroup				= NULL_PTR
+	rbnDropDButton			= NULL_PTR
+	rbnDropDButtonGroup		= NULL_PTR
+	rbnControlsColl		= NULL_PTR
+	rbnControlItem			= NULL_PTR
+	rbnTabFound			= NULL_PTR
+	rbnGroupFound			= NULL_PTR
+	rbnControlFound		= NULL_PTR
+	rbnControlGroupFound	= NULL_PTR
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNDropDButtonGroupRemoveControl: " & sControlName & " from " & sDropDButtonGroupName & " on " & sDropDButtonName & " - tab | group: " & sTabName & "|" & sGroupName)
 	Call ERRShow()
 
 End Function
@@ -2489,7 +3039,7 @@ RBNGalleryGetGroupThs = FALSE
 		RBNGalleryGetGroupThs	= TRUE
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl 	= NULL_PTR
 '	rbnGroupItem 	= NULL_PTR
@@ -2535,7 +3085,7 @@ RBNGalleryGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		If sName = sGroupName Then
 			RBNGalleryGetGroupIndexThs	= i
 
-			'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 			'This is necessary to avoid memory leaks and unnecessary variable references.
 			rbnGroupsColl		= NULL_PTR
 			rbnGroupItem		= NULL_PTR
@@ -2544,7 +3094,7 @@ RBNGalleryGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl	= NULL_PTR
 	rbnGroupItem	= NULL_PTR
@@ -2614,7 +3164,7 @@ RBNCollectionGetControlIndexThs = RBN_ELEMENT_NOT_FOUND
 		If sName = sControlName Then
 			RBNCollectionGetControlIndexThs	= i
 
-			'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 			'This is necessary to avoid memory leaks and unnecessary variable references.
 			rbnControlItem				= NULL_PTR
 
@@ -2622,7 +3172,7 @@ RBNCollectionGetControlIndexThs = RBN_ELEMENT_NOT_FOUND
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnControlItem		= NULL_PTR
 
@@ -2673,7 +3223,7 @@ RBNGetContextGroup = FALSE
 			rbnGroupFound		= rbnGroupItem
 			RBNGetContextGroup	= TRUE
 
-			'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+			'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 			'This is necessary to avoid memory leaks and unnecessary variable references.
 			rbnGroupsColl		= NULL_PTR
 '			rbnGroupItem		= NULL_PTR
@@ -2682,7 +3232,7 @@ RBNGetContextGroup = FALSE
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroupsColl	= NULL_PTR
 	rbnGroupItem	= NULL_PTR
@@ -2742,7 +3292,7 @@ RBNContextGroupAddButton = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnGroup		= NULL_PTR
 	rbnGroupsColl	= NULL_PTR
@@ -3176,7 +3726,7 @@ OnError GoTo ErrorOccured
 '			Call SetRbnBtnCtrlToolTip(rbnControl, rbnControlToolTip)
 	End Case
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnControlToolTip = NULL_PTR
 
@@ -3865,7 +4415,9 @@ OnError GoTo ErrorOccured
 
 '		Case ControlType_ContextMenuSeparator
 '		Case ControlType_MenuItemSeparator
-'		Case ControlType_DropDownButton
+
+		Case ControlType_DropDownButton
+			Call SetRbnDropDownCtrlEnabled(rbnControl, bEnabled)
 
 		Case ControlType_SplitButton
 			Call SetRbnSplitCtrlEnabled(rbnControl, bEnabled)
@@ -4121,7 +4673,7 @@ RBNControlGetIndex = 0
 		End If
 	End If
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab		= NULL_PTR
 	rbnGroup		= NULL_PTR
@@ -4334,12 +4886,23 @@ OnError GoTo ErrorOccured
 
 		If NOT marrSplitButtonGroupNames(i) = "" Then
 			If NOT marrControlNames(i) = "" Then
-				'**Remove SplitButton Control
-				nResult = RBNSplitButtonGroupRemoveControl(  marrControlNames(i), marrTabNames(i), marrGroupNames(i), marrSplitButtonNames(i), marrSplitButtonGroupNames(i))
-'				Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
+				If marrControlTypes(i) = ControlType_SplitButton Then
+					'**Remove SplitButton Control
+					nResult = RBNSplitButtonGroupRemoveControl(  marrControlNames(i), marrTabNames(i), marrGroupNames(i), marrSplitButtonNames(i), marrSplitButtonGroupNames(i))
+	'				Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
+				ElseIf marrControlTypes(i) = ControlType_DropDownButton Then
+					'**Remove DropDownButton Control
+					nResult = RBNDropDButtonGroupRemoveControl(  marrControlNames(i), marrTabNames(i), marrGroupNames(i), marrSplitButtonNames(i), marrSplitButtonGroupNames(i))
+	'				Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
+				End If
 			Else
-				nResult = RBNSplitButtonGroupRemove(marrSplitButtonGroupNames(i), marrTabNames(i), marrGroupNames(i), marrSplitButtonNames(i))
-				Call DEBUGPrint("   " & i & " SplitButton Group Removed Result: " & nResult)
+				If marrControlTypes(i) = ControlType_SplitButton Then
+					nResult = RBNSplitButtonGroupRemove(marrSplitButtonGroupNames(i), marrTabNames(i), marrGroupNames(i), marrSplitButtonNames(i))
+'					Call DEBUGPrint("   " & i & " SplitButton Group Removed Result: " & nResult)
+				ElseIf marrControlTypes(i) = ControlType_DropDownButton Then
+					nResult = RBNDropDButtonGroupRemove(marrSplitButtonGroupNames(i), marrTabNames(i), marrGroupNames(i), marrSplitButtonNames(i))
+'					Call DEBUGPrint("   " & i & " DropDownButton Group Removed Result: " & nResult)
+				End If
 			End If
 		ElseIf NOT marrControlNames(i) = "" Then
 			'**Remove Control
@@ -4372,7 +4935,7 @@ OnError GoTo ErrorOccured
 		End If
 	Next
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 	rbnTab			= NULL_PTR
 	rbnGroupsColl		= NULL_PTR
@@ -4584,7 +5147,7 @@ OnError GoTo ErrorOccured
 	refNotification	= theNotification
 	Call ShowNotification(theMapInfoApplication, refNotification)
 
-	'Always assing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
+	'Always asing NULL_PTR to all local variables declared within this local scope who are of type - this or RefPtr.
 	'This is necessary to avoid memory leaks and unnecessary variable references.
 '	refNotification	= NULL_PTR
 

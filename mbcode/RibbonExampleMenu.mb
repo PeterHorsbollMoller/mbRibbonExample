@@ -16,7 +16,7 @@ Include "Library\Defaults.def"
 
 Define xProgram 		"RibbonExample"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.8"
+Define xVersion 		"0.9"
 Define xYear			"2015"
 
 Define FILE_INI			ApplicationDirectory$() & xProgram & ".ini"
@@ -48,6 +48,7 @@ Declare Sub WinClosedHandler
 Declare Sub MENUTableOpenedHandler(ByVal args as This)
 Declare Sub MENUTableClosedHandler(ByVal args as This)
 Declare Sub MENUWindowActivatedHandler(ByVal args as This)
+Declare Sub MENUFrontWindowChangedHandler(ByVal args as This)
 
 Declare Sub AddIn_DefaultCommand
 
@@ -264,6 +265,39 @@ OnError GoTo ErrorOccured
 		End If
 	End If
 
+	'**Adding a new DropDownButton to the TOOLS tab
+	nCtrlIdx = RBNGroupAddControl("allInfoToolsDropDButton", "Info Tools", "", ControlType_DropDownButton, sTabName, xProgramMenu)
+	If nCtrlIdx > 0 Then
+		'*Setting the image sizes to large
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_SMALL, "", PATH_IMAGES & "Tables_Info_32x32.png")
+
+		'**Adding a Group to the new DropDownButton
+		nCtrlIdx	= RBNDropDButtonAddGroup("allInfoToolsDropDownGroup", "", sTabName, xProgramMenu, "allInfoToolsDropDButton")
+		If nCtrlIdx > 0 Then
+			'**Adding a Control to the Group on the DropDownButton
+			nCtrlIdx = RBNDropDButtonGroupAddControl("showTablesInfo", "Table Info", "T", ControlType_Button, sTabName, xProgramMenu, "allInfoToolsDropDButton", "allInfoToolsDropDownGroup")
+			If nCtrlIdx > 0 Then
+				'Create & Set the button tooltip
+				Call RBNControlSetToolTipIdx(nCtrlIdx, "Table Info", "This will give you some basic information about open tables", "Open one or more tables to use this feature")
+				'Set the button icon
+				Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_SMALL, "", PATH_IMAGES & "Tables_Info_32x32.png")
+				'Set Custom MapBasic Handle to the button
+				Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowTablesInfo")
+			End If
+
+			'**Adding another Control to the Group on the DropDownButton
+			nCtrlIdx = RBNDropDButtonGroupAddControl("showMapperInfo", "Mapper Info", "M", ControlType_Button, sTabName, xProgramMenu, "allInfoToolsDropDButton", "allInfoToolsDropDownGroup")
+			If nCtrlIdx > 0 Then
+				'Create & Set the button tooltip
+				Call RBNControlSetToolTipIdx(nCtrlIdx, "Mapper Info", "This will give you some basic information about a mapper window", "Make a mapper window active to use this feature")
+				'Set the button icon
+				Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_SMALL, "", PATH_IMAGES & "Mapper_Info_32x32.png")
+				'Set Custom MapBasic Handle to the button
+				Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowMapperInfo")
+			End If
+		End If
+	End If
+
 	'**************************************************************************************************
 	nCtrlIdx = RBNGroupAddButton("showMapperInfo", "Mapper Info", "M", "TabMap", "MapFile")
 	If nCtrlIdx > 0 Then
@@ -473,6 +507,9 @@ OnError GoTo ErrorOccured
 	End If
 	If NOT RBNEventSubscribe(AddInEvents_WindowActivated, "MENUWindowActivatedHandler") Then
 		Call DEBUGPrint("MENUWindowActivatedHandler was not subscribed!")
+	End If
+	If NOT RBNEventSubscribe(AddInEvents_FrontWindowChanged, "MENUFrontWindowChangedHandler") Then
+		Call DEBUGPrint("MENUFrontWindowChangedHandler was not subscribed!")
 	End If
 
 	Exit Sub
@@ -749,6 +786,43 @@ OnError GoTo ErrorOccured
 	nWID	= FrontWindow()
 	If nWID = 0 Then
 		'**No Windows Open - do what you need to do
+		Call DEBUGPrint("   Window Activated: ")
+	Else
+		Call DEBUGPrint("   Window Activated: " & WindowInfo(nWID, WIN_INFO_NAME))
+	End If
+
+	Do Case WindowInfo(nWID, WIN_INFO_TYPE)
+		Case WIN_MAPPER
+
+		Case WIN_LAYOUT_DESIGNER
+
+	End Case
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "MENUWindowActivatedHandler")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub MENUFrontWindowChangedHandler(ByVal args as This)
+
+Dim	nWID As Integer
+
+OnError GoTo ErrorOccured
+
+	nWID	= FrontWindow()
+	If nWID = 0 Then
+		'**No Windows Open - do what you need to do
+		Call DEBUGPrint("   Front Window Changed: ")
+	Else
+		Call DEBUGPrint("   Front Window Changed: " & WindowInfo(nWID, WIN_INFO_NAME))
 	End If
 
 	Do Case WindowInfo(nWID, WIN_INFO_TYPE)
