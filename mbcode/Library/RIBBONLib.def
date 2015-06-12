@@ -209,6 +209,24 @@
 '							- RBNDropDButtonGroupExistsThs(...) As Logical
 '							- RBNDropDButtonGroupAddControl(...) As Integer
 '							- RBNDropDButtonGroupRemoveControl(...) As Integer
+'	28-04-2015 15:49:48		- Added:
+'							- RBNControlToggleThs(...)
+'							- RBNControlToggleIdx(...)
+'	29-04-2015 10:11:46		- Added:
+'							- RBNControlSelectedThs(...)
+'							- RBNControlSelectedIdx(...)
+'						- Added:
+'							- RBNMapMTBNumStackPanels() As Integer
+'							- RBNMapMTBAddStackPanel(...) As Integer
+'							- RBNMapMTBStackPanelRemove(...) As Integer
+'							- RBNMapMTBGetStackPanel(...) As Logical
+'							- RBNMapMTBGetStackPanelIndex(...) As Integer
+'							- RBNMapMTBStackPanelExists(...) As Logical
+'							- RBNMapMTBInsertStackPanelAfter(...) As Logical
+'							- RBNMapMTBInsertStackPanelBefore(...) As Logical
+'						- Added:
+'							- RBNMapMTBStackPanelAddControl(...) As Integer
+'							- RBNMapMTBStackPanelRemoveControl(...) As Integer
 '*****************************************************************************************************************************
 
 
@@ -563,6 +581,30 @@ Declare Function RBNToolContextMenuAddMenuItem(	  ByVal sControlName As String
 Declare Function RBNToolContextMenuRemoveMenuItem(  ByVal sControlName As String
 										) As Integer
 
+'** WORKING WITH STACKPANELS ON MINI MAP TOOLBAR **********************************************
+Declare Function RBNMapMTBNumStackPanels() As Integer
+
+Declare Function RBNMapMTBAddStackPanel(	  ByVal sStackPanelName As String
+									, ByVal sCaption As String
+									) As Integer					'Returns the modular Idx of the StackPanel or 0, if it wasn't created
+Declare Function RBNMapMTBInsertStackPanelAfter(	  ByVal sStackPanelName As String
+										, ByVal sCaption As String
+										, ByVal sNameAfter As String
+										) As Logical
+Declare Function RBNMapMTBInsertStackPanelBefore( ByVal sStackPanelName As String
+										, ByVal sCaption As String
+										, ByVal sNameBefore As String
+										) As Logical
+Declare Function RBNMapMTBStackPanelRemove(	  ByVal sStackPanelName As String
+									) As Integer
+Declare Function RBNMapMTBGetStackPanel(	 ByVal sStackPanelName As String
+									, rbnsStackPanelFound As RefPtr
+									) As Logical
+Declare Function RBNMapMTBGetStackPanelIndex(  ByVal sStackPanelName As String
+									) As Integer
+Declare Function RBNMapMTBStackPanelExists(	  ByVal sStackPanelName As String
+									) As Logical
+
 '** WORKING WITH CONTROLS AND BUTTONS ON MINI MAP TOOLBAR **********************************************
 Declare Function RBNMapMTBAddControl(	  ByVal sControlName As String
 								, ByVal sCaption As String
@@ -595,6 +637,17 @@ Declare Function RBNMapMTBAddButton( ByVal sControlName As String
 							) As Integer					'Returns the modular Idx of the control or 0, if it wasn't created
 Declare Function RBNMapMTBGetControlIndex(	  ByVal sControlName As String
 									) As Integer
+
+'** WORKING WITH CONTROLS ON STACKPANEL ON MINI MAP TOOLBAR **********************************************
+Declare Function RBNMapMTBStackPanelAddControl(	  ByVal sControlName As String
+										, ByVal sCaption As String
+										, ByVal sKeytip As String
+										, ByVal nControlType As Integer
+										, ByVal sStackPanelName As string
+										) As Integer					'Returns the modular Idx of the control or 0, if it wasn't created
+Declare Function RBNMapMTBStackPanelRemoveControl(  ByVal sControlName As String
+										, ByVal sStackPanelName As string
+										) As Integer
 
 '** WORKING WITH GALLERY *******************************************************************************
 Declare Function RBNGalleryGetGroupThs(	  rbnGallery As This
@@ -654,6 +707,12 @@ Declare Sub RBNControlSetCustomMBXHandlerThs(  ByVal rbnControl As This
 Declare Sub RBNControlSetCustomMBXHandlerIdx(  ByVal nElementIdx As Integer
 									, ByVal sMBXHandler As String
 									)
+Declare Sub RBNControlSetCmdIDThs(	  ByVal rbnControl As This
+							, ByVal nCmdID As Integer
+							)
+Declare Sub RBNControlSetCmdIDIdx(	  ByVal nElementIdx As Integer
+							, ByVal nCmdID As Integer
+							)
 Declare Sub RBNControlSetDrawModeThs(	  ByVal rbnControl As This
 								, ByVal nDrawMode As Integer
 								)
@@ -668,12 +727,6 @@ Declare Sub RBNControlSetMICursorIdx(	  ByVal nElementIdx As Integer
 								, ByVal nCursor As Integer
 								, ByVal sFile As String
 								)
-Declare Sub RBNControlSetCmdIDThs(	  ByVal rbnControl As This
-							, ByVal nCmdID As Integer
-							)
-Declare Sub RBNControlSetCmdIDIdx(	  ByVal nElementIdx As Integer
-							, ByVal nCmdID As Integer
-							)
 Declare Sub RBNControlEnableThs(	  ByVal rbnControl As This
 							, ByVal bEnabled As Logical
 							)
@@ -686,6 +739,19 @@ Declare Sub RBNControlCheckThs(	  ByVal rbnControl As This
 Declare Sub RBNControlCheckIdx(	  ByVal nElementIdx As Integer
 							, ByVal bChecked As Logical
 							)
+Declare Sub RBNControlSelectedThs(	  ByVal rbnControl As This
+							, ByVal bSelected As Logical
+							)
+Declare Sub RBNControlSelectedIdx(	  ByVal nElementIdx As Integer
+							, ByVal bSelected As Logical
+							)
+Declare Sub RBNControlToggleThs(	  ByVal rbnControl As This
+							, ByVal bIsToggle As Logical
+							)
+Declare Sub RBNControlToggleIdx(	  ByVal nElementIdx As Integer
+							, ByVal bIsToggle As Logical
+							)
+
 Declare Function RBNControlGetControlIDThs(	  ByVal rbnControl As This
 									) As Integer	 'Will return the ID of the control used CommandInfo(CMD_INFO_MENUITEM) and CommandInfo(CMD_INFO_TOOLBTN)
 Declare Function RBNControlGetControlIDIdx(	  nElementIdx As Integer

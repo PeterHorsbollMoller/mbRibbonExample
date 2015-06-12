@@ -13,7 +13,7 @@ Include "ERRORLib.def"
 Include "FILELib.def"
 Include "CONFIGFILELib.def"
 
-Dim	marrResStrings(), marrStringFiles(), marrLanguages() As String,
+Dim	msStringFilesFolder, marrResStrings(), marrStringFiles(), marrLanguages() As String,
 	mnNumResStrings As Integer,
 	mbResStringsLoaded As Logical
 
@@ -84,13 +84,13 @@ OnError GoTo ErrorOccured
 
 RESSTRNGLoadStringsByLanguage = FALSE
 
-	Call DEBUGPrint("1. Number of language files found: " & Ubound(marrStringFiles()))
+'	Call DEBUGPrint("1. Number of language files found: " & Ubound(marrStringFiles()))
 	If Ubound(marrStringFiles()) = 0 Then
-		If RESSTRNGFindStringFiles(ApplicationDirectory$()) = 0 Then
+		If RESSTRNGFindStringFiles(RESSTRNGGetStringFilesFolder()) = 0 Then
 			Print "No language files (.str) were found. These are required for the application to work!"
 			Exit Function
 		End If
-		Call DEBUGPrint("2. Number of language files found: " & Ubound(marrStringFiles()))
+'		Call DEBUGPrint("2. Number of language files found: " & Ubound(marrStringFiles()))
 	End If
 
 	nItem	= RESSTRNGGetStringFileItemByLanguage(sLanguage)
@@ -177,7 +177,7 @@ Dim	i, nNumFiles As Integer
 
 OnError GoTo ErrorOccured
 
-	Call DEBUGPrint("Searching for language files in: '" & ApplicationDirectory$() & "'")
+	Call DEBUGPrint("Searching for language files in: '" & sPath & "'")
 	nNumFiles	= FILEFindFiles(sPath, "*.str", TRUE, FALSE, marrStringFiles)
 	If nNumFiles = 0 Then
 		RESSTRNGFindStringFiles = 0
@@ -256,8 +256,11 @@ OnError GoTo ErrorOccured
 
 RESSTRNGGetStringFileItemByLanguage = 0
 
+'	Call DEBUGPrint("RESSTRNGGetStringFileItemByLanguage For i = 1 To " & Ubound(marrLanguages()) & " Looking for '" & sLanguage & "'")
 	For i = 1 To Ubound(marrLanguages())
+'		Call DEBUGPrint(i & ": " & marrLanguages(i))
 		If marrLanguages(i) = sLanguage Then
+'			Call DEBUGPrint("Found it!!: " & i & ": " & marrLanguages(i))
 			RESSTRNGGetStringFileItemByLanguage = i
 			Exit Function
 		End If
@@ -265,7 +268,7 @@ RESSTRNGGetStringFileItemByLanguage = 0
 	Exit Function
 '-------------------------
 ErrorOccured:
-	Call ERRCreate(Err(), Error$(), "PleaseEnterNameOfFunctionHere")
+	Call ERRCreate(Err(), Error$(), "RESSTRNGGetStringFileItemByLanguage")
 	Call ERRShow()
 
 End Function
@@ -307,7 +310,7 @@ OnError GoTo ErrorOccured
 RESSTRNGGetStringFiles = 0
 
 	If Ubound(marrStringFiles()) = 0 Then
-		If RESSTRNGFindStringFiles(ApplicationDirectory$()) = 0 Then
+		If RESSTRNGFindStringFiles(RESSTRNGGetStringFilesFolder()) = 0 Then
 			Print "No language files (.str) were found. These are required for the application to work!"
 			Exit Function
 		End If
@@ -348,7 +351,7 @@ OnError GoTo ErrorOccured
 RESSTRNGGetLanguages = 0
 
 	If Ubound(marrStringFiles()) = 0 Then
-		If RESSTRNGFindStringFiles(ApplicationDirectory$()) = 0 Then
+		If RESSTRNGFindStringFiles(RESSTRNGGetStringFilesFolder()) = 0 Then
 			Print "No language files (.str) were found. These are required for the application to work!"
 			Exit Function
 		End If
@@ -367,6 +370,42 @@ RESSTRNGGetLanguages = Ubound(arrLanguages)
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "RESSTRNGGetStringFiles")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RESSTRNGSetStringFilesFolder(ByVal sPath As String)
+
+OnError GoTo ErrorOccured
+
+	msStringFilesFolder	= sPath
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RESSTRNGSetStringFilesFolder")
+	Call ERRShow()
+
+End Sub
+'**********************************************************************************************''
+Function RESSTRNGGetStringFilesFolder() As String
+
+OnError GoTo ErrorOccured
+
+	If msStringFilesFolder = "" Then
+		RESSTRNGGetStringFilesFolder = ApplicationDirectory$()
+	Else
+		RESSTRNGGetStringFilesFolder = FILEGetAbsolutePath(ApplicationDirectory$(), msStringFilesFolder)
+	End If
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RESSTRNGGetStringFilesFolder")
 	Call ERRShow()
 
 End Function

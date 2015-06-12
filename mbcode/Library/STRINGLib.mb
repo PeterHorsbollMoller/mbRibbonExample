@@ -222,6 +222,44 @@ ErrorOccured:
 End Function
 
 '**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function STRINGReplacePosition(	  ByVal sToBeSearched As String	'Text to be searched
+							, ByVal sSearchFor As String		'text to search for
+							, ByVal sReplaceWith As String	'text to replace the found text with
+							, ByVal nStartPosition As Integer	'Position to start search
+							) As String					'returns the text where the value has been replaced
+
+Dim	nPos, nLenR, nLenS As Integer
+
+OnError GoTo ErrorOccured
+
+STRINGReplacePosition = sToBeSearched
+
+	nLenR	= Len(sReplaceWith)
+	nLenS	= Len(sSearchFor)
+	nPos		= InStr(nStartPosition, sToBeSearched, sSearchFor)
+	Do While nPos > 0
+		sToBeSearched	= Left$(sToBeSearched, nPos - 1) + sReplaceWith + Right$(sToBeSearched, Len(sToBeSearched) - ((nPos - 1) + nLenS))
+'		Print "nPos: " & sToBeSearched
+		nPos 		= InStr(nPos + nLenR, sToBeSearched, sSearchFor)
+	Loop
+
+STRINGReplacePosition = sToBeSearched
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "STRINGReplacePosition: Replacing " & sSearchFor & " with " & sReplaceWith & " in " & sToBeSearched)
+	Call ERRPrint()
+
+End Function
+
+'**********************************************************************************************''
 'Created by Peter Horsbøll Møller, Pitney Bowes MapInfo
 'Parameters:
 '
@@ -283,6 +321,34 @@ STRINGContainsOnlyNumbers = TRUE
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "STRINGContainsOnlyNumbers")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Business Insight
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function STRINGConcatenateWithSeparator(  ByVal sFirst As String		'First part of the concatenated string
+								, ByVal sLast As String		'Last part of the concatenated string
+								, ByVal sSeparator As String	'Separator between the two string, only used if both are not equal to ""
+								) As String
+
+OnError GoTo ErrorOccured
+
+	If sFirst <> "" AND sLast <> "" Then
+		STRINGConcatenateWithSeparator = sFirst & sSeparator & sLast
+	Else
+		STRINGConcatenateWithSeparator = sFirst & sLast
+	End If
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "STRINGConcatenateWithSeparator")
 	Call ERRShow()
 
 End Function

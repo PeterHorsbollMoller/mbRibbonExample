@@ -66,7 +66,7 @@ End Type
 '64-bit number specifying the elapsed time since January 1, 1601, in 100-nanosecond increments
 Type FILETIME
         dwLowDateTime As Integer
-        dwHighDateTime As Integer 
+        dwHighDateTime As Integer
 End Type
 
 Type WIN32_FIND_DATA
@@ -74,7 +74,7 @@ Type WIN32_FIND_DATA
 	ftCreationTime		As FILETIME
 	ftLastAccessTime	As FILETIME
 	ftLastWriteTime	As FILETIME
-	nFileSizeHigh		As Integer 
+	nFileSizeHigh		As Integer
 	nFileSizeLow		As Integer
 	dwReserved0		As Integer
 	dwReserved1		As Integer
@@ -154,11 +154,11 @@ Declare Function WAPIFindFirstFile Lib "kernel32" Alias "FindFirstFileA"
 Declare Function WAPIFindNextFile Lib "kernel32" Alias "FindNextFileA"
 		( ByVal hFindFile As IntPtr
 		, lpFindFileData As WIN32_FIND_DATA
-		) As Integer	'IntPtr
+		) As Integer
 'http://msdn.microsoft.com/en-us/library/windows/desktop/aa364428(v=vs.85).aspx
 Declare Function WAPIFindClose Lib "kernel32" Alias "FindClose"
 		( ByVal hFindFile As IntPtr
-		) As Integer	'IntPtr
+		) As Integer
 'http://msdn.microsoft.com/en-us/library/windows/desktop/aa364413(v=vs.85).aspx
 
 Declare Function WAPIGetCursorPosition Lib "user32" Alias "GetCursorPos" (lpPoint As POINTAPI) As Integer

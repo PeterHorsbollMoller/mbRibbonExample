@@ -573,8 +573,6 @@ OnError GoTo ErrorOccured
 		Control GroupBox	Position 10,105	Width 185	Height 30			ID CTRL_TXT_LANGUAGES
 			Title "Application language:"
 		Control PopUpMenu Position 20,117 		Width 160					ID CTRL_LST_LANGUAGES
-			Title From Variable marrLanguages()
-			Value PRGIGetApplicationLanguage()
 			Into mnLanguage
 
 		Control Button		Position 10,150	Width 70
@@ -630,6 +628,7 @@ OnError GoTo ErrorOccured
 			Alter Control CTRL_LST_LANGUAGES Hide
 		Else
 			Alter Control CTRL_LST_LANGUAGES Title From Variable marrLanguages
+			Alter Control CTRL_LST_LANGUAGES Value PRGIGetApplicationLanguage()
 		End If
 	End If
 

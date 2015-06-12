@@ -109,10 +109,6 @@ Dim	nNumTabs, nNumGroups, nNumCntrls, nNumGalleryGroups, nNumGalleryCtrls, nNumS
 	'--------------------------------
 	Call RBNInitiate
 
-	'--------------------------------
-	'Get Tabs Collection
-	theTabsColl = GetTabsColl(theRibbon)
-
 	nNumTabs = GetRbnTabCollCount(theTabsColl)
 '	Call DEBUGPrint("Number of Tabs " & nNumTabs)
 
@@ -473,6 +469,8 @@ OnError GoTo ErrorOccured
 	theRibbon 			= GetRibbon(theMapInfoApplication)
 	'Get the Statusbar
 	theStatusbar			= GetStatusBar(theMapInfoApplication)
+	'Get Tabs Collection
+	theTabsColl = GetTabsColl(theRibbon)
 
 	Call RegisterUriParser(New_GenericUriParser(1), "pack", -1)
 
@@ -532,7 +530,7 @@ RBNAddTab = 0
 	nCtrl = RBNAddElement(sTabName, "", "", "", "", CONTROL_TYPE_RLIB_TAB)
 
 	'Add a new Tab to theTabsColl collection
-	marrControls(nCtrl) = RbnTabCollAddStrStr (theTabsColl, sTabName, sCaption)
+	marrControls(nCtrl) = RbnTabCollAddStrStr(theTabsColl, sTabName, sCaption)
 
 	If sKeytip <> "" Then
 		'Set the KeyTip for the RibbonTab. KeyTip: The keyboard shortcut for
@@ -762,10 +760,6 @@ RBNGetTabIndex = RBN_ELEMENT_NOT_FOUND
 
 	Call RBNInitiate
 
-	'--------------------------------
-	'Get Tabs Collection
-	theTabsColl = GetTabsColl(theRibbon)
-
 	nNumTabs = GetRbnTabCollCount(theTabsColl)
 '	Call DEBUGPrint("Number of Tabs " & nNumTabs)
 	For i = 0 To (nNumTabs - 1)	'**First element is at position 0, not as normally in MapBasic at position 1
@@ -858,10 +852,6 @@ OnError GoTo ErrorOccured
 RBNTabGetNameFromCaption = ""
 
 	Call RBNInitiate
-
-	'--------------------------------
-	'Get Tabs Collection
-	theTabsColl = GetTabsColl(theRibbon)
 
 	nNumTabs = GetRbnTabCollCount(theTabsColl)
 '	Call DEBUGPrint("Number of Tabs " & nNumTabs)
@@ -1183,11 +1173,11 @@ OnError GoTo ErrorOccured
 
 RBNTabGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 
-	Call DEBUGPrint("   RBNTabGetGroupIndexThs: Looking for " & sGroupName & " rbnTab = " & rbnTab)
+'	Call DEBUGPrint("   RBNTabGetGroupIndexThs: Looking for " & sGroupName & " rbnTab = " & rbnTab)
 
 	rbnGroupsColl = GetRbnTabGrps(rbnTab)
 	nNumGroups = GetRbnCtrlGrpCollCount(rbnGroupsColl)
-	Call DEBUGPrint("   RBNTabGetGroupIndexThs: Number of Tab Groups " & nNumGroups)
+'	Call DEBUGPrint("   RBNTabGetGroupIndexThs: Number of Tab Groups " & nNumGroups)
 	For i = 0 To (nNumGroups - 1)
 		rbnGroupItem = GetRbnCtrlGrpCollItemInt(rbnGroupsColl, i)
 
@@ -1463,11 +1453,11 @@ RBNGroupAddControl = 0
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("RBNGetTab")
+'	Call DEBUGPrint("RBNGetTab")
 	If RBNGetTab(sTabName, rbnTabFound) Then
 		rbnTab = rbnTabFound
 
-		Call DEBUGPrint("RBNTabGetGroupThs")
+'		Call DEBUGPrint("RBNTabGetGroupThs")
 		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
 
 			rbnGroup = rbnGroupFound
@@ -2070,33 +2060,33 @@ RBNSplitButtonAddGroup = 0
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("RBNSplitButtonAddGroup")
+'	Call DEBUGPrint("RBNSplitButtonAddGroup")
 	If RBNGetTab(sTabName, rbnTabFound) Then
-		Call DEBUGPrint("   Tab found: " & sTabName)
+'		Call DEBUGPrint("   Tab found: " & sTabName)
 		rbnTab = rbnTabFound
 
 		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
-			Call DEBUGPrint("   Group found: " & sGroupName)
+'			Call DEBUGPrint("   Group found: " & sGroupName)
 			'Get the ribbon group collection.
 			rbnGroup		= rbnGroupFound
 
 			If RBNGroupGetControlThs(rbnGroup, sSplitButtonName, rbnControlFound) Then
-				Call DEBUGPrint("   Splitbutton found: " & sSplitButtonName)
+'				Call DEBUGPrint("   Splitbutton found: " & sSplitButtonName)
 				rbnSplitButton = rbnControlFound
 
 				nCtrl = RBNAddElement(sTabName, sGroupName, sSplitButtonName, sSplitButtonGroupName, "", ControlType_DropDownMenuGroup)
-				Call DEBUGPrint("   Adding as element: " & nCtrl)
+'				Call DEBUGPrint("   Adding as element: " & nCtrl)
 
-				Call DEBUGPrint("   Getting the Group Collection")
+'				Call DEBUGPrint("   Getting the Group Collection")
 				'Get Group controls collection
 				rbnGroupsColl = GetRbnSplitCtrlCtrls(rbnSplitButton)
 
 				'Add a new group.
-				Call DEBUGPrint("   Adding the new Group " & sSplitButtonGroupName)
+'				Call DEBUGPrint("   Adding the new Group " & sSplitButtonGroupName)
 				marrControls(nCtrl)		= MICtrlCollAddStrStrInt(rbnGroupsColl, sSplitButtonGroupName, sCaption, ControlType_DropDownMenuGroup)
 
-				Call DEBUGPrint( "GetRbnDropDownCtrlHorzAlign: " & GetRbnDropDownCtrlHorzAlign(marrControls(nCtrl)))
-				Call DEBUGPrint( "GetRbnDropDownCtrlVertAlign: " & GetRbnDropDownCtrlVertAlign(marrControls(nCtrl)))
+'				Call DEBUGPrint( "GetRbnDropDownCtrlHorzAlign: " & GetRbnDropDownCtrlHorzAlign(marrControls(nCtrl)))
+'				Call DEBUGPrint( "GetRbnDropDownCtrlVertAlign: " & GetRbnDropDownCtrlVertAlign(marrControls(nCtrl)))
 				Call SetRbnDropDownCtrlHorzAlign(marrControls(nCtrl), Horiz_Align_Stretch)
 				Call SetRbnDropDownCtrlVertAlign(marrControls(nCtrl), Vert_Align_Stretch)
 				RBNSplitButtonAddGroup = nCtrl
@@ -2151,23 +2141,23 @@ RBNSplitButtonGroupRemove = 0
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("RBNSplitButtonGroupRemove from " & sTabName)
+'	Call DEBUGPrint("RBNSplitButtonGroupRemove from " & sTabName)
 	If RBNGetTab(sTabName, rbnTabFound) Then
-		Call DEBUGPrint("   Tab found: " & sTabName & " searching for Group " & sGroupName)
+'		Call DEBUGPrint("   Tab found: " & sTabName & " searching for Group " & sGroupName)
 		rbnTab = rbnTabFound
 
 		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
-			Call DEBUGPrint("   Group found: " & sGroupName & " searching for SplitButton " & sSplitButtonName)
+'			Call DEBUGPrint("   Group found: " & sGroupName & " searching for SplitButton " & sSplitButtonName)
 			'Get the ribbon group collection.
 			rbnGroup		= rbnGroupFound
 
 			If RBNGroupGetControlThs(rbnGroup, sSplitButtonName, rbnControlFound) Then
-				Call DEBUGPrint("   Splitbutton found: " & sSplitButtonName & " searching for Group " & sSplitButtonGroupName)
+'				Call DEBUGPrint("   Splitbutton found: " & sSplitButtonName & " searching for Group " & sSplitButtonGroupName)
 				rbnSplitButton = rbnControlFound
 
 				nGroupItem = RBNSplitButtonGetGroupIndexThs(rbnSplitButton, sSplitButtonGroupName)
 				If nGroupItem > RBN_ELEMENT_NOT_FOUND Then
-					Call DEBUGPrint("   Group found: " & sSplitButtonGroupName)
+'					Call DEBUGPrint("   Group found: " & sSplitButtonGroupName)
 					'Get Group controls collection
 					rbnGroupsColl = GetRbnSplitCtrlCtrls(rbnSplitButton)
 
@@ -2175,7 +2165,7 @@ RBNSplitButtonGroupRemove = 0
 					nCtrl = RBNRemoveElement(sTabName, sGroupName, sSplitButtonName, sSplitButtonGroupName, "")
 					RBNSplitButtonGroupRemove = nCtrl
 				Else
-					Call DEBUGPrint("RBNSplitButtonGroupRemove: Control not found: " & sSplitButtonGroupName)
+'					Call DEBUGPrint("RBNSplitButtonGroupRemove: Control not found: " & sSplitButtonGroupName)
 				End If
 			End If
 		End If
@@ -2265,14 +2255,14 @@ RBNSplitButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 
 	rbnGroupsColl = GetRbnSplitCtrlCtrls(rbnSplitButton)
 	nNumGroups = GetMICtrlCollCount(rbnGroupsColl)
-	Call DEBUGPrint("   RBNSplitButtonGetGroupIndexThs: Number of SplitButton Groups " & nNumGroups)
+'	Call DEBUGPrint("   RBNSplitButtonGetGroupIndexThs: Number of SplitButton Groups " & nNumGroups)
 	For i = 0 To (nNumGroups - 1)
 		rbnGroupItem = GetMICtrlCollItemInt(rbnGroupsColl, i)
 
 		nCtrlType	= GetMICtrlCtrlType(rbnGroupItem)
 		sName	= GetMICtrlName(rbnGroupItem)
 		sCaption	= GetMICtrlCaption(rbnGroupItem)
-		Call DEBUGPrint("   SplitButton Group " & i & " is named " & sName & " but shown as " & sCaption)
+'		Call DEBUGPrint("   SplitButton Group " & i & " is named " & sName & " but shown as " & sCaption)
 
 		If sName = sGroupName AND nCtrlType = ControlType_DropDownMenuGroup Then
 			RBNSplitButtonGetGroupIndexThs	= i
@@ -2585,33 +2575,33 @@ RBNDropDButtonAddGroup = 0
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("RBNDropDButtonAddGroup")
+'	Call DEBUGPrint("RBNDropDButtonAddGroup")
 	If RBNGetTab(sTabName, rbnTabFound) Then
-		Call DEBUGPrint("   Tab found: " & sTabName)
+'		Call DEBUGPrint("   Tab found: " & sTabName)
 		rbnTab = rbnTabFound
 
 		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
-			Call DEBUGPrint("   Group found: " & sGroupName)
+'			Call DEBUGPrint("   Group found: " & sGroupName)
 			'Get the ribbon group collection.
 			rbnGroup		= rbnGroupFound
 
 			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
-				Call DEBUGPrint("   DropDownButton found: " & sDropDButtonName)
+'				Call DEBUGPrint("   DropDownButton found: " & sDropDButtonName)
 				rbnDropDButton = rbnControlFound
 
 				nCtrl = RBNAddElement(sTabName, sGroupName, sDropDButtonName, sDropDButtonGroupName, "", ControlType_DropDownMenuGroup)
-				Call DEBUGPrint("   Adding as element: " & nCtrl)
+'				Call DEBUGPrint("   Adding as element: " & nCtrl)
 
-				Call DEBUGPrint("   Getting the Group Collection")
+'				Call DEBUGPrint("   Getting the Group Collection")
 				'Get Group controls collection
 				rbnGroupsColl = GetRbnDropDownCtrlCtrls(rbnDropDButton)
 
 				'Add a new group.
-				Call DEBUGPrint("   Adding the new Group " & sDropDButtonGroupName)
+'				Call DEBUGPrint("   Adding the new Group " & sDropDButtonGroupName)
 				marrControls(nCtrl)		= MICtrlCollAddStrStrInt(rbnGroupsColl, sDropDButtonGroupName, sCaption, ControlType_DropDownMenuGroup)
 
-				Call DEBUGPrint( "GetRbnDropDownCtrlHorzAlign: " & GetRbnDropDownCtrlHorzAlign(marrControls(nCtrl)))
-				Call DEBUGPrint( "GetRbnDropDownCtrlVertAlign: " & GetRbnDropDownCtrlVertAlign(marrControls(nCtrl)))
+'				Call DEBUGPrint( "GetRbnDropDownCtrlHorzAlign: " & GetRbnDropDownCtrlHorzAlign(marrControls(nCtrl)))
+'				Call DEBUGPrint( "GetRbnDropDownCtrlVertAlign: " & GetRbnDropDownCtrlVertAlign(marrControls(nCtrl)))
 				Call SetRbnDropDownCtrlHorzAlign(marrControls(nCtrl), Horiz_Align_Stretch)
 				Call SetRbnDropDownCtrlVertAlign(marrControls(nCtrl), Vert_Align_Stretch)
 				RBNDropDButtonAddGroup = nCtrl
@@ -2666,23 +2656,23 @@ RBNDropDButtonGroupRemove = 0
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("RBNDropDButtonGroupRemove from " & sTabName)
+'	Call DEBUGPrint("RBNDropDButtonGroupRemove from " & sTabName)
 	If RBNGetTab(sTabName, rbnTabFound) Then
-		Call DEBUGPrint("   Tab found: " & sTabName & " searching for Group " & sGroupName)
+'		Call DEBUGPrint("   Tab found: " & sTabName & " searching for Group " & sGroupName)
 		rbnTab = rbnTabFound
 
 		If RBNTabGetGroupThs(rbnTab, sGroupName, rbnGroupFound) Then
-			Call DEBUGPrint("   Group found: " & sGroupName & " searching for DropDButton " & sDropDButtonName)
+'			Call DEBUGPrint("   Group found: " & sGroupName & " searching for DropDButton " & sDropDButtonName)
 			'Get the ribbon group collection.
 			rbnGroup		= rbnGroupFound
 
 			If RBNGroupGetControlThs(rbnGroup, sDropDButtonName, rbnControlFound) Then
-				Call DEBUGPrint("   DropDownButton found: " & sDropDButtonName & " searching for Group " & sDropDButtonGroupName)
+'				Call DEBUGPrint("   DropDownButton found: " & sDropDButtonName & " searching for Group " & sDropDButtonGroupName)
 				rbnDropDButton = rbnControlFound
 
 				nGroupItem = RBNDropDButtonGetGroupIndexThs(rbnDropDButton, sDropDButtonGroupName)
 				If nGroupItem > RBN_ELEMENT_NOT_FOUND Then
-					Call DEBUGPrint("   Group found: " & sDropDButtonGroupName)
+'					Call DEBUGPrint("   Group found: " & sDropDButtonGroupName)
 					'Get Group controls collection
 					rbnGroupsColl = GetRbnDropDownCtrlCtrls(rbnDropDButton)
 
@@ -2780,14 +2770,14 @@ RBNDropDButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 
 	rbnGroupsColl = GetRbnDropDownCtrlCtrls(rbnDropDButton)
 	nNumGroups = GetMICtrlCollCount(rbnGroupsColl)
-	Call DEBUGPrint("   RBNDropDButtonGetGroupIndexThs: Number of DropDownButton Groups " & nNumGroups)
+'	Call DEBUGPrint("   RBNDropDButtonGetGroupIndexThs: Number of DropDownButton Groups " & nNumGroups)
 	For i = 0 To (nNumGroups - 1)
 		rbnGroupItem = GetMICtrlCollItemInt(rbnGroupsColl, i)
 
 		nCtrlType	= GetMICtrlCtrlType(rbnGroupItem)
 		sName	= GetMICtrlName(rbnGroupItem)
 		sCaption	= GetMICtrlCaption(rbnGroupItem)
-		Call DEBUGPrint("   DropDownButton Group " & i & " is named " & sName & " but shown as " & sCaption)
+'		Call DEBUGPrint("   DropDownButton Group " & i & " is named " & sName & " but shown as " & sCaption)
 
 		If sName = sGroupName AND nCtrlType = ControlType_DropDownMenuGroup Then
 			RBNDropDButtonGetGroupIndexThs	= i
@@ -3387,6 +3377,249 @@ ErrorOccured:
 End Function
 
 '*******************************************************************************************************
+'** WORKING WITH STACKPANELS ON MINI MAP TOOLBAR **********************************************
+'*******************************************************************************************************
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBNumStackPanels() As Integer
+
+Dim	i, nNumCntrls, nNumStackPanels, nCntrlType As Integer,
+	sName, sCaption As String,
+	rbnControlItem As This
+
+OnError GoTo ErrorOccured
+
+	Call RBNInitiate
+
+	nNumCntrls = GetMICtrlCollCount(theMapMTBControlsColl)
+'	Call DEBUGPrint("   Map MiniToolBar: Number of Controls " & nNumCntrls)
+	For i = 0 To (nNumCntrls - 1)
+		rbnControlItem	= GetMICtrlCollItemInt(theMapMTBControlsColl, i)
+
+'		sName		= GetMICtrlName(rbnControlItem)
+		nCntrlType	= GetMICtrlCtrlType(rbnControlItem)
+'		sCaption		= GetMICtrlCaption(rbnControlItem)
+'		Call DEBUGPrint("      MiniToolBar Control " & i & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
+
+		If nCntrlType = ControlType_StackPanel Then
+			nNumStackPanels = nNumStackPanels + 1
+		End If
+	Next
+
+	RBNMapMTBNumStackPanels = nNumStackPanels
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBNumStackPanels")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBAddStackPanel(	  ByVal sStackPanelName As String
+							, ByVal sCaption As String
+							) As Integer					'Returns the modular Idx of the StackPanel or 0, if it wasn't created
+
+OnError GoTo ErrorOccured
+
+	Call RBNInitiate
+
+	RBNMapMTBAddStackPanel = RBNMapMTBAddControl(sStackPanelName, sCaption, "", ControlType_StackPanel)
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBAddStackPanel")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBInsertStackPanelAfter(  ByVal sStackPanelName As String
+								, ByVal sCaption As String
+								, ByVal sNameAfter As String
+								) As Logical
+
+OnError GoTo ErrorOccured
+
+	Call RBNInitiate
+
+	RBNMapMTBInsertStackPanelAfter = RBNMapMTBInsertControlAfter(sStackPanelName, sCaption, "", ControlType_StackPanel, sNameAfter)
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBInsertStackPanelAfter")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBInsertStackPanelBefore( ByVal sStackPanelName As String
+								, ByVal sCaption As String
+								, ByVal sNameBefore As String
+								) As Logical
+
+OnError GoTo ErrorOccured
+
+	Call RBNInitiate
+
+	RBNMapMTBInsertStackPanelBefore = RBNMapMTBInsertControlBefore(sStackPanelName, sCaption, "", ControlType_StackPanel, sNameBefore)
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBInsertStackPanelBefore")
+	Call ERRShow()
+
+End Function
+
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBStackPanelRemove(	  ByVal sStackPanelName As String
+								) As Integer
+
+OnError GoTo ErrorOccured
+
+	Call RBNInitiate
+
+	RBNMapMTBStackPanelRemove = RBNMapMTBRemoveControl(sStackPanelName)
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBStackPanelRemove")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBGetStackPanel(	 ByVal sStackPanelName As String
+							, rbnsStackPanelFound As RefPtr
+							) As Logical
+
+Dim	nIndex As Integer
+
+OnError GoTo ErrorOccured
+
+RBNMapMTBGetStackPanel = FALSE
+
+	Call RBNInitiate
+
+	nIndex	= RBNMapMTBGetStackPanelIndex(sStackPanelName)
+	If nIndex > RBN_ELEMENT_NOT_FOUND Then
+		rbnsStackPanelFound	= GetMICtrlCollItemInt(theMapMTBControlsColl, nIndex)
+		RBNMapMTBGetStackPanel = TRUE
+	End If
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBGetStackPanel")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBGetStackPanelIndex(	  ByVal sStackPanelName As String
+								) As Integer
+
+Dim	i, nNumCntrls, nCntrlType As Integer,
+	sName, sCaption As String,
+	rbnControlItem As This
+
+OnError GoTo ErrorOccured
+
+RBNMapMTBGetStackPanelIndex	= RBN_ELEMENT_NOT_FOUND
+
+	Call RBNInitiate
+
+	nNumCntrls = GetMICtrlCollCount(theMapMTBControlsColl)
+'	Call DEBUGPrint("   Map MiniToolBar: Number of Controls " & nNumCntrls)
+	For i = 0 To (nNumCntrls - 1)
+		rbnControlItem	= GetMICtrlCollItemInt(theMapMTBControlsColl, i)
+
+		sName		= GetMICtrlName(rbnControlItem)
+		nCntrlType	= GetMICtrlCtrlType(rbnControlItem)
+'		sCaption		= GetMICtrlCaption(rbnControlItem)
+'		Call DEBUGPrint("      MiniToolBar Control " & i & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
+
+		If nCntrlType = ControlType_StackPanel Then
+			If sStackPanelName = sName Then
+				RBNMapMTBGetStackPanelIndex = i
+			End If
+		End If
+	Next
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBGetStackPanelIndex")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBStackPanelExists(	  ByVal sStackPanelName As String
+								) As Logical
+
+OnError GoTo ErrorOccured
+
+	Call RBNInitiate
+
+	RBNMapMTBStackPanelExists = (RBNMapMTBGetStackPanelIndex(sStackPanelName) > RBN_ELEMENT_NOT_FOUND)
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBStackPanelExists")
+	Call ERRShow()
+
+End Function
+
+'*******************************************************************************************************
 '** WORKING WITH CONTROLS AND BUTTONS ON MINI MAP TOOLBAR **********************************************
 '*******************************************************************************************************
 
@@ -3453,7 +3686,7 @@ RBNMapMTBInsertControl = 0
 	Call RBNInitiate
 
 	nCtrl 			= RBNAddElement("MapMiniToolbar", "", "", "", sControlName, nControlType)
-	marrControls(nCtrl) = MICtrlCollInsertIntStrStrInt(theMapMTBControlsColl, sControlName, sCaption, nControlType, nPosition)
+	marrControls(nCtrl) = MICtrlCollInsertIntStrStrInt(theMapMTBControlsColl, nPosition, sControlName, sCaption, nControlType)
 
 	If sKeytip <> "" Then
 		'Set the KeyTip for the Control. KeyTip: The keyboard shortcut for the Control.
@@ -3550,7 +3783,7 @@ End Function
 '
 '**********************************************************************************************''
 Function RBNMapMTBRemoveControl(  ByVal sControlName As String
-							) As integer
+							) As Integer
 
 Dim	nControlItem, nCtrl as Integer
 
@@ -3563,13 +3796,11 @@ RBNMapMTBRemoveControl = 0
 	nControlItem = RBNMapMTBGetControlIndex(sControlName)
 	If nControlItem > RBN_ELEMENT_NOT_FOUND Then
 		Call MICtrlCollRemoveAt(theMapMTBControlsColl, nControlItem)
-		nCtrl 						= RBNRemoveElement("MapMiniToolbar", "", "", "", sControlName)
+		nCtrl 				= RBNRemoveElement("MapMiniToolbar", "", "", "", sControlName)
 		RBNMapMTBRemoveControl	= nCtrl
 	Else
 		Call DEBUGPrint("RBNMapMTBRemoveControl: Menu Item not found: " & sControlName)
 	End If
-
-	RBNMapMTBRemoveControl = nCtrl
 
 	Exit Function
 '-------------------------
@@ -3623,6 +3854,105 @@ RBNMapMTBGetControlIndex = 0
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "RBNMapMTBGetControlIndex")
+	Call ERRShow()
+
+End Function
+
+'*******************************************************************************************************
+'** WORKING WITH CONTROLS ON STACKPANEL ON MINI MAP TOOLBAR ********************************************
+'*******************************************************************************************************
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBStackPanelAddControl(	  ByVal sControlName As String
+								, ByVal sCaption As String
+								, ByVal sKeytip As String
+								, ByVal nControlType As Integer
+								, ByVal sStackPanelName As string
+								) As Integer					'Returns the modular Idx of the control or 0, if it wasn't created
+
+Dim	nCtrl As Integer,
+	rbnsStackPanelFound As RefPtr,
+	rbnsStackPanel As This,
+	stackPanelColl As This
+
+OnError GoTo ErrorOccured
+
+	If RBNMapMTBGetStackPanel(sStackPanelName, rbnsStackPanelFound) > RBN_ELEMENT_NOT_FOUND Then
+		rbnsStackPanel	= rbnsStackPanelFound
+
+		stackPanelColl	= GetIStackPanelCtrls(rbnsStackPanel)
+
+		nCtrl 			= RBNAddElement("MapMiniToolbar", sStackPanelName, "", "", sControlName, nControlType)
+		marrControls(nCtrl) = MICtrlCollAddStrStrInt(stackPanelColl, sControlName, sCaption, nControlType)
+
+		If sKeytip <> "" Then
+			'Set the KeyTip for the Control. KeyTip: The keyboard shortcut for the Control.
+			'A KeyTip must have from 1 to 3 uppercase characters.
+			Call SetMICtrlKeyTip(marrControls(nCtrl), sKeytip)
+		End If
+	End If
+
+	rbnsStackPanelFound	= NULL_PTR
+	rbnsStackPanel		= NULL_PTR
+	stackPanelColl		= NULL_PTR
+
+	RBNMapMTBStackPanelAddControl = nCtrl
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBStackPanelAddControl")
+	Call ERRShow()
+
+End Function
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'	:
+'Return value:
+'
+'**********************************************************************************************''
+Function RBNMapMTBStackPanelRemoveControl(	  ByVal sControlName As String
+									, ByVal sStackPanelName As string
+									) As Integer
+
+Dim	nCtrl, nControlItem As Integer,
+	rbnsStackPanelFound As RefPtr,
+	rbnsStackPanel As This,
+	stackPanelColl As This
+
+OnError GoTo ErrorOccured
+
+RBNMapMTBStackPanelRemoveControl = 0
+
+	If RBNMapMTBGetStackPanel(sStackPanelName, rbnsStackPanelFound) > RBN_ELEMENT_NOT_FOUND Then
+		rbnsStackPanel	= rbnsStackPanelFound
+
+		stackPanelColl	= GetIStackPanelCtrls(rbnsStackPanel)
+
+		nControlItem = RBNCollectionGetControlIndexThs(stackPanelColl, sControlName)
+		If nControlItem > RBN_ELEMENT_NOT_FOUND Then
+			Call MICtrlCollRemoveAt(stackPanelColl, nControlItem)
+			nCtrl 				= RBNRemoveElement("MapMiniToolbar", "", "", "", sControlName)
+			RBNMapMTBStackPanelRemoveControl	= nCtrl
+		Else
+			Call DEBUGPrint("RBNMapMTBStackPanelRemoveControl: Item not found: " & sControlName)
+		End If
+	Else
+		Call DEBUGPrint("RBNMapMTBStackPanelRemoveControl: StackPanel not found: " & sStackPanelName)
+	End If
+
+	Exit Function
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNMapMTBStackPanelRemoveControl")
 	Call ERRShow()
 
 End Function
@@ -4203,6 +4533,87 @@ End Sub
 'Parameters:
 '
 '**********************************************************************************************''
+Sub RBNControlSetCmdIDThs(	  ByVal rbnControl As This
+						, ByVal nCmdID As Integer)
+
+OnError GoTo ErrorOccured
+
+	Do Case GetMICtrlCtrlType(rbnControl)
+		Case ControlType_Button
+			Call SetRbnBtnCtrlCmdId(rbnControl, nCmdID)
+
+		Case ControlType_ToolButton
+			Call SetRbnToolBtnCtrlCmdId(rbnControl, nCmdID)
+
+		Case ControlType_RibbonMenuItem
+			Call SetRbnMenuItemCtrlCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_RibbonButtonPanel
+		'Case ControlType_RibbonSeparator
+
+		Case ControlType_ContextMenuItem
+			Call SetICntxtMnuMenuItemCmdId(rbnControl, nCmdID)
+
+		'Case ControlType_ContextMenuSeparator
+		'Case ControlType_MenuItemSeparator
+'		Case ControlType_DropDownButton
+
+		Case ControlType_SplitButton
+			Call SetRbnSplitCtrlCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_DropDownMenuGroup
+'		Case ControlType_GalleryControl
+
+		Case ControlType_GalleryItem
+			Call SetRbnGalleryItemCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_GalleryGroup
+'		Case ControlType_CustomControl
+'		Case ControlType_TextBlock
+'		Case ControlType_Image
+'		Case ControlType_BackStageTabItem
+
+		Case ControlType_BackStageButton
+			Call SetIBackStageBtnCmdId(rbnControl, nCmdID)
+
+'		Case ControlType_BackStageTabSection
+'		Case ControlType_BackStageSeparator
+'		Case ControlType_StackPanel
+	End Case
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlSetCmdIDThs")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RBNControlSetCmdIDIdx(	  ByVal nElementIdx As Integer
+						, ByVal nCmdID As Integer
+						)
+
+OnError GoTo ErrorOccured
+
+	Call RBNControlSetCmdIDThs(marrControls(nElementIdx), nCmdID)
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlSetCmdIDIdx")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
 Sub RBNControlSetDrawModeThs(	  ByVal rbnControl As This
 						, ByVal nDrawMode As Integer
 						)
@@ -4300,87 +4711,6 @@ OnError GoTo ErrorOccured
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "RBNControlSetMICursorIdx")
-	Call ERRShow()
-
-End Sub
-
-'**********************************************************************************************''
-'Created by Peter Horsbøll Møller, Pitney Bowes Software
-'Parameters:
-'
-'**********************************************************************************************''
-Sub RBNControlSetCmdIDThs(	  ByVal rbnControl As This
-						, ByVal nCmdID As Integer)
-
-OnError GoTo ErrorOccured
-
-	Do Case GetMICtrlCtrlType(rbnControl)
-		Case ControlType_Button
-			Call SetRbnBtnCtrlCmdId(rbnControl, nCmdID)
-
-		Case ControlType_ToolButton
-			Call SetRbnToolBtnCtrlCmdId(rbnControl, nCmdID)
-
-		Case ControlType_RibbonMenuItem
-			Call SetRbnMenuItemCtrlCmdId(rbnControl, nCmdID)
-
-'		Case ControlType_RibbonButtonPanel
-		'Case ControlType_RibbonSeparator
-
-		Case ControlType_ContextMenuItem
-			Call SetICntxtMnuMenuItemCmdId(rbnControl, nCmdID)
-
-		'Case ControlType_ContextMenuSeparator
-		'Case ControlType_MenuItemSeparator
-'		Case ControlType_DropDownButton
-
-		Case ControlType_SplitButton
-			Call SetRbnSplitCtrlCmdId(rbnControl, nCmdID)
-
-'		Case ControlType_DropDownMenuGroup
-'		Case ControlType_GalleryControl
-
-		Case ControlType_GalleryItem
-			Call SetRbnGalleryItemCmdId(rbnControl, nCmdID)
-
-'		Case ControlType_GalleryGroup
-'		Case ControlType_CustomControl
-'		Case ControlType_TextBlock
-'		Case ControlType_Image
-'		Case ControlType_BackStageTabItem
-
-		Case ControlType_BackStageButton
-			Call SetIBackStageBtnCmdId(rbnControl, nCmdID)
-
-'		Case ControlType_BackStageTabSection
-'		Case ControlType_BackStageSeparator
-'		Case ControlType_StackPanel
-	End Case
-
-	Exit Sub
-'-------------------------
-ErrorOccured:
-	Call ERRCreate(Err(), Error$(), "RBNControlSetCmdIDThs")
-	Call ERRShow()
-
-End Sub
-
-'**********************************************************************************************''
-'Created by Peter Horsbøll Møller, Pitney Bowes Software
-'Parameters:
-'
-'**********************************************************************************************''
-Sub RBNControlSetCmdIDIdx(	  ByVal nElementIdx As Integer
-						, ByVal nCmdID As Integer
-						)
-
-OnError GoTo ErrorOccured
-
-	Call RBNControlSetCmdIDThs(marrControls(nElementIdx), nCmdID)
-	Exit Sub
-'-------------------------
-ErrorOccured:
-	Call ERRCreate(Err(), Error$(), "RBNControlSetCmdIDIdx")
 	Call ERRShow()
 
 End Sub
@@ -4528,7 +4858,8 @@ End Sub
 '
 '**********************************************************************************************''
 Sub RBNControlCheckIdx(	  ByVal nElementIdx As Integer
-					, ByVal bChecked As Logical)
+					, ByVal bChecked As Logical
+					)
 
 OnError GoTo ErrorOccured
 
@@ -4537,6 +4868,145 @@ OnError GoTo ErrorOccured
 '-------------------------
 ErrorOccured:
 	Call ERRCreate(Err(), Error$(), "RBNControlCheckIdx")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RBNControlSelectedThs(	  ByVal rbnControl As This
+						, ByVal bSelected As Logical
+						)
+
+OnError GoTo ErrorOccured
+
+	Do Case GetMICtrlCtrlType(rbnControl)
+		Case ControlType_Button
+'			Call DEBUGPrint("SetRbnBtnCtrlIsSelected(rbnControl, " & bSelected)
+			Call SetRbnBtnCtrlIsSelected(rbnControl, bSelected)
+'		Case ControlType_ToolButton
+		Case ControlType_RibbonMenuItem
+			Call SetRbnMenuItemCtrlIsChecked(rbnControl, bSelected)
+'		Case ControlType_RibbonButtonPanel
+'		Case ControlType_RibbonSeparator
+		Case ControlType_ContextMenuItem
+			Call SetICntxtMnuMenuItemIsChecked(rbnControl, bSelected)
+'		Case ControlType_ContextMenuSeparator
+'		Case ControlType_MenuItemSeparator
+'		Case ControlType_DropDownButton
+'		Case ControlType_SplitButton
+'		Case ControlType_DropDownMenuGroup
+'		Case ControlType_GalleryControl
+		Case ControlType_GalleryItem
+			Call SetRbnGalleryItemIsChecked(rbnControl, bSelected)
+'		Case ControlType_GalleryGroup
+'		Case ControlType_CustomControl
+'		Case ControlType_TextBlock
+'		Case ControlType_Image
+'		Case ControlType_BackStageTabItem
+		Case ControlType_BackStageButton
+			Call SetIBackStageBtnIsSelected(rbnControl, bSelected)
+'		Case ControlType_BackStageTabSection
+'		Case ControlType_BackStageSeparator
+'		Case ControlType_StackPanel
+
+	End Case
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlSelectedThs")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RBNControlSelectedIdx(	  ByVal nElementIdx As Integer
+						, ByVal bSelected As Logical
+					)
+
+OnError GoTo ErrorOccured
+
+	Call RBNControlSelectedThs(marrControls(nElementIdx), bSelected)
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlSelectedIdx")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RBNControlToggleThs(	  ByVal rbnControl As This
+					, ByVal bIsToggle As Logical
+					)
+
+OnError GoTo ErrorOccured
+
+	Do Case GetMICtrlCtrlType(rbnControl)
+		Case ControlType_Button
+			Call SetRbnBtnCtrlIsToggle(rbnControl, bIsToggle)
+'		Case ControlType_ToolButton
+		Case ControlType_RibbonMenuItem
+			Call SetRbnMenuItemCtrlIsCheckable(rbnControl, bIsToggle)
+'		Case ControlType_RibbonButtonPanel
+'		Case ControlType_RibbonSeparator
+		Case ControlType_ContextMenuItem
+			Call SetICntxtMnuMenuItemIsCheckable(rbnControl, bIsToggle)
+'		Case ControlType_ContextMenuSeparator
+'		Case ControlType_MenuItemSeparator
+'		Case ControlType_DropDownButton
+'		Case ControlType_SplitButton
+'		Case ControlType_DropDownMenuGroup
+'		Case ControlType_GalleryControl
+'		Case ControlType_GalleryItem
+'		Case ControlType_GalleryGroup
+'		Case ControlType_CustomControl
+'		Case ControlType_TextBlock
+'		Case ControlType_Image
+'		Case ControlType_BackStageTabItem
+'		Case ControlType_BackStageButton
+'		Case ControlType_BackStageTabSection
+'		Case ControlType_BackStageSeparator
+'		Case ControlType_StackPanel
+
+	End Case
+
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlToggleThs")
+	Call ERRShow()
+
+End Sub
+
+'**********************************************************************************************''
+'Created by Peter Horsbøll Møller, Pitney Bowes Software
+'Parameters:
+'
+'**********************************************************************************************''
+Sub RBNControlToggleIdx(	  ByVal nElementIdx As Integer
+					, ByVal bIsToggle As Logical
+					)
+
+OnError GoTo ErrorOccured
+
+	Call RBNControlToggleThs(marrControls(nElementIdx), bIsToggle)
+	Exit Sub
+'-------------------------
+ErrorOccured:
+	Call ERRCreate(Err(), Error$(), "RBNControlToggleIdx")
 	Call ERRShow()
 
 End Sub
@@ -4910,8 +5380,13 @@ OnError GoTo ErrorOccured
 				nResult = RBNToolContextMenuRemoveMenuItem(marrControlNames(i))
 '				Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
 			ElseIf marrTabNames(i) = "MapMiniToolbar" Then
-				nResult = RBNMapMTBRemoveControl(marrControlNames(i))
-'				Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
+				If marrGroupNames(i) = "" Then
+					nResult = RBNMapMTBRemoveControl(marrControlNames(i))
+'					Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
+				Else
+					nResult = RBNMapMTBStackPanelRemoveControl(marrControlNames(i), marrGroupNames(i))
+'					Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
+				End If
 			Else
 				nResult = RBNGroupRemoveControl(marrControlNames(i), marrTabNames(i), marrGroupNames(i))
 '				Call DEBUGPrint("   " & i & " Control Removed Result: " & nResult)
@@ -4922,7 +5397,7 @@ OnError GoTo ErrorOccured
 				nResult = RBNTabGroupRemove(marrGroupNames(i), marrTabNames(i))
 '				Call DEBUGPrint("   " & i & " Group Removed Result: " & nResult)
 			Else
-				Call DEBUGPrint("   " & i & " Group has still Controls")
+'				Call DEBUGPrint("   " & i & " Group has still Controls")
 			End If
 		Else
 			If RBNTabNumGroups(marrTabNames(i)) = 0 Then
@@ -4930,7 +5405,7 @@ OnError GoTo ErrorOccured
 				nResult = RBNRemoveTab(marrTabNames(i))
 '				Call DEBUGPrint("   " & i & " Tab Removed Result: " & nResult)
 			Else
-				Call DEBUGPrint("   " & i & " Tab has still Groups")
+'				Call DEBUGPrint("   " & i & " Tab has still Groups")
 			End If
 		End If
 	Next
@@ -5013,7 +5488,7 @@ RBNEventSubscribe = FALSE
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("MIEventsSubscribe(theMapInfoEvents, " & nEventType & ", " & sMBXHandler & ")")
+'	Call DEBUGPrint("MIEventsSubscribe(theMapInfoEvents, " & nEventType & ", " & sMBXHandler & ")")
 	bWasSubscribed = MIEventsSubscribe(theMapInfoEvents, nEventType, sMBXHandler)
 
 	If bWasSubscribed Then
@@ -5053,7 +5528,7 @@ RBNEventUnsubscribe = FALSE
 
 	Call RBNInitiate
 
-	Call DEBUGPrint("MIEventsUnSubscribe(theMapInfoEvents, " & nEventType & ", " & sMBXHandler & ")")
+'	Call DEBUGPrint("MIEventsUnSubscribe(theMapInfoEvents, " & nEventType & ", " & sMBXHandler & ")")
 	bWasUnsubscribed	= MIEventsUnSubscribe(theMapInfoEvents, nEventType, sMBXHandler)
 	If bWasUnsubscribed Then
 		For i = 1 To mnNumEvents
