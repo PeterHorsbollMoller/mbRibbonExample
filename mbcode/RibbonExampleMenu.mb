@@ -17,7 +17,7 @@ Include "Library\MI_ICONS_X64.def"
 
 Define xProgram 		"RibbonExample"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.9.2"
+Define xVersion 		"0.9.3"
 Define xYear			"2015"
 
 Define FILE_INI			ApplicationDirectory$() & xProgram & ".ini"
