@@ -17,7 +17,7 @@ Include "Library\MI_ICONS_X64.def"
 
 Define xProgram 		"RibbonExample"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.9.1"
+Define xVersion 		"0.9.2"
 Define xYear			"2015"
 
 Define FILE_INI			ApplicationDirectory$() & xProgram & ".ini"
@@ -231,6 +231,10 @@ OnError GoTo ErrorOccured
 		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_LARGE, "", PATH_IMAGES & "Browser_Info_32x32.png")
 		'Set Custom MapBasic Handle to the button
 		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowBrowserInfo")
+	End If
+
+	nCtrlIdx = RBNGroupAddControl("separator1", "", "", ControlType_RibbonSeparator, sTabName, xProgramMenu)
+	If nCtrlIdx > 0 Then
 	End If
 
 	'**Adding a new SplitButton to the TOOLS tab
