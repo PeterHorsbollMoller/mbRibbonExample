@@ -470,7 +470,7 @@ OnError GoTo ErrorOccured
 	'Get the Statusbar
 	theStatusbar			= GetStatusBar(theMapInfoApplication)
 	'Get Tabs Collection
-	theTabsColl = GetTabsColl(theRibbon)
+	theTabsColl 			= GetTabsColl(theRibbon)
 
 	Call RegisterUriParser(New_GenericUriParser(1), "pack", -1)
 
@@ -1182,7 +1182,7 @@ RBNTabGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		rbnGroupItem = GetRbnCtrlGrpCollItemInt(rbnGroupsColl, i)
 
 		sName	= GetRbnCtrlGrpName(rbnGroupItem)
-		sCaption	= GetRbnCtrlGrpCaption(rbnGroupItem)
+'		sCaption	= GetRbnCtrlGrpCaption(rbnGroupItem)
 '		Call DEBUGPrint("   Tab Ctrl Group " & i & " is named " & sName & " but shown as " & sCaption)
 
 		If sName = sGroupName Then
@@ -1935,7 +1935,7 @@ RBNGroupGetControlIndexThs = RBN_ELEMENT_NOT_FOUND
 
 '		nCntrlType	= GetMICtrlCtrlType(rbnControlItem)
 		sName		= GetMICtrlName(rbnControlItem)
-		sCaption		= GetMICtrlCaption(rbnControlItem)
+'		sCaption		= GetMICtrlCaption(rbnControlItem)
 '		Call DEBUGPrint("      Control " & k & " is named '" & sName & "' but shown as '" & sCaption & "' and Control Type is " & nCntrlType & " (" & RBNControlGetTypeName(nCntrlType) & ")")
 
 		If sName = sControlName Then
@@ -2261,7 +2261,7 @@ RBNSplitButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 
 		nCtrlType	= GetMICtrlCtrlType(rbnGroupItem)
 		sName	= GetMICtrlName(rbnGroupItem)
-		sCaption	= GetMICtrlCaption(rbnGroupItem)
+'		sCaption	= GetMICtrlCaption(rbnGroupItem)
 '		Call DEBUGPrint("   SplitButton Group " & i & " is named " & sName & " but shown as " & sCaption)
 
 		If sName = sGroupName AND nCtrlType = ControlType_DropDownMenuGroup Then
@@ -2446,7 +2446,7 @@ RBNSplitButtonGroupRemoveControl = 0
 					rbnControlsColl	= GetCtrlGrpCtrls(rbnSplitButtonGroup)
 					nNumCntrls 		= GetMICtrlCollCount(rbnControlsColl)
 
-					For nItem = 0 To (nNumCntrls - 1)
+					For nItem = (nNumCntrls - 1) To 0 Step -1
 						rbnControlItem	= GetMICtrlCollItemInt(rbnControlsColl, nItem)
 						If sControlName = GetMICtrlName(rbnControlItem) Then
 							Call MICtrlCollRemoveAt(rbnControlsColl, nItem)
@@ -2776,7 +2776,7 @@ RBNDropDButtonGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 
 		nCtrlType	= GetMICtrlCtrlType(rbnGroupItem)
 		sName	= GetMICtrlName(rbnGroupItem)
-		sCaption	= GetMICtrlCaption(rbnGroupItem)
+'		sCaption	= GetMICtrlCaption(rbnGroupItem)
 '		Call DEBUGPrint("   DropDownButton Group " & i & " is named " & sName & " but shown as " & sCaption)
 
 		If sName = sGroupName AND nCtrlType = ControlType_DropDownMenuGroup Then
@@ -3069,7 +3069,7 @@ RBNGalleryGetGroupIndexThs = RBN_ELEMENT_NOT_FOUND
 		rbnGroupItem = GetMIGalleryGrpCollItemInt(rbnGroupsColl, i)
 
 		sName	= GetRbnGalleryGrpName(rbnGroupItem)
-		sCaption	= GetRbnGalleryGrpCaption(rbnGroupItem)
+'		sCaption	= GetRbnGalleryGrpCaption(rbnGroupItem)
 '		Call DEBUGPrint("   Gallery Group " & i & " is named " & sName & " but shown as " & sCaption)
 
 		If sName = sGroupName Then

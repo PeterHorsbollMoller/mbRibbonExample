@@ -628,7 +628,7 @@ OnError GoTo ErrorOccured
 			Alter Control CTRL_LST_LANGUAGES Hide
 		Else
 			Alter Control CTRL_LST_LANGUAGES Title From Variable marrLanguages
-			Alter Control CTRL_LST_LANGUAGES Value PRGIGetApplicationLanguage()
+			Alter Control CTRL_LST_LANGUAGES Value Maximum(1, PRGIGetApplicationLanguage())
 		End If
 	End If
 
@@ -667,9 +667,13 @@ Sub PRGILaunchHelpFile
 
 OnError GoTo ErrorOccured
 
-	If NOT FileExists(PRGIGetApplicationHelpFile()) Then
-		Note "Help file does not exist: " & PRGIGetApplicationHelpFile()
-		Exit Sub
+	If PRGIGetApplicationHelpFile() = "" Then
+		Call PRGIAboutbox
+	Else
+		If NOT FileExists(PRGIGetApplicationHelpFile()) Then
+			Note "Help file does not exist: " & PRGIGetApplicationHelpFile()
+			Exit Sub
+		End If
 	End If
 
 	Call FILELaunch(PRGIGetApplicationHelpFile())

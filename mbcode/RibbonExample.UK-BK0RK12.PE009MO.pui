@@ -1,22 +1,13 @@
 [Open Files]
 Active File Display Mode=1
 Active File Index=0
-Open File Line0=0
-Open File Line1=48377
-Open File Line2=1562
-Open File Pos0=300
-Open File Pos1=48957
-Open File Pos2=2306
-Open File Window Pos0=0,1,-1,-1,-1,-1,3,26,1545,752
-Open File Window Pos1=0,1,-1,-1,-1,-1,3,26,1545,752
-Open File Window Pos2=0,1,-1,-1,-1,-1,3,26,1545,752
+Open File Line0=8564
+Open File Pos0=9818
+Open File Window Pos0=0,1,-1,-1,-1,-1,3,26,1144,752
 Open File0=D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\mbcode\RibbonExampleMenu.mb
-Open File1=D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\mbcode\Library\RIBBONLib.mb
-Open File2=D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\mbcode\Library\MapBasic\Enums.def
-Open File3=
+Open File1=
 Remember Files=1
 
 [Project Information]
 	Project Start=DF070200010002000D002B003400000057
-	Working Time=333972
-
+	Working Time=411718
