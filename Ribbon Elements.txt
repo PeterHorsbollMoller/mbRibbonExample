@@ -1,667 +1,680 @@
-20:39:23 --------------------------------------------------------------
-20:39:23 Tab 0 is named 'TabHome' but shown as 'HOME'
-20:39:23    Tab Group 0 is named 'HomeFile' but shown as 'File'
-20:39:23       Control 0 is named 'HomeFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 5 Groups/controls
-20:39:23          SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 7 Controls
-20:39:23             DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 6 Controls
-20:39:23             DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 3 is named 'openBaseMap_1' but shown as 'Basemap' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 4 is named 'openBaseMap_2' but shown as 'Subdued' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 5 is named 'openBaseMap_3' but shown as 'Grey' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 2 Controls
-20:39:23             DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 0 Controls
-20:39:23          SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 10 Controls
-20:39:23             DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\3. Demo\Kort\DAGI\2014\KOMMUNE.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 2 is named 'MruFile_2' but shown as 'BaseMap Subdued.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 3 is named 'MruFile_3' but shown as 'C:\MapInfo\Pro x64\Raster\Raster.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 4 is named 'MruFile_4' but shown as 'D:\3. Demo\KMS\DTM 2007\Sealand DK 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\Dropbox (Horsboll-Moller)\...\Mini\MRG.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\KMS\DTM 2007\Denmark DTM 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 7 is named 'MruFile_7' but shown as 'D:\3. Demo\Kort\UK\CodePoint\CodePoint.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 8 is named 'MruFile_8' but shown as 'D:\3. Demo\KMS\DTM 2015\Odsherred.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 9 is named 'MruFile_9' but shown as 'C:\MapInfo\...\12.5 EN\TileServer\BingAerial.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23       Control 1 is named 'HomeSaveWorkspaceSplitButton' but shown as 'Save Workspace' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 1 Groups/controls
-20:39:23          SplitButton Control 0 is named 'SaveWorkspaceDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 2 Controls
-20:39:23             DropDownMenu Control 0 is named 'SaveWorkspaceButton' but shown as 'Save Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'SaveWorkspaceAsButton' but shown as 'Save Workspace As' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'SaveTableButton' but shown as 'Save Table' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'SaveCopyAsButton' but shown as 'Save Copy As' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'CloseConnectionButton' but shown as 'Close DBMS' and Control Type is 1 (Button)
-20:39:23       Control 5 is named 'CloseTableButton' but shown as 'Close Table' and Control Type is 1 (Button)
-20:39:23       Control 6 is named 'CloseAllButton' but shown as 'Close All' and Control Type is 1 (Button)
-20:39:23    Tab Group 1 is named 'HomeClipboard' but shown as 'Clipboard'
-20:39:23       Control 0 is named 'CopyButton' but shown as 'Copy' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'PasteButton' but shown as 'Paste' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'CutButton' but shown as 'Cut' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'UndoButton' but shown as 'Undo' and Control Type is 1 (Button)
-20:39:23    Tab Group 2 is named 'HomeWindow' but shown as 'Window'
-20:39:23       Control 0 is named 'WindowGallery' but shown as 'Windows' and Control Type is 12 (GalleryControl)
-20:39:23       Gallery has 2 Groups/controls
-20:39:23       Gallery Group 0 is named 'NewWindows' but shown as 'New Document Windows'
-20:39:23          Gallery Control 0 is named 'NewMapGalleryItem' but shown as 'Map' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 1 is named 'MapBrowserGalleryItem' but shown as 'Browser' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 2 is named 'LayoutWindowGalleryItem' but shown as 'Layout' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 3 is named 'LegendWindowGalleryItem' but shown as 'Legend' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 4 is named 'ThreeDWindowGalleryItem' but shown as '3D Map' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 5 is named 'PrismWindowButtonGalleryItem' but shown as 'Prism Map' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 6 is named 'RedistictWindowGalleryItem' but shown as 'Redistricter' and Control Type is 13 (GalleryItem)
-20:39:23       Gallery Group 1 is named 'ToolWindows' but shown as 'Show/Activate Tool Windows'
-20:39:23          Gallery Control 0 is named 'LayerControlButtonGalleryItem' but shown as 'Layers' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 1 is named 'TableListButtonGalleryItem' but shown as 'Tables' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 2 is named 'WindowsButtonGalleryItem' but shown as 'Windows' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 3 is named 'WorkspaceExplorerButtonGalleryItem' but shown as 'Explorer' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 4 is named 'MoveToWindowGalleryItem' but shown as 'Move To' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 5 is named 'ToolsButtonGalleryItem' but shown as 'Tools' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 6 is named 'MapBasicWindowButtonGalleryItem' but shown as 'MapBasic' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 7 is named 'ConnectionListButtonGalleryItem' but shown as 'Connections' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 8 is named 'TaskManagerButtonGalleryItem' but shown as 'Tasks' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 9 is named 'InfoWindowGalleryItem' but shown as 'Info' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 10 is named 'RulerWindowGalleryItem' but shown as 'Ruler' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 11 is named 'StatisticsWindowGalleryItem' but shown as 'Statistics' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 12 is named 'FloatingThemeLegendWindowGalleryItem' but shown as 'Themes' and Control Type is 13 (GalleryItem)
-20:39:23          Gallery Control 13 is named 'MessageWindowGalleryItem' but shown as 'Message' and Control Type is 13 (GalleryItem)
-20:39:23    Tab Group 3 is named 'HomeOutput' but shown as 'Output'
-20:39:23       Control 0 is named 'PrintButton' but shown as 'Print' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'PdfButton' but shown as 'Create' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'ExportImgButton' but shown as 'Save' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'PageSetupButton' but shown as 'Page Setup' and Control Type is 1 (Button)
-20:39:23    Tab Group 4 is named 'HomeTools' but shown as 'Tools'
-20:39:23       Control 0 is named 'ToolsDropDownButton' but shown as 'Tools' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'ToolManagerCtl' but shown as '' and Control Type is 23 (Unknown)
-20:39:23 --------------------------------------------------------------
-20:39:23 Tab 1 is named 'TabTable' but shown as 'TABLE'
-20:39:23    Tab Group 0 is named 'TableData' but shown as 'Content'
-20:39:23       Control 0 is named 'NewBrowserButton' but shown as 'New Browser' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'TableFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 5 Groups/controls
-20:39:23          SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 7 Controls
-20:39:23             DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 3 Controls
-20:39:23             DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 2 Controls
-20:39:23             DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 0 Controls
-20:39:23          SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 10 Controls
-20:39:23             DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\3. Demo\Kort\DAGI\2014\KOMMUNE.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 2 is named 'MruFile_2' but shown as 'BaseMap Subdued.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 3 is named 'MruFile_3' but shown as 'C:\MapInfo\Pro x64\Raster\Raster.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 4 is named 'MruFile_4' but shown as 'D:\3. Demo\KMS\DTM 2007\Sealand DK 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\Dropbox (Horsboll-Moller)\...\Mini\MRG.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\KMS\DTM 2007\Denmark DTM 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 7 is named 'MruFile_7' but shown as 'D:\3. Demo\Kort\UK\CodePoint\CodePoint.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 8 is named 'MruFile_8' but shown as 'D:\3. Demo\KMS\DTM 2015\Odsherred.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 9 is named 'MruFile_9' but shown as 'C:\MapInfo\...\12.5 EN\TileServer\BingAerial.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23       Control 2 is named 'TableSaveSplitButton' but shown as 'Save' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 1 Groups/controls
-20:39:23          SplitButton Control 0 is named 'TableSaveDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 3 Controls
-20:39:23             DropDownMenu Control 0 is named 'TableSaveButton' but shown as 'Save Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'SaveQueryButton' but shown as 'Save Query' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'TableSaveCopyAsButton' but shown as 'Save Copy As' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'RevertTableButton' but shown as 'Revert' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'TableCloseButton' but shown as 'Close ' and Control Type is 1 (Button)
-20:39:23       Control 5 is named 'NewTableButton' but shown as 'New Table' and Control Type is 1 (Button)
-20:39:23       Control 6 is named 'showBrowserInfo' but shown as 'Browser Info' and Control Type is 1 (Button)
-20:39:23       Control 7 is named 'ExportButton' but shown as 'Export' and Control Type is 1 (Button)
-20:39:23       Control 8 is named 'TableData' but shown as 'Universal Translator' and Control Type is 1 (Button)
-20:39:23    Tab Group 1 is named 'TableSelection' but shown as 'Selection'
-20:39:23       Control 0 is named 'SelectButton' but shown as 'Select' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'SqlSelectButton' but shown as 'SQL Select' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'SelectionInvertSelectButton' but shown as 'Invert' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'SelectionClearButton' but shown as 'Clear' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'MapFindSplitButton' but shown as 'Find' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 1 Groups/controls
-20:39:23          SplitButton Control 0 is named 'MapFindSplitButtonGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 3 Controls
-20:39:23             DropDownMenu Control 0 is named 'FindSelectionButton' but shown as 'Find' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'FindAddressButton' but shown as 'Find Address' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'FindAndMarkButton' but shown as 'Mark' and Control Type is 1 (Button)
-20:39:23    Tab Group 2 is named 'TableAddEdit' but shown as 'Edit'
-20:39:23       Control 0 is named 'UpdateColumnButton' but shown as 'Update Column' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'AppendRowButton' but shown as 'Append Rows' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'AddNewRowButton' but shown as 'Add New Row' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'TableClearMapObjectsButton' but shown as 'Clear Map Objects' and Control Type is 1 (Button)
-20:39:23    Tab Group 3 is named 'BrowserTools' but shown as 'Browser Tools'
-20:39:23       Control 0 is named 'InfoToolButton' but shown as 'Info' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'HotLinkButton' but shown as 'Hotlink' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'HotLinkOptionsButton' but shown as 'Hotlink Options' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'PickFieldsButton' but shown as 'Pick Fields' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'BrowserFontButton' but shown as 'Font' and Control Type is 1 (Button)
-20:39:23       Control 5 is named 'ShowGridLinesToggleButton' but shown as 'Gridlines' and Control Type is 1 (Button)
-20:39:23    Tab Group 4 is named 'BrowserSortFilter' but shown as 'Sort and Filter'
-20:39:23       Control 0 is named 'FilterDropDown' but shown as 'Filter' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'FilterDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 2 Controls
-20:39:23             DropDown Control 0 is named 'FilterButton' but shown as 'Filter' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'ClearFilterButton' but shown as 'Clear Filters' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'SortDropDown' but shown as 'Sort' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'SortDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 4 Controls
-20:39:23             DropDown Control 0 is named 'MultiColumnSortButton' but shown as 'Sort Multi Column...' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'SortAscendingButton' but shown as 'Sort Ascending' and Control Type is 1 (Button)
-20:39:23             DropDown Control 2 is named 'SortDescendingButton' but shown as 'Sort Descending' and Control Type is 1 (Button)
-20:39:23             DropDown Control 3 is named 'ClearSortButton' but shown as 'Clear Sort' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'ClearAllSortButton' but shown as 'Clear All' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'ToggleSortButton' but shown as 'Sort On / Off' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'ReApplySortButton' but shown as 'Re-Sort' and Control Type is 1 (Button)
-20:39:23       Control 5 is named 'AddtoMapButton' but shown as 'Add to Map' and Control Type is 1 (Button)
-20:39:23    Tab Group 5 is named 'TableMaintenance' but shown as 'Maintenance'
-20:39:23       Control 0 is named 'TableMaintenanceButton' but shown as 'Table' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'TableSplitButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 4 Controls
-20:39:23             DropDown Control 0 is named 'TableModifyStructureButton' but shown as 'Modify Structure' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'TablePackButton' but shown as 'Pack Table' and Control Type is 1 (Button)
-20:39:23             DropDown Control 2 is named 'TableDeleteButton' but shown as 'Delete Table' and Control Type is 1 (Button)
-20:39:23             DropDown Control 3 is named 'TableRenameButton' but shown as 'Rename Table' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'DatabaseMaintenanceButton' but shown as 'Database' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'DatabaseSplitButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 12 Controls
-20:39:23             DropDown Control 0 is named 'DatabaseMakeMappableButton' but shown as 'Make DBMS Table Mappable' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'DatabaseChangeTableSymbolButton' but shown as 'Change DBMS Table Symbol' and Control Type is 1 (Button)
-20:39:23             DropDown Control 2 is named 'DatabaseUnlinkTableButton' but shown as 'Unlink DBMS Table' and Control Type is 1 (Button)
-20:39:23             DropDown Control 3 is named 'DatabaseRefreshDbmsTableButton' but shown as 'Refresh DBMS Table' and Control Type is 1 (Button)
-20:39:23             DropDown Control 4 is named '' but shown as '' and Control Type is 7 (ContextMenuSeparator)
-20:39:23             DropDown Control 5 is named 'CreateOracleWorkspaceButton' but shown as 'Create Oracle Workspace' and Control Type is 1 (Button)
-20:39:23             DropDown Control 6 is named 'DeleteOracleWorkspaceButton' but shown as 'Delete Oracle Workspace' and Control Type is 1 (Button)
-20:39:23             DropDown Control 7 is named 'MergeOracleTableButton' but shown as 'Merge Oracle Table' and Control Type is 1 (Button)
-20:39:23             DropDown Control 8 is named 'RefreshOracleTableButton' but shown as 'Refresh Oracle Table' and Control Type is 1 (Button)
-20:39:23             DropDown Control 9 is named '' but shown as '' and Control Type is 7 (ContextMenuSeparator)
-20:39:23             DropDown Control 10 is named 'EnableOracleVersioningButton' but shown as 'Enable Oracle Versioning' and Control Type is 1 (Button)
-20:39:23             DropDown Control 11 is named 'DisableOracleVersioningButton' but shown as 'Disable Oracle Versioning' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'LibraryMaintenanceButton' but shown as 'Library' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'LibraryButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 2 Controls
-20:39:23             DropDown Control 0 is named 'AddToLibraryButton' but shown as 'Add to Library' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'ViewEditMetadataButton' but shown as 'View / Edit Metadata' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'RasterTableMaintenanceButton' but shown as 'Raster' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'RasterTableButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 4 Controls
-20:39:23             DropDown Control 0 is named 'RasterImageStyleButton' but shown as 'Adjust Image Styles' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'RasterRegStyleButton' but shown as 'Modify Image Registration' and Control Type is 1 (Button)
-20:39:23             DropDown Control 2 is named 'SeparatorRasterTable' but shown as '' and Control Type is 7 (ContextMenuSeparator)
-20:39:23             DropDown Control 3 is named 'RasterAddControlPtsButton' but shown as 'Select Control Point' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'WebServicesMaintenanceButton' but shown as 'Web Services' and Control Type is 9 (DropDownButton)
-20:39:23       DropDownButton has 1 Groups/controls
-20:39:23          DropDownButton Control 0 is named 'WebServicesButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 4 Controls
-20:39:23             DropDown Control 0 is named 'WfsPropertiesButton' but shown as 'WFS Table Properties' and Control Type is 1 (Button)
-20:39:23             DropDown Control 1 is named 'WfsRefreshButton' but shown as 'WFS Table Refresh' and Control Type is 1 (Button)
-20:39:23             DropDown Control 2 is named 'SeparatorWebService' but shown as '' and Control Type is 7 (ContextMenuSeparator)
-20:39:23             DropDown Control 3 is named 'WmsPropertiesButton' but shown as 'WMS Table Properties' and Control Type is 1 (Button)
-20:39:23 --------------------------------------------------------------
-20:39:23 Tab 2 is named 'TabMap' but shown as 'MAP'
-20:39:23    Tab Group 0 is named 'MapFile' but shown as 'Content'
-20:39:23       Control 0 is named 'NewMapButton' but shown as 'Map' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'MapFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 5 Groups/controls
-20:39:23          SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 7 Controls
-20:39:23             DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 3 Controls
-20:39:23             DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 2 Controls
-20:39:23             DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
-20:39:23          SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 0 Controls
-20:39:23          SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 10 Controls
-20:39:23             DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\3. Demo\Kort\DAGI\2014\KOMMUNE.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 2 is named 'MruFile_2' but shown as 'BaseMap Subdued.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 3 is named 'MruFile_3' but shown as 'C:\MapInfo\Pro x64\Raster\Raster.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 4 is named 'MruFile_4' but shown as 'D:\3. Demo\KMS\DTM 2007\Sealand DK 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\Dropbox (Horsboll-Moller)\...\Mini\MRG.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\KMS\DTM 2007\Denmark DTM 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 7 is named 'MruFile_7' but shown as 'D:\3. Demo\Kort\UK\CodePoint\CodePoint.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 8 is named 'MruFile_8' but shown as 'D:\3. Demo\KMS\DTM 2015\Odsherred.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23             DropDownMenu Control 9 is named 'MruFile_9' but shown as 'C:\MapInfo\...\12.5 EN\TileServer\BingAerial.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:23       Control 2 is named 'MapExplorerControlButton' but shown as 'Explorer' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'MapAddLayersButton' but shown as 'Add Layers' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'MapAddThematicButton' but shown as 'Add Theme' and Control Type is 1 (Button)
-20:39:23       Control 5 is named 'MapCreateLegendDesignerButton' but shown as 'Add Legend' and Control Type is 1 (Button)
-20:39:23       Control 6 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
-20:39:23    Tab Group 1 is named 'MapSelection' but shown as 'Selection'
-20:39:23       Control 0 is named 'MapSelectionToolsSplitButton' but shown as 'Select' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 1 Groups/controls
-20:39:23          SplitButton Control 0 is named 'SelectionDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 6 Controls
-20:39:23             DropDownMenu Control 0 is named 'SelectButton' but shown as 'Select' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 1 is named 'RadiusSelectButton' but shown as 'Radius Selection' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 2 is named 'MaqueeSelectButton' but shown as 'Marquee Selection' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 3 is named 'RegionSelectButton' but shown as 'Polygon Selection' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 4 is named 'BoundarySelectButton' but shown as 'Boundary Selection' and Control Type is 1 (Button)
-20:39:23             DropDownMenu Control 5 is named 'selectWithinMap' but shown as 'Within Map' and Control Type is 1 (Button)
-20:39:23       Control 1 is named 'MapSelectionSqlSelectButton' but shown as 'SQL Select' and Control Type is 1 (Button)
-20:39:23       Control 2 is named 'MapSelectionInvertSelectButton' but shown as 'Invert' and Control Type is 1 (Button)
-20:39:23       Control 3 is named 'MapSelectionClearButton' but shown as 'Clear' and Control Type is 1 (Button)
-20:39:23       Control 4 is named 'MapFindSplitButton' but shown as 'Find' and Control Type is 10 (SplitButton)
-20:39:23       SplitButton has 1 Groups/controls
-20:39:23          SplitButton Control 0 is named 'MapFindSplitButtonGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:23             DropDownMenu Control has 3 Controls
-20:39:24             DropDownMenu Control 0 is named 'FindSelectionButton' but shown as 'Find' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'FindAddressButton' but shown as 'Find Address' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'FindAndMarkButton' but shown as 'Mark' and Control Type is 1 (Button)
-20:39:24    Tab Group 2 is named 'MapNavigate' but shown as 'Navigate'
-20:39:24       Control 0 is named 'PanButton' but shown as 'Pan' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'ZoomInButton' but shown as 'Zoom In' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'ZoomOutButton' but shown as 'Zoom Out' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'ZoomToDropDownButton' but shown as 'Zoom To' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'ZoomToDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 5 Controls
-20:39:24             DropDown Control 0 is named 'ZoomToSelectionLayerButton' but shown as 'Entire Selection Layer' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'ZoomToSelectedObjectsButton' but shown as 'Extents of Selected Objects' and Control Type is 1 (Button)
-20:39:24             DropDown Control 2 is named 'ZoomToLayerButton' but shown as 'Entire Layer' and Control Type is 1 (Button)
-20:39:24             DropDown Control 3 is named 'ZoomToEntireMapButton' but shown as 'Entire Map' and Control Type is 1 (Button)
-20:39:24             DropDown Control 4 is named 'ZoomToNearestTileServerLevelButton' but shown as 'Nearest Tile Server Level' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'MoveMapToButton' but shown as 'Move To' and Control Type is 1 (Button)
-20:39:24       Control 5 is named 'PreviousViewButton' but shown as 'Previous View' and Control Type is 1 (Button)
-20:39:24    Tab Group 3 is named 'MapLabel' but shown as 'Label'
-20:39:24       Control 0 is named 'LabelToolButton' but shown as 'Label Tool' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'SelectableLabelButton' but shown as 'Selectable' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'ClearCustomLabelButton' but shown as 'Clear Custom' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'LabelPriorityButton' but shown as 'Priority' and Control Type is 1 (Button)
-20:39:24    Tab Group 4 is named 'MapAnalyze' but shown as 'Analyze'
-20:39:24       Control 0 is named 'DragMapButton' but shown as 'Drag Map' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'HotLinkButton' but shown as 'Hotlink' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'InfoToolButton' but shown as 'Info' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'StatsWindowButton' but shown as 'Statistics' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'MapAnalyzeRedistricterDropDown' but shown as 'Redistricter' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'MapAnalyzeRedistricterDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 7 Controls
-20:39:24             DropDown Control 0 is named 'NewRedistricterWindowButton' but shown as 'New Redistricter Window' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'SetTargetButton' but shown as 'Set Target' and Control Type is 1 (Button)
-20:39:24             DropDown Control 2 is named 'AssignDistrictButton' but shown as 'Assign District' and Control Type is 1 (Button)
-20:39:24             DropDown Control 3 is named 'AddDistrictButton' but shown as 'Add District' and Control Type is 1 (Button)
-20:39:24             DropDown Control 4 is named 'ResdistrictorItemSeparator' but shown as '' and Control Type is 7 (ContextMenuSeparator)
-20:39:24             DropDown Control 5 is named 'DeleteDistrictButton' but shown as 'Delete District' and Control Type is 1 (Button)
-20:39:24             DropDown Control 6 is named 'RedistricterOptionsButton' but shown as 'Options' and Control Type is 1 (Button)
-20:39:24       Control 5 is named 'MeasureButton' but shown as 'Ruler' and Control Type is 1 (Button)
-20:39:24    Tab Group 5 is named 'MapOptions' but shown as 'Options'
-20:39:24       Control 0 is named 'MapOptionsButton' but shown as 'Map Options' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'MapHotlinkOptionsButton' but shown as 'Hotlink Options' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'LockScaleButton' but shown as 'Lock Scale' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'CreateScaleBarButton' but shown as 'Scalebar' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'MapRedrawButton' but shown as 'Redraw' and Control Type is 1 (Button)
-20:39:24 --------------------------------------------------------------
-20:39:24 Tab 3 is named 'TabSpatial' but shown as 'SPATIAL'
-20:39:24    Tab Group 0 is named 'SpatialClipboardBar' but shown as 'Clipboard'
-20:39:24       Control 0 is named 'ClipboardCopyButton' but shown as 'Copy' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'ClipboardPasteButton' but shown as 'Paste' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'ClipboardCutButton' but shown as 'Cut' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'ClipboardUndoButton' but shown as 'Undo' and Control Type is 1 (Button)
-20:39:24    Tab Group 1 is named 'SpatialSelectionBar' but shown as 'Selection'
-20:39:24       Control 0 is named 'SpatialSelectionToolsSplitButton' but shown as 'Select' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'SelectionDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 5 Controls
-20:39:24             DropDownMenu Control 0 is named 'SelectButton' but shown as 'Select' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'RadiusSelectButton' but shown as 'Radius Selection' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'MaqueeSelectButton' but shown as 'Marquee Selection' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'RegionSelectButton' but shown as 'Polygon Selection' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 4 is named 'BoundarySelectButton' but shown as 'Boundary Selection' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'SpatialSelectionSqlSelectButton' but shown as 'SQL Select' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'SpatialSelectionInvertSelectButton' but shown as 'Invert' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'SpatialSelectionClearButton' but shown as 'Clear' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'SpatialFindSplitButton' but shown as 'Find' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'MapFindSplitButtonGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 3 Controls
-20:39:24             DropDownMenu Control 0 is named 'FindSelectionButton' but shown as 'Find' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'FindAddressButton' but shown as 'Find Address' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'FindAndMarkButton' but shown as 'Mark' and Control Type is 1 (Button)
-20:39:24    Tab Group 2 is named 'SpatialEditBar' but shown as 'Edit'
-20:39:24       Control 0 is named 'SetTargetButton' but shown as 'Set Target' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'ClearTargetButton' but shown as 'Clear Target' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'EraseDropDown' but shown as 'Erase' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'SpatialEraseDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDown Control 0 is named 'SpatialEraseTargetButton' but shown as 'Erase Target' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'SpatialEraseOutsideTargetButton' but shown as 'Erase Outside Target' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'CombineDropDown' but shown as 'Combine' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'CombineDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDown Control 0 is named 'CombineSelectedObjectsButton' but shown as 'Combine Selected Objects' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'CombineUsingColumnButton' but shown as 'Combine Using Column' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'SplitDropdown' but shown as 'Split' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'SplitDropdownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 3 Controls
-20:39:24             DropDown Control 0 is named 'SplitTargetButton' but shown as 'Split Target' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'PolylineSplitButton' but shown as 'Split Target using Polyline' and Control Type is 1 (Button)
-20:39:24             DropDown Control 2 is named 'PolylineSplitAtNodeButton' but shown as 'Polyline Split at Node' and Control Type is 1 (Button)
-20:39:24       Control 5 is named 'DisaggregateButton' but shown as 'Disaggregate' and Control Type is 1 (Button)
-20:39:24       Control 6 is named 'RibbonSeparator1' but shown as '' and Control Type is 5 (RibbonSeparator)
-20:39:24       Control 7 is named 'SpatialBufferSplitButton' but shown as 'Buffer' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'SpatialBufferMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 3 Controls
-20:39:24             DropDownMenu Control 0 is named 'SpatialBufferButton' but shown as 'Buffer Objects' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'SpatialBufferTableButton' but shown as 'Buffer Table' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'SpatialConvexHullButton' but shown as 'Convex Hull' and Control Type is 1 (Button)
-20:39:24       Control 8 is named 'NodesSplitButton' but shown as 'Nodes' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'NodesSplitButtonMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 4 Controls
-20:39:24             DropDownMenu Control 0 is named 'SnapToNodeButton' but shown as 'Snap to Nodes' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'ReshapeButton' but shown as 'Reshape' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'AddNodeButton' but shown as 'Add Node' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'OverlayNodeButton' but shown as 'Overlay Nodes onto Target' and Control Type is 1 (Button)
-20:39:24       Control 9 is named 'FixCleanSplitButton' but shown as 'Fix/Clean' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'FixCleanButtonMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 5 Controls
-20:39:24             DropDownMenu Control 0 is named 'CheckRegionsButton' but shown as 'Check Regions' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'CleanButton' but shown as 'Clean Objects' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'SnapButton' but shown as 'Snap/Thin' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'SmoothButton' but shown as 'Smooth Lines' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 4 is named 'UnsmoothButton' but shown as 'Unsmooth Lines' and Control Type is 1 (Button)
-20:39:24       Control 10 is named 'TransformSplitButton' but shown as 'Transform' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'TransformDropdownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDownMenu Control 0 is named 'OffsetObjectButton' but shown as 'Offset Object' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'RotateObjectButton' but shown as 'Rotate Object' and Control Type is 1 (Button)
-20:39:24       Control 11 is named 'SpatialConvertToPolylineButton' but shown as 'Convert to Polylines' and Control Type is 1 (Button)
-20:39:24       Control 12 is named 'ClipRegionDropDown' but shown as 'Clip Region' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'ClipRegionDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDown Control 0 is named 'SetClipRegionButton' but shown as 'Set Clip Region' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'ClipRegionOnOffButton' but shown as 'Clip Region On/Off' and Control Type is 1 (Button)
-20:39:24       Control 13 is named 'DigitizerSetupButton' but shown as 'Digitizer Setup ' and Control Type is 1 (Button)
-20:39:24       Control 14 is named 'SpatialClearMapObjectsButton' but shown as 'Clear Map Objects' and Control Type is 1 (Button)
-20:39:24    Tab Group 3 is named 'SpatialCreateBar' but shown as 'Create'
-20:39:24       Control 0 is named 'SpatialCreateInsertSplitButton' but shown as 'Insert' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 3 Groups/controls
-20:39:24          SplitButton Control 0 is named 'InsertPointsandTextMenuGroup' but shown as 'Points and Text' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDownMenu Control 0 is named 'SpatialCreateInsertSymbolButton' but shown as 'Symbol' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'SpatialCreateInsertTextButton' but shown as 'Text' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 1 is named 'InsertLinesMenuGroup' but shown as 'Lines' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 3 Controls
-20:39:24             DropDownMenu Control 0 is named 'SpatialCreateInsertLineButton' but shown as 'Line' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'SpatialCreateInsertPolylineButton' but shown as 'Polyline' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'SpatialCreateInsertArcButton' but shown as 'Arc' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 2 is named 'InsertRegionsMenuGroup' but shown as 'Regions' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 4 Controls
-20:39:24             DropDownMenu Control 0 is named 'SpatialCreateInsertPolygonButton' but shown as 'Polygon' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'SpatialCreateInsertEllipseButton' but shown as 'Ellipse' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'SpatialCreateInsertRectangleButton' but shown as 'Rectangle' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'SpatialCreateInsertRoundedRectangleButton' but shown as 'Rounded' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'SpatialStylesSplitButton' but shown as 'Style' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'SpatialStylesMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 4 Controls
-20:39:24             DropDownMenu Control 0 is named 'SpatialCreateSymbolStyleButton' but shown as 'Symbol Style' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'SpatialCreateLineStyleButton' but shown as 'Line Style' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'SpatialCreateRegionStyleButton' but shown as 'Region Style' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'SpatialCreateTextStyleButton' but shown as 'Text Style' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'SpatialCreateRegionsSplitButton' but shown as 'Regions' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'SpatialCreateRegionsMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 6 Controls
-20:39:24             DropDownMenu Control 0 is named 'SpatialConvertToRegionButton' but shown as 'Convert to Regions' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'SpatialEncloseButton' but shown as 'Enclose (Polylines to Regions)' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'SpatialCreateDriveRegionsButton' but shown as 'Drive Regions (Objects)' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'SpatialDriveRegionsTableButton' but shown as 'Drive Regions (Table)' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 4 is named 'SpatialVoronoiButton' but shown as 'Voronoi (Objects)' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 5 is named 'SpatialVoronoiTableButton' but shown as 'Voronoi (Table)' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'CreatePointsButton' but shown as 'Create Points' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'GeoCodeSplitButton' but shown as 'Geocode' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 1 Groups/controls
-20:39:24          SplitButton Control 0 is named 'GeoCodeSplitButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDownMenu Control 0 is named 'GeoCodeButton' but shown as 'Geocode' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'WebGeoCodeButton' but shown as 'Geocode using Server' and Control Type is 1 (Button)
-20:39:24 --------------------------------------------------------------
-20:39:24 Tab 4 is named 'TabLayout' but shown as 'LAYOUT'
-20:39:24    Tab Group 0 is named 'LayoutPage' but shown as 'Page'
-20:39:24       Control 0 is named 'LayoutNewPageButton' but shown as 'New Layout' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'LayoutFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 5 Groups/controls
-20:39:24          SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 7 Controls
-20:39:24             DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 3 Controls
-20:39:24             DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 0 Controls
-20:39:24          SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 10 Controls
-20:39:24             DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\3. Demo\Kort\DAGI\2014\KOMMUNE.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 2 is named 'MruFile_2' but shown as 'BaseMap Subdued.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 3 is named 'MruFile_3' but shown as 'C:\MapInfo\Pro x64\Raster\Raster.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 4 is named 'MruFile_4' but shown as 'D:\3. Demo\KMS\DTM 2007\Sealand DK 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\Dropbox (Horsboll-Moller)\...\Mini\MRG.MBX' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\KMS\DTM 2007\Denmark DTM 2007.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 7 is named 'MruFile_7' but shown as 'D:\3. Demo\Kort\UK\CodePoint\CodePoint.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 8 is named 'MruFile_8' but shown as 'D:\3. Demo\KMS\DTM 2015\Odsherred.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24             DropDownMenu Control 9 is named 'MruFile_9' but shown as 'C:\MapInfo\...\12.5 EN\TileServer\BingAerial.TAB' and Control Type is 3 (RibbonMenuItem)
-20:39:24       Control 2 is named 'LayoutPageSetupButton' but shown as 'Page Setup' and Control Type is 1 (Button)
-20:39:24    Tab Group 1 is named 'LayoutEdit' but shown as 'Edit'
-20:39:24       Control 0 is named 'AddMapSplitButton' but shown as 'Map' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 3 Groups/controls
-20:39:24          SplitButton Control 0 is named 'NewMapMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 1 Controls
-20:39:24             DropDownMenu Control 0 is named 'AddMapButton' but shown as 'New Map' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 1 is named 'MapsMenuGroup' but shown as 'Maps' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 0 Controls
-20:39:24          SplitButton Control 2 is named 'MapFramesMenuGroup' but shown as 'Map Frames' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 0 Controls
-20:39:24       Control 1 is named 'AddBrowserSplitButton' but shown as 'Browser' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 3 Groups/controls
-20:39:24          SplitButton Control 0 is named 'NewBrowserMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 1 Controls
-20:39:24             DropDownMenu Control 0 is named 'AddBrowserButton' but shown as 'New Browser' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 1 is named 'BrowserMenuGroup' but shown as 'Browsers' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 0 Controls
-20:39:24          SplitButton Control 2 is named 'BrowserFramesMenuGroup' but shown as 'Browser Frames' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 0 Controls
-20:39:24       Control 2 is named 'LayoutDesigneInsertTextButton' but shown as 'Text' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'LayoutDesigneInsertImageButton' but shown as 'Image' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'LayoutAddMapLegendButton' but shown as 'Legend' and Control Type is 1 (Button)
-20:39:24       Control 5 is named 'InsertShapeSplitButton' but shown as 'Shape' and Control Type is 10 (SplitButton)
-20:39:24       SplitButton has 2 Groups/controls
-20:39:24          SplitButton Control 0 is named 'InsertLinesMenuGroup' but shown as 'Lines' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 1 Controls
-20:39:24             DropDownMenu Control 0 is named 'InsertLineButton' but shown as 'Line' and Control Type is 1 (Button)
-20:39:24          SplitButton Control 1 is named 'InsertRegionsMenuGroup' but shown as 'Regions' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 3 Controls
-20:39:24             DropDownMenu Control 0 is named 'InsertEllipseButton' but shown as 'Ellipse' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 1 is named 'InsertRectangleButton' but shown as 'Rectangle' and Control Type is 1 (Button)
-20:39:24             DropDownMenu Control 2 is named 'InsertRoundedRectangleButton' but shown as 'Rounded' and Control Type is 1 (Button)
-20:39:24       Control 6 is named 'RemoveSelectedLayoutItemsButton' but shown as 'Remove' and Control Type is 1 (Button)
-20:39:24    Tab Group 2 is named 'LayoutArrange' but shown as 'Arrange'
-20:39:24       Control 0 is named 'LayoutReorderDropDownButton' but shown as 'Reorder' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'ReorderMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 2 Controls
-20:39:24             DropDown Control 0 is named 'LayoutBringToFrontButton' but shown as 'Bring To Front' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'LayoutSendToBackButton' but shown as 'Send To Back' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'AlignDropDown' but shown as 'Align' and Control Type is 9 (DropDownButton)
-20:39:24       DropDownButton has 1 Groups/controls
-20:39:24          DropDownButton Control 0 is named 'GuidelineMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:24             DropDownMenu Control has 4 Controls
-20:39:24             DropDown Control 0 is named 'VerticalGuidelineButton' but shown as 'Add Vertical Guideline' and Control Type is 1 (Button)
-20:39:24             DropDown Control 1 is named 'HorizontalGuidelineButton' but shown as 'Add Horizontal Guideline' and Control Type is 1 (Button)
-20:39:24             DropDown Control 2 is named 'DisableGuidelinesButton' but shown as 'Disable Guidelines' and Control Type is 1 (Button)
-20:39:24             DropDown Control 3 is named 'RemoveGuidelinesButton' but shown as 'Remove All Guidelines' and Control Type is 1 (Button)
-20:39:24       Control 2 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
-20:39:24       Control 3 is named 'SnapToLeftButton' but shown as 'Snap to Left Guideline' and Control Type is 1 (Button)
-20:39:24       Control 4 is named 'SnapToBottomButton' but shown as 'Snap to Bottom Guideline' and Control Type is 1 (Button)
-20:39:24       Control 5 is named 'SnapToTopButton' but shown as 'Snap to Top Guideline' and Control Type is 1 (Button)
-20:39:24       Control 6 is named 'SnapToRightButton' but shown as 'Snap to Right Guideline' and Control Type is 1 (Button)
-20:39:24       Control 7 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
-20:39:24       Control 8 is named 'LayoutGridLinesButton' but shown as 'Grid Lines' and Control Type is 1 (Button)
-20:39:24       Control 9 is named 'SnapToGridButton' but shown as 'Snap To Grid' and Control Type is 1 (Button)
-20:39:24       Control 10 is named 'LayoutGridSizeStackPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:24    Tab Group 3 is named 'LayoutTools' but shown as 'Tools'
-20:39:24       Control 0 is named 'LayoutSelectButton' but shown as 'Select' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'LayoutZoomInButton' but shown as 'Zoom In' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'LayoutZoomOutButton' but shown as 'Zoom Out' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'LayoutPanButton' but shown as 'Pan' and Control Type is 1 (Button)
-20:39:24    Tab Group 4 is named 'LayoutStyle' but shown as 'Style'
-20:39:24       Control 0 is named 'FontFamilyButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:24       Control 1 is named 'FontStyleButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:24       Control 2 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
-20:39:24       Control 3 is named 'RegionStyleButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:24       Control 4 is named 'LineStyleButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:24       Control 5 is named 'FrameStyleButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:24    Tab Group 5 is named 'LayoutOutput' but shown as 'Output'
-20:39:24       Control 0 is named 'PrintButton' but shown as 'Print' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'PdfButton' but shown as 'Create' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'ExportImgButton' but shown as 'Save' and Control Type is 1 (Button)
-20:39:24 --------------------------------------------------------------
-20:39:24 Tab 5 is named 'RASTER' but shown as 'RASTER'
-20:39:24    Tab Group 0 is named 'Properties' but shown as 'Properties'
-20:39:24       Control 0 is named 'Info' but shown as 'Raster Info' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'Statistics' but shown as 'Statistics' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'CellValue' but shown as 'Cell Value' and Control Type is 2 (ToolButton)
-20:39:24    Tab Group 1 is named 'Display' but shown as 'Display'
-20:39:24       Control 0 is named 'ColorOptionsStack' but shown as '' and Control Type is 22 (StackPanel)
-20:39:24       Control 1 is named 'ColorstretchOptionsStack' but shown as '' and Control Type is 22 (StackPanel)
-20:39:24       Control 2 is named 'HillShadeStack' but shown as '' and Control Type is 22 (StackPanel)
-20:39:24    Tab Group 2 is named 'Processing' but shown as 'Processing'
-20:39:24       Control 0 is named 'Gallery' but shown as 'Operations' and Control Type is 12 (GalleryControl)
-20:39:24       Gallery has 1 Groups/controls
-20:39:24       Gallery Group 0 is named 'Processing' but shown as 'Processing'
-20:39:24          Gallery Control 0 is named 'Convert' but shown as 'Convert' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 1 is named 'Resample' but shown as 'Resample' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 2 is named 'Reproject' but shown as 'Reproject' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 3 is named 'Clip' but shown as 'Clip' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 4 is named 'Merge' but shown as 'Merge' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 5 is named 'Rasterize' but shown as 'Rasterize' and Control Type is 13 (GalleryItem)
-20:39:24    Tab Group 3 is named 'Analysis' but shown as 'Analysis'
-20:39:24       Control 0 is named 'Gallery' but shown as 'Analysis' and Control Type is 12 (GalleryControl)
-20:39:24       Gallery has 1 Groups/controls
-20:39:24       Gallery Group 0 is named 'Analysis' but shown as 'Analysis'
-20:39:24          Gallery Control 0 is named 'PointInspection' but shown as 'Point Inspect' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 1 is named 'RegionInspection' but shown as 'Region Stats' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 2 is named 'LineInspect' but shown as 'Line Stats' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 3 is named 'Calculator' but shown as 'Calculator' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 4 is named 'Contour' but shown as 'Contour' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 5 is named 'Viewshed' but shown as 'Viewshed' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 6 is named 'Classify' but shown as 'Classify' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 7 is named 'CrossSection' but shown as 'Cross Section' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 8 is named 'Surface' but shown as 'Surface' and Control Type is 13 (GalleryItem)
-20:39:24          Gallery Control 9 is named 'Filter' but shown as 'Filter' and Control Type is 13 (GalleryItem)
-20:39:24    Tab Group 4 is named 'Utilities' but shown as 'Utilities'
-20:39:24       Control 0 is named 'Copy' but shown as 'Copy Raster' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'Delete' but shown as 'Delete Raster' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'Rename' but shown as 'Rename' and Control Type is 1 (Button)
-20:39:24    Tab Group 5 is named 'Help' but shown as 'Help'
-20:39:24       Control 0 is named 'Help' but shown as 'Help' and Control Type is 1 (Button)
-20:39:24 --------------------------------------------------------------
-20:39:24 Tab 6 is named 'TabTools' but shown as 'TOOLS'
-20:39:24    Tab Group 0 is named 'RibbonExample' but shown as 'RibbonExample'
-20:39:24       Control 0 is named 'showTablesInfo' but shown as 'Table Info' and Control Type is 1 (Button)
-20:39:24       Control 1 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
-20:39:24       Control 2 is named 'showBrowserInfo' but shown as 'Browser Info' and Control Type is 1 (Button)
-20:39:24       Control 3 is named 'allInfoToolsSplitButton' but shown as 'Info Tools' and Control Type is 10 (SplitButton)
-20:39:25       SplitButton has 1 Groups/controls
-20:39:25          SplitButton Control 0 is named 'allInfoToolsGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
-20:39:25             DropDownMenu Control has 2 Controls
-20:39:25             DropDownMenu Control 0 is named 'showTablesInfo' but shown as 'Table Info' and Control Type is 1 (Button)
-20:39:25             DropDownMenu Control 1 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
-20:39:25    Map MiniToolBar: Number of Controls 7
-20:39:25       MiniToolBar Control 0 is named 'MapTools0' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25          StackPanel Control 0 is named 'MapSelectionToolsSplitButton' but shown as '' and Control Type is 10 (SplitButton)
-20:39:25          StackPanel Control 1 is named 'PanButton' but shown as '' and Control Type is 1 (Button)
-20:39:25       MiniToolBar Control 1 is named 'MapTools1' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25          StackPanel Control 0 is named 'SelectionClearButton' but shown as '' and Control Type is 1 (Button)
-20:39:25          StackPanel Control 1 is named 'LabelToolButton' but shown as '' and Control Type is 1 (Button)
-20:39:25       MiniToolBar Control 2 is named 'MapTools2' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25          StackPanel Control 0 is named 'ZoomInButton' but shown as '' and Control Type is 1 (Button)
-20:39:25          StackPanel Control 1 is named 'ZoomOutButton' but shown as '' and Control Type is 1 (Button)
-20:39:25       MiniToolBar Control 3 is named 'RibbonSeparator0' but shown as '' and Control Type is 5 (RibbonSeparator)
-20:39:25       MiniToolBar Control 4 is named 'FontTools' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25          StackPanel Control 0 is named 'FontStylePanel' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25          StackPanel Control 1 is named 'FontButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
-20:39:25       MiniToolBar Control 5 is named 'RibbonSeparator1' but shown as '' and Control Type is 5 (RibbonSeparator)
-20:39:25       MiniToolBar Control 6 is named 'MapTools3' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25          StackPanel Control 0 is named 'AddNodeButton' but shown as '' and Control Type is 1 (Button)
-20:39:25          StackPanel Control 1 is named 'ReShapeModeButton' but shown as '' and Control Type is 1 (Button)
-20:39:25    Statusbar: Number of Controls 12
-20:39:25       Statusbar Control 0 is named 'StMapperView' but shown as 'D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.MBX' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 1 is named 'StMapperPopUpImage' but shown as '' and Control Type is 23 (Unknown)
-20:39:25       Statusbar Control 2 is named 'StMapperLayer' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 3 is named 'StEditLayerPopUpImage' but shown as '' and Control Type is 23 (Unknown)
-20:39:25       Statusbar Control 4 is named 'StSelected' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 5 is named 'StProjection' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 6 is named 'StDigitizer' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 7 is named 'StSnap' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 8 is named 'StAutotrace' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 9 is named 'StAutonode' but shown as '' and Control Type is 16 (TextBlock)
-20:39:25       Statusbar Control 10 is named 'CurrentWorkSpacePanel' but shown as '' and Control Type is 22 (StackPanel)
-20:39:25       Statusbar Control 11 is named 'StBackgroundTsk' but shown as '' and Control Type is 16 (TextBlock)
+--------------------------------------------------------------
+Tab 0 is named 'TabHome' but shown as 'HOME'
+   Tab Group 0 is named 'HomeFile' but shown as 'File'
+      Control 0 is named 'HomeFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
+      SplitButton has 5 Groups/controls
+         SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 7 Controls
+            DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
+            DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 6 Controls
+            DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'openBaseMap_1' but shown as 'Basemap' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'openBaseMap_2' but shown as 'Subdued' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'openBaseMap_3' but shown as 'Grey' and Control Type is 1 (Button)
+         SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
+         SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+         SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 10 Controls
+            DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\2. Support\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 2 is named 'MruFile_2' but shown as 'D:\3. Demo\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 3 is named 'MruFile_3' but shown as 'D:\2. Support\Test 1520.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 4 is named 'MruFile_4' but shown as 'C:\MapInfo\...\TileServer\BingRoads.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\3. Demo\...\Spectrum VS SpectrumOnDemand.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\...\LINAK_TaiwanGeocoding UTF8.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 7 is named 'MruFile_7' but shown as 'C:\MapInfo\...\Tools\SpiderGraph.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 8 is named 'MruFile_8' but shown as 'C:\MapInfo\...\Tools\DistanceCalc.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 9 is named 'MruFile_9' but shown as 'Taiwan_geocode_V1_OUTPUT_19082015 (00000003).TAB' and Control Type is 3 (RibbonMenuItem)
+      Control 1 is named 'HomeSaveWorkspaceSplitButton' but shown as 'Save Workspace' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'SaveWorkspaceDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'SaveWorkspaceButton' but shown as 'Save Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SaveWorkspaceAsButton' but shown as 'Save Workspace As' and Control Type is 1 (Button)
+      Control 2 is named 'SaveTableButton' but shown as 'Save Table' and Control Type is 1 (Button)
+      Control 3 is named 'SaveCopyAsButton' but shown as 'Save Copy As' and Control Type is 1 (Button)
+      Control 4 is named 'CloseConnectionButton' but shown as 'Close DBMS' and Control Type is 1 (Button)
+      Control 5 is named 'CloseTableButton' but shown as 'Close Table' and Control Type is 1 (Button)
+      Control 6 is named 'CloseAllButton' but shown as 'Close All' and Control Type is 1 (Button)
+   Tab Group 1 is named 'HomeClipboard' but shown as 'Clipboard'
+      Control 0 is named 'CopyButton' but shown as 'Copy' and Control Type is 1 (Button)
+      Control 1 is named 'PasteButton' but shown as 'Paste' and Control Type is 1 (Button)
+      Control 2 is named 'CutButton' but shown as 'Cut' and Control Type is 1 (Button)
+      Control 3 is named 'UndoButton' but shown as 'Undo' and Control Type is 1 (Button)
+   Tab Group 2 is named 'HomeWindow' but shown as 'Window'
+      Control 0 is named 'WindowGallery' but shown as 'Windows' and Control Type is 12 (GalleryControl)
+      Gallery has 2 Groups/controls
+      Gallery Group 0 is named 'NewWindows' but shown as 'New Document Windows'
+         Gallery Control 0 is named 'NewMapGalleryItem' but shown as 'Map' and Control Type is 13 (GalleryItem)
+         Gallery Control 1 is named 'MapBrowserGalleryItem' but shown as 'Browser' and Control Type is 13 (GalleryItem)
+         Gallery Control 2 is named 'LayoutWindowGalleryItem' but shown as 'Layout' and Control Type is 13 (GalleryItem)
+         Gallery Control 3 is named 'LegendWindowGalleryItem' but shown as 'Legend' and Control Type is 13 (GalleryItem)
+         Gallery Control 4 is named 'ThreeDWindowGalleryItem' but shown as '3D Map' and Control Type is 13 (GalleryItem)
+         Gallery Control 5 is named 'PrismWindowButtonGalleryItem' but shown as 'Prism Map' and Control Type is 13 (GalleryItem)
+         Gallery Control 6 is named 'RedistictWindowGalleryItem' but shown as 'Redistricter' and Control Type is 13 (GalleryItem)
+      Gallery Group 1 is named 'ToolWindows' but shown as 'Show/Activate Tool Windows'
+         Gallery Control 0 is named 'LayerControlButtonGalleryItem' but shown as 'Layers' and Control Type is 13 (GalleryItem)
+         Gallery Control 1 is named 'TableListButtonGalleryItem' but shown as 'Tables' and Control Type is 13 (GalleryItem)
+         Gallery Control 2 is named 'WindowsButtonGalleryItem' but shown as 'Windows' and Control Type is 13 (GalleryItem)
+         Gallery Control 3 is named 'WorkspaceExplorerButtonGalleryItem' but shown as 'Explorer' and Control Type is 13 (GalleryItem)
+         Gallery Control 4 is named 'MoveToWindowGalleryItem' but shown as 'Move To' and Control Type is 13 (GalleryItem)
+         Gallery Control 5 is named 'ToolsButtonGalleryItem' but shown as 'Tools' and Control Type is 13 (GalleryItem)
+         Gallery Control 6 is named 'MapBasicWindowButtonGalleryItem' but shown as 'MapBasic' and Control Type is 13 (GalleryItem)
+         Gallery Control 7 is named 'ConnectionListButtonGalleryItem' but shown as 'Connections' and Control Type is 13 (GalleryItem)
+         Gallery Control 8 is named 'TaskManagerButtonGalleryItem' but shown as 'Tasks' and Control Type is 13 (GalleryItem)
+         Gallery Control 9 is named 'InfoWindowGalleryItem' but shown as 'Info' and Control Type is 13 (GalleryItem)
+         Gallery Control 10 is named 'RulerWindowGalleryItem' but shown as 'Ruler' and Control Type is 13 (GalleryItem)
+         Gallery Control 11 is named 'StatisticsWindowGalleryItem' but shown as 'Statistics' and Control Type is 13 (GalleryItem)
+         Gallery Control 12 is named 'FloatingThemeLegendWindowGalleryItem' but shown as 'Themes' and Control Type is 13 (GalleryItem)
+         Gallery Control 13 is named 'MessageWindowGalleryItem' but shown as 'Message' and Control Type is 13 (GalleryItem)
+   Tab Group 3 is named 'HomeOutput' but shown as 'Output'
+      Control 0 is named 'PrintButton' but shown as 'Print' and Control Type is 1 (Button)
+      Control 1 is named 'PdfButton' but shown as 'Create' and Control Type is 1 (Button)
+      Control 2 is named 'ExportImgButton' but shown as 'Save' and Control Type is 1 (Button)
+      Control 3 is named 'PageSetupButton' but shown as 'Page Setup' and Control Type is 1 (Button)
+   Tab Group 4 is named 'HomeTools' but shown as 'Tools'
+      Control 0 is named 'ToolsDropDownButton' but shown as 'Tools' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'ToolManagerCtl' but shown as '' and Control Type is 23 (Unknown)
+--------------------------------------------------------------
+Tab 1 is named 'TabTable' but shown as 'TABLE'
+   Tab Group 0 is named 'TableData' but shown as 'Content'
+      Control 0 is named 'NewBrowserButton' but shown as 'New Browser' and Control Type is 1 (Button)
+      Control 1 is named 'TableFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
+      SplitButton has 5 Groups/controls
+         SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 7 Controls
+            DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
+            DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
+         SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
+         SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+         SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 10 Controls
+            DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\2. Support\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 2 is named 'MruFile_2' but shown as 'D:\3. Demo\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 3 is named 'MruFile_3' but shown as 'D:\2. Support\Test 1520.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 4 is named 'MruFile_4' but shown as 'C:\MapInfo\...\TileServer\BingRoads.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\3. Demo\...\Spectrum VS SpectrumOnDemand.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\...\LINAK_TaiwanGeocoding UTF8.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 7 is named 'MruFile_7' but shown as 'C:\MapInfo\...\Tools\SpiderGraph.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 8 is named 'MruFile_8' but shown as 'C:\MapInfo\...\Tools\DistanceCalc.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 9 is named 'MruFile_9' but shown as 'Taiwan_geocode_V1_OUTPUT_19082015 (00000003).TAB' and Control Type is 3 (RibbonMenuItem)
+      Control 2 is named 'TableSaveSplitButton' but shown as 'Save' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'TableSaveDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'TableSaveButton' but shown as 'Save Table' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SaveQueryButton' but shown as 'Save Query' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'TableSaveCopyAsButton' but shown as 'Save Copy As' and Control Type is 1 (Button)
+      Control 3 is named 'RevertTableButton' but shown as 'Revert' and Control Type is 1 (Button)
+      Control 4 is named 'TableCloseButton' but shown as 'Close ' and Control Type is 1 (Button)
+      Control 5 is named 'NewTableButton' but shown as 'New Table' and Control Type is 1 (Button)
+      Control 6 is named 'showBrowserInfo' but shown as 'Browser Info' and Control Type is 1 (Button)
+      Control 7 is named 'ExportButton' but shown as 'Export' and Control Type is 1 (Button)
+      Control 8 is named 'UniversalTranslatorButton' but shown as 'Universal Translator' and Control Type is 1 (Button)
+   Tab Group 1 is named 'TableSelection' but shown as 'Selection'
+      Control 0 is named 'SelectButton' but shown as 'Select' and Control Type is 1 (Button)
+      Control 1 is named 'SqlSelectButton' but shown as 'SQL Select' and Control Type is 1 (Button)
+      Control 2 is named 'SelectionInvertSelectButton' but shown as 'Invert' and Control Type is 1 (Button)
+      Control 3 is named 'SelectionClearButton' but shown as 'Clear' and Control Type is 1 (Button)
+      Control 4 is named 'MapFindSplitButton' but shown as 'Find' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'MapFindSplitButtonGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'FindSelectionButton' but shown as 'Find' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FindAddressButton' but shown as 'Find Address' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FindAndMarkButton' but shown as 'Mark' and Control Type is 1 (Button)
+   Tab Group 2 is named 'TableAddEdit' but shown as 'Edit'
+      Control 0 is named 'UpdateColumnButton' but shown as 'Update Column' and Control Type is 1 (Button)
+      Control 1 is named 'AppendRowButton' but shown as 'Append Rows' and Control Type is 1 (Button)
+      Control 2 is named 'AddNewRowButton' but shown as 'Add New Row' and Control Type is 1 (Button)
+      Control 3 is named 'TableClearMapObjectsButton' but shown as 'Clear Map Objects' and Control Type is 1 (Button)
+   Tab Group 3 is named 'BrowserTools' but shown as 'Browser Tools'
+      Control 0 is named 'InfoToolButton' but shown as 'Info' and Control Type is 1 (Button)
+      Control 1 is named 'HotLinkButton' but shown as 'Hotlink' and Control Type is 1 (Button)
+      Control 2 is named 'HotLinkOptionsButton' but shown as 'Hotlink Options' and Control Type is 1 (Button)
+      Control 3 is named 'PickFieldsButton' but shown as 'Pick Fields' and Control Type is 1 (Button)
+      Control 4 is named 'BrowserFontButton' but shown as 'Font' and Control Type is 1 (Button)
+      Control 5 is named 'ShowGridLinesToggleButton' but shown as 'Gridlines' and Control Type is 1 (Button)
+   Tab Group 4 is named 'BrowserSortFilter' but shown as 'Sort and Filter'
+      Control 0 is named 'FilterDropDown' but shown as 'Filter' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'FilterDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'FilterButton' but shown as 'Filter' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'ClearFilterButton' but shown as 'Clear Filters' and Control Type is 1 (Button)
+      Control 1 is named 'SortDropDown' but shown as 'Sort' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'SortDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDown Control 0 is named 'MultiColumnSortButton' but shown as 'Sort Multi Column...' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'SortAscendingButton' but shown as 'Sort Ascending' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'SortDescendingButton' but shown as 'Sort Descending' and Control Type is 1 (Button)
+            DropDown Control 3 is named 'ClearSortButton' but shown as 'Clear Sort' and Control Type is 1 (Button)
+      Control 2 is named 'ClearAllSortButton' but shown as 'Clear All' and Control Type is 1 (Button)
+      Control 3 is named 'ToggleSortButton' but shown as 'Sort On / Off' and Control Type is 1 (Button)
+      Control 4 is named 'ReApplySortButton' but shown as 'Re-Sort' and Control Type is 1 (Button)
+      Control 5 is named 'AddtoMapButton' but shown as 'Add to Map' and Control Type is 1 (Button)
+   Tab Group 5 is named 'TableMaintenance' but shown as 'Maintenance'
+      Control 0 is named 'TableMaintenanceButton' but shown as 'Table' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'TableSplitButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDown Control 0 is named 'TableModifyStructureButton' but shown as 'Modify Structure' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'TablePackButton' but shown as 'Pack Table' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'TableDeleteButton' but shown as 'Delete Table' and Control Type is 1 (Button)
+            DropDown Control 3 is named 'TableRenameButton' but shown as 'Rename Table' and Control Type is 1 (Button)
+      Control 1 is named 'DatabaseMaintenanceButton' but shown as 'Database' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'DatabaseSplitButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 12 Controls
+            DropDown Control 0 is named 'DatabaseMakeMappableButton' but shown as 'Make DBMS Table Mappable' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'DatabaseChangeTableSymbolButton' but shown as 'Change DBMS Table Symbol' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'DatabaseUnlinkTableButton' but shown as 'Unlink DBMS Table' and Control Type is 1 (Button)
+            DropDown Control 3 is named 'DatabaseRefreshDbmsTableButton' but shown as 'Refresh DBMS Table' and Control Type is 1 (Button)
+            DropDown Control 4 is named '' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+            DropDown Control 5 is named 'CreateOracleWorkspaceButton' but shown as 'Create Oracle Workspace' and Control Type is 1 (Button)
+            DropDown Control 6 is named 'DeleteOracleWorkspaceButton' but shown as 'Delete Oracle Workspace' and Control Type is 1 (Button)
+            DropDown Control 7 is named 'MergeOracleTableButton' but shown as 'Merge Oracle Table' and Control Type is 1 (Button)
+            DropDown Control 8 is named 'RefreshOracleTableButton' but shown as 'Refresh Oracle Table' and Control Type is 1 (Button)
+            DropDown Control 9 is named '' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+            DropDown Control 10 is named 'EnableOracleVersioningButton' but shown as 'Enable Oracle Versioning' and Control Type is 1 (Button)
+            DropDown Control 11 is named 'DisableOracleVersioningButton' but shown as 'Disable Oracle Versioning' and Control Type is 1 (Button)
+      Control 2 is named 'LibraryMaintenanceButton' but shown as 'Library' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'LibraryButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'AddToLibraryButton' but shown as 'Add to Library' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'ViewEditMetadataButton' but shown as 'View / Edit Metadata' and Control Type is 1 (Button)
+      Control 3 is named 'RasterTableMaintenanceButton' but shown as 'Raster' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'RasterTableButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDown Control 0 is named 'RasterImageStyleButton' but shown as 'Adjust Image Styles' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'RasterRegStyleButton' but shown as 'Modify Image Registration' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'SeparatorRasterTable' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+            DropDown Control 3 is named 'RasterAddControlPtsButton' but shown as 'Select Control Point' and Control Type is 1 (Button)
+      Control 4 is named 'WebServicesMaintenanceButton' but shown as 'Web Services' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'WebServicesButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDown Control 0 is named 'WfsPropertiesButton' but shown as 'WFS Table Properties' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'WfsRefreshButton' but shown as 'WFS Table Refresh' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'SeparatorWebService' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+            DropDown Control 3 is named 'WmsPropertiesButton' but shown as 'WMS Table Properties' and Control Type is 1 (Button)
+--------------------------------------------------------------
+Tab 2 is named 'TabMap' but shown as 'MAP'
+   Tab Group 0 is named 'MapFile' but shown as 'Content'
+      Control 0 is named 'NewMapButton' but shown as 'Map' and Control Type is 1 (Button)
+      Control 1 is named 'MapFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
+      SplitButton has 5 Groups/controls
+         SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 7 Controls
+            DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
+            DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
+         SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
+         SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+         SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 10 Controls
+            DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\2. Support\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 2 is named 'MruFile_2' but shown as 'D:\3. Demo\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 3 is named 'MruFile_3' but shown as 'D:\2. Support\Test 1520.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 4 is named 'MruFile_4' but shown as 'C:\MapInfo\...\TileServer\BingRoads.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\3. Demo\...\Spectrum VS SpectrumOnDemand.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\...\LINAK_TaiwanGeocoding UTF8.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 7 is named 'MruFile_7' but shown as 'C:\MapInfo\...\Tools\SpiderGraph.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 8 is named 'MruFile_8' but shown as 'C:\MapInfo\...\Tools\DistanceCalc.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 9 is named 'MruFile_9' but shown as 'Taiwan_geocode_V1_OUTPUT_19082015 (00000003).TAB' and Control Type is 3 (RibbonMenuItem)
+      Control 2 is named 'MapExplorerControlButton' but shown as 'Explorer' and Control Type is 1 (Button)
+      Control 3 is named 'MapAddLayersButton' but shown as 'Add Layers' and Control Type is 1 (Button)
+      Control 4 is named 'MapAddThematicButton' but shown as 'Add Theme' and Control Type is 1 (Button)
+      Control 5 is named 'MapCreateLegendDesignerButton' but shown as 'Add Legend' and Control Type is 1 (Button)
+      Control 6 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
+   Tab Group 1 is named 'MapSelection' but shown as 'Selection'
+      Control 0 is named 'MapSelectionToolsSplitButton' but shown as 'Select' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'SelectionDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 6 Controls
+            DropDownMenu Control 0 is named 'SelectButton' but shown as 'Select' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'RadiusSelectButton' but shown as 'Radius Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'MaqueeSelectButton' but shown as 'Marquee Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'RegionSelectButton' but shown as 'Polygon Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'BoundarySelectButton' but shown as 'Boundary Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'selectWithinMap' but shown as 'Within Map' and Control Type is 1 (Button)
+      Control 1 is named 'MapSelectionSqlSelectButton' but shown as 'SQL Select' and Control Type is 1 (Button)
+      Control 2 is named 'MapSelectionInvertSelectButton' but shown as 'Invert' and Control Type is 1 (Button)
+      Control 3 is named 'MapSelectionClearButton' but shown as 'Clear' and Control Type is 1 (Button)
+      Control 4 is named 'MapFindSplitButton' but shown as 'Find' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'MapFindSplitButtonGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'FindSelectionButton' but shown as 'Find' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FindAddressButton' but shown as 'Find Address' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FindAndMarkButton' but shown as 'Mark' and Control Type is 1 (Button)
+   Tab Group 2 is named 'MapNavigate' but shown as 'Navigate'
+      Control 0 is named 'ZoomInButton' but shown as 'Zoom In' and Control Type is 1 (Button)
+      Control 1 is named 'ZoomOutButton' but shown as 'Zoom Out' and Control Type is 1 (Button)
+      Control 2 is named 'PanButton' but shown as 'Pan' and Control Type is 1 (Button)
+      Control 3 is named 'ZoomToDropDownButton' but shown as 'Zoom To' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'ZoomToDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 5 Controls
+            DropDown Control 0 is named 'ZoomToSelectionLayerButton' but shown as 'Entire Selection Layer' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'ZoomToSelectedObjectsButton' but shown as 'Extents of Selected Objects' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'ZoomToLayerButton' but shown as 'Entire Layer' and Control Type is 1 (Button)
+            DropDown Control 3 is named 'ZoomToEntireMapButton' but shown as 'Entire Map' and Control Type is 1 (Button)
+            DropDown Control 4 is named 'ZoomToNearestTileServerLevelButton' but shown as 'Nearest Tile Server Level' and Control Type is 1 (Button)
+      Control 4 is named 'MoveMapToButton' but shown as 'Move To' and Control Type is 1 (Button)
+      Control 5 is named 'PreviousViewButton' but shown as 'Previous View' and Control Type is 1 (Button)
+   Tab Group 3 is named 'MapLabel' but shown as 'Label'
+      Control 0 is named 'LabelToolButton' but shown as 'Label Tool' and Control Type is 1 (Button)
+      Control 1 is named 'SelectableLabelButton' but shown as 'Selectable' and Control Type is 1 (Button)
+      Control 2 is named 'ClearCustomLabelButton' but shown as 'Clear Custom' and Control Type is 1 (Button)
+      Control 3 is named 'LabelPriorityButton' but shown as 'Priority' and Control Type is 1 (Button)
+   Tab Group 4 is named 'MapAnalyze' but shown as 'Analyze'
+      Control 0 is named 'HotLinkButton' but shown as 'Hotlink' and Control Type is 1 (Button)
+      Control 1 is named 'MeasureButton' but shown as 'Ruler' and Control Type is 1 (Button)
+      Control 2 is named 'InfoToolButton' but shown as 'Info' and Control Type is 1 (Button)
+      Control 3 is named 'MapAnalyzeRedistricterDropDown' but shown as 'Redistricter' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'MapAnalyzeRedistricterDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 7 Controls
+            DropDown Control 0 is named 'NewRedistricterWindowButton' but shown as 'New Redistricter Window' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'SetTargetButton' but shown as 'Set Target' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'AssignDistrictButton' but shown as 'Assign District' and Control Type is 1 (Button)
+            DropDown Control 3 is named 'AddDistrictButton' but shown as 'Add District' and Control Type is 1 (Button)
+            DropDown Control 4 is named 'ResdistrictorItemSeparator' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+            DropDown Control 5 is named 'DeleteDistrictButton' but shown as 'Delete District' and Control Type is 1 (Button)
+            DropDown Control 6 is named 'RedistricterOptionsButton' but shown as 'Options' and Control Type is 1 (Button)
+      Control 4 is named 'StatsWindowButton' but shown as 'Statistics' and Control Type is 1 (Button)
+   Tab Group 5 is named 'MapOptions' but shown as 'Options'
+      Control 0 is named 'MapOptionsButton' but shown as 'Map Options' and Control Type is 1 (Button)
+      Control 1 is named 'MapOptionsGridlinesButton' but shown as 'Gridlines' and Control Type is 1 (Button)
+      Control 2 is named 'CreateScaleBarButton' but shown as 'Scalebar' and Control Type is 1 (Button)
+      Control 3 is named 'MapHotlinkOptionsButton' but shown as 'Hotlink Options' and Control Type is 1 (Button)
+      Control 4 is named 'LockScaleButton' but shown as 'Lock Scale' and Control Type is 1 (Button)
+      Control 5 is named 'MapRedrawButton' but shown as 'Redraw' and Control Type is 1 (Button)
+      Control 6 is named 'DragMapButton' but shown as 'Drag Map' and Control Type is 1 (Button)
+--------------------------------------------------------------
+Tab 3 is named 'TabSpatial' but shown as 'SPATIAL'
+   Tab Group 0 is named 'SpatialClipboardBar' but shown as 'Clipboard'
+      Control 0 is named 'ClipboardCopyButton' but shown as 'Copy' and Control Type is 1 (Button)
+      Control 1 is named 'ClipboardPasteButton' but shown as 'Paste' and Control Type is 1 (Button)
+      Control 2 is named 'ClipboardCutButton' but shown as 'Cut' and Control Type is 1 (Button)
+      Control 3 is named 'ClipboardUndoButton' but shown as 'Undo' and Control Type is 1 (Button)
+   Tab Group 1 is named 'SpatialSelectionBar' but shown as 'Selection'
+      Control 0 is named 'SpatialSelectionToolsSplitButton' but shown as 'Select' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'SelectionDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 5 Controls
+            DropDownMenu Control 0 is named 'SelectButton' but shown as 'Select' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'RadiusSelectButton' but shown as 'Radius Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'MaqueeSelectButton' but shown as 'Marquee Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'RegionSelectButton' but shown as 'Polygon Selection' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'BoundarySelectButton' but shown as 'Boundary Selection' and Control Type is 1 (Button)
+      Control 1 is named 'SpatialSelectionSqlSelectButton' but shown as 'SQL Select' and Control Type is 1 (Button)
+      Control 2 is named 'SpatialSelectionInvertSelectButton' but shown as 'Invert' and Control Type is 1 (Button)
+      Control 3 is named 'SpatialSelectionClearButton' but shown as 'Clear' and Control Type is 1 (Button)
+      Control 4 is named 'SpatialFindSplitButton' but shown as 'Find' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'MapFindSplitButtonGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'FindSelectionButton' but shown as 'Find' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FindAddressButton' but shown as 'Find Address' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FindAndMarkButton' but shown as 'Mark' and Control Type is 1 (Button)
+   Tab Group 2 is named 'SpatialEditBar' but shown as 'Edit'
+      Control 0 is named 'SetTargetButton' but shown as 'Set Target' and Control Type is 1 (Button)
+      Control 1 is named 'ClearTargetButton' but shown as 'Clear Target' and Control Type is 1 (Button)
+      Control 2 is named 'EraseDropDown' but shown as 'Erase' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'SpatialEraseDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'SpatialEraseTargetButton' but shown as 'Erase Target' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'SpatialEraseOutsideTargetButton' but shown as 'Erase Outside Target' and Control Type is 1 (Button)
+      Control 3 is named 'CombineDropDown' but shown as 'Combine' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'CombineDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'CombineSelectedObjectsButton' but shown as 'Combine Selected Objects' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'CombineUsingColumnButton' but shown as 'Combine Using Column' and Control Type is 1 (Button)
+      Control 4 is named 'SplitDropdown' but shown as 'Split' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'SplitDropdownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDown Control 0 is named 'SplitTargetButton' but shown as 'Split Target' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'PolylineSplitButton' but shown as 'Split Target using Polyline' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'PolylineSplitAtNodeButton' but shown as 'Polyline Split at Node' and Control Type is 1 (Button)
+      Control 5 is named 'DisaggregateButton' but shown as 'Disaggregate' and Control Type is 1 (Button)
+      Control 6 is named 'RibbonSeparator1' but shown as '' and Control Type is 5 (RibbonSeparator)
+      Control 7 is named 'SpatialBufferSplitButton' but shown as 'Buffer' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'SpatialBufferMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'SpatialBufferButton' but shown as 'Buffer Objects' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SpatialBufferTableButton' but shown as 'Buffer Table' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'SpatialConvexHullButton' but shown as 'Convex Hull' and Control Type is 1 (Button)
+      Control 8 is named 'NodesSplitButton' but shown as 'Nodes' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'NodesSplitButtonMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDownMenu Control 0 is named 'SnapToNodeButton' but shown as 'Snap to Nodes' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'ReshapeButton' but shown as 'Reshape' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'AddNodeButton' but shown as 'Add Node' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'OverlayNodeButton' but shown as 'Overlay Nodes onto Target' and Control Type is 1 (Button)
+      Control 9 is named 'FixCleanSplitButton' but shown as 'Fix/Clean' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'FixCleanButtonMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 5 Controls
+            DropDownMenu Control 0 is named 'CheckRegionsButton' but shown as 'Check Regions' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'CleanButton' but shown as 'Clean Objects' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'SnapButton' but shown as 'Snap/Thin' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'SmoothButton' but shown as 'Smooth Lines' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'UnsmoothButton' but shown as 'Unsmooth Lines' and Control Type is 1 (Button)
+      Control 10 is named 'TransformSplitButton' but shown as 'Transform' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'TransformDropdownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'OffsetObjectButton' but shown as 'Offset Object' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'RotateObjectButton' but shown as 'Rotate Object' and Control Type is 1 (Button)
+      Control 11 is named 'SpatialConvertToPolylineButton' but shown as 'Convert to Polylines' and Control Type is 1 (Button)
+      Control 12 is named 'ClipRegionDropDown' but shown as 'Clip Region' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'ClipRegionDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'SetClipRegionButton' but shown as 'Set Clip Region' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'ClipRegionOnOffButton' but shown as 'Clip Region On/Off' and Control Type is 1 (Button)
+      Control 13 is named 'DigitizerSetupButton' but shown as 'Digitizer Setup ' and Control Type is 1 (Button)
+      Control 14 is named 'SpatialClearMapObjectsButton' but shown as 'Clear Map Objects' and Control Type is 1 (Button)
+   Tab Group 3 is named 'SpatialCreateBar' but shown as 'Create'
+      Control 0 is named 'SpatialCreateInsertSplitButton' but shown as 'Insert' and Control Type is 10 (SplitButton)
+      SplitButton has 3 Groups/controls
+         SplitButton Control 0 is named 'InsertPointsandTextMenuGroup' but shown as 'Points and Text' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'SpatialCreateInsertSymbolButton' but shown as 'Symbol' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SpatialCreateInsertTextButton' but shown as 'Text' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'InsertLinesMenuGroup' but shown as 'Lines' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'SpatialCreateInsertLineButton' but shown as 'Line' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SpatialCreateInsertPolylineButton' but shown as 'Polyline' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'SpatialCreateInsertArcButton' but shown as 'Arc' and Control Type is 1 (Button)
+         SplitButton Control 2 is named 'InsertRegionsMenuGroup' but shown as 'Regions' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDownMenu Control 0 is named 'SpatialCreateInsertPolygonButton' but shown as 'Polygon' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SpatialCreateInsertEllipseButton' but shown as 'Ellipse' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'SpatialCreateInsertRectangleButton' but shown as 'Rectangle' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'SpatialCreateInsertRoundedRectangleButton' but shown as 'Rounded' and Control Type is 1 (Button)
+      Control 1 is named 'SpatialStylesSplitButton' but shown as 'Style' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'SpatialStylesMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDownMenu Control 0 is named 'SpatialCreateSymbolStyleButton' but shown as 'Symbol Style' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SpatialCreateLineStyleButton' but shown as 'Line Style' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'SpatialCreateRegionStyleButton' but shown as 'Region Style' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'SpatialCreateTextStyleButton' but shown as 'Text Style' and Control Type is 1 (Button)
+      Control 2 is named 'SpatialCreateRegionsSplitButton' but shown as 'Regions' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'SpatialCreateRegionsMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 6 Controls
+            DropDownMenu Control 0 is named 'SpatialConvertToRegionButton' but shown as 'Convert to Regions' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'SpatialEncloseButton' but shown as 'Enclose (Polylines to Regions)' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'SpatialCreateDriveRegionsButton' but shown as 'Drive Regions (Objects)' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'SpatialDriveRegionsTableButton' but shown as 'Drive Regions (Table)' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'SpatialVoronoiButton' but shown as 'Voronoi (Objects)' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'SpatialVoronoiTableButton' but shown as 'Voronoi (Table)' and Control Type is 1 (Button)
+      Control 3 is named 'CreatePointsButton' but shown as 'Create Points' and Control Type is 1 (Button)
+      Control 4 is named 'GeoCodeSplitButton' but shown as 'Geocode' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'GeoCodeSplitButtonDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'GeoCodeButton' but shown as 'Geocode' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'WebGeoCodeButton' but shown as 'Geocode using Server' and Control Type is 1 (Button)
+--------------------------------------------------------------
+Tab 4 is named 'TabLayout' but shown as 'LAYOUT'
+   Tab Group 0 is named 'LayoutPage' but shown as 'Page'
+      Control 0 is named 'LayoutNewPageButton' but shown as 'New Layout' and Control Type is 1 (Button)
+      Control 1 is named 'LayoutFileOpenGallerySplitButton' but shown as 'Open' and Control Type is 10 (SplitButton)
+      SplitButton has 5 Groups/controls
+         SplitButton Control 0 is named 'WorkspaceTable' but shown as 'Workspaces, Tables, Programs' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 7 Controls
+            DropDownMenu Control 0 is named 'FileOpenWorkspaceButton' but shown as 'Open Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'FileAddWorkspaceButton' but shown as 'Add Workspace' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'FileOpenTableButton' but shown as 'Table' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'FileImportButton' but shown as 'Import' and Control Type is 1 (Button)
+            DropDownMenu Control 4 is named 'FileUniversalDataButton' but shown as 'Universal Data' and Control Type is 1 (Button)
+            DropDownMenu Control 5 is named 'FileDatabaseTableButton' but shown as 'Database Table' and Control Type is 1 (Button)
+            DropDownMenu Control 6 is named 'RunMapBasicButton' but shown as 'Program' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'BaseMaps' but shown as 'Base Maps' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDownMenu Control 0 is named 'AddBasemapAerialButton' but shown as 'Aerial' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'AddBasemapRoadsButton' but shown as 'Roads' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'AddBasemapHybridButton' but shown as 'Hybrid' and Control Type is 1 (Button)
+         SplitButton Control 2 is named 'WebServices' but shown as 'Web Services' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'OpenWmsButton' but shown as 'Mapping (WMS)' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'OpenWfsButton' but shown as 'Feature (WFS)' and Control Type is 1 (Button)
+         SplitButton Control 3 is named 'OpenConnections' but shown as 'Open Connections' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+         SplitButton Control 4 is named 'RecentFiles' but shown as 'Recent Files' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 10 Controls
+            DropDownMenu Control 0 is named 'MruFile_0' but shown as 'RibbonExample.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 1 is named 'MruFile_1' but shown as 'D:\2. Support\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 2 is named 'MruFile_2' but shown as 'D:\3. Demo\...\Destillerier i Skotland.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 3 is named 'MruFile_3' but shown as 'D:\2. Support\Test 1520.wor' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 4 is named 'MruFile_4' but shown as 'C:\MapInfo\...\TileServer\BingRoads.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 5 is named 'MruFile_5' but shown as 'D:\3. Demo\...\Spectrum VS SpectrumOnDemand.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 6 is named 'MruFile_6' but shown as 'D:\3. Demo\...\LINAK_TaiwanGeocoding UTF8.TAB' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 7 is named 'MruFile_7' but shown as 'C:\MapInfo\...\Tools\SpiderGraph.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 8 is named 'MruFile_8' but shown as 'C:\MapInfo\...\Tools\DistanceCalc.MBX' and Control Type is 3 (RibbonMenuItem)
+            DropDownMenu Control 9 is named 'MruFile_9' but shown as 'Taiwan_geocode_V1_OUTPUT_19082015 (00000003).TAB' and Control Type is 3 (RibbonMenuItem)
+      Control 2 is named 'LayoutPageSetupButton' but shown as 'Page Setup' and Control Type is 1 (Button)
+   Tab Group 1 is named 'LayoutClipboard' but shown as 'Clipboard'
+      Control 0 is named 'CopyButton' but shown as 'Copy' and Control Type is 1 (Button)
+      Control 1 is named 'PasteButton' but shown as 'Paste' and Control Type is 1 (Button)
+      Control 2 is named 'CutButton' but shown as 'Cut' and Control Type is 1 (Button)
+   Tab Group 2 is named 'LayoutEdit' but shown as 'Edit'
+      Control 0 is named 'AddMapSplitButton' but shown as 'Map' and Control Type is 10 (SplitButton)
+      SplitButton has 3 Groups/controls
+         SplitButton Control 0 is named 'NewMapMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 1 Controls
+            DropDownMenu Control 0 is named 'AddMapButton' but shown as 'New Map' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'MapsMenuGroup' but shown as 'Maps' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+         SplitButton Control 2 is named 'MapFramesMenuGroup' but shown as 'Map Frames' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+      Control 1 is named 'LayoutAddMapLegendButton' but shown as 'Legend' and Control Type is 1 (Button)
+      Control 2 is named 'AddBrowserSplitButton' but shown as 'Browser' and Control Type is 10 (SplitButton)
+      SplitButton has 3 Groups/controls
+         SplitButton Control 0 is named 'NewBrowserMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 1 Controls
+            DropDownMenu Control 0 is named 'AddBrowserButton' but shown as 'New Browser' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'BrowserMenuGroup' but shown as 'Browsers' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+         SplitButton Control 2 is named 'BrowserFramesMenuGroup' but shown as 'Browser Frames' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 0 Controls
+      Control 3 is named 'LayoutDesigneInsertTextButton' but shown as 'Text' and Control Type is 1 (Button)
+      Control 4 is named 'LayoutDesigneInsertImageButton' but shown as 'Image' and Control Type is 1 (Button)
+      Control 5 is named 'InsertSplitButton' but shown as 'Insert' and Control Type is 10 (SplitButton)
+      SplitButton has 3 Groups/controls
+         SplitButton Control 0 is named 'InsertSymbolsMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'InsertSymbolButton' but shown as 'Symbol' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'ScaleBar' but shown as 'ScaleBar' and Control Type is 1 (Button)
+         SplitButton Control 1 is named 'InsertShapesMenuGroup' but shown as 'Shapes' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'InsertLineButton' but shown as 'Line' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'InsertPloylineButton' but shown as 'Polyline' and Control Type is 1 (Button)
+         SplitButton Control 2 is named 'InsertRectanglesMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDownMenu Control 0 is named 'InsertEllipseButton' but shown as 'Ellipse' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'InsertRectangleButton' but shown as 'Rectangle' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'InsertRoundedRectangleButton' but shown as 'Rounded' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'InsertPolygonButton' but shown as 'Polygon' and Control Type is 1 (Button)
+      Control 6 is named 'LayoutFramesDropDown' but shown as 'Frames' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'LayoutFramesDropDownMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 3 Controls
+            DropDown Control 0 is named 'NewEmptyFrameButton' but shown as 'New Frame' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'RemoveSelectedFramesContentButton' but shown as 'Remove Content' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'RemoveSelectedLayoutItemsButton' but shown as 'Remove' and Control Type is 1 (Button)
+   Tab Group 3 is named 'LayoutArrange' but shown as 'Arrange'
+      Control 0 is named 'LayoutReorderDropDownButton' but shown as 'Reorder' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'ReorderMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'LayoutBringToFrontButton' but shown as 'Bring To Front' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'LayoutSendToBackButton' but shown as 'Send To Back' and Control Type is 1 (Button)
+      Control 1 is named 'GuideDropDown' but shown as 'Guide' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'GuidelineMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDown Control 0 is named 'VerticalGuidelineButton' but shown as 'Add Vertical Guideline' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'HorizontalGuidelineButton' but shown as 'Add Horizontal Guideline' and Control Type is 1 (Button)
+            DropDown Control 2 is named 'DisableGuidelinesButton' but shown as 'Enable Guidelines' and Control Type is 1 (Button)
+            DropDown Control 3 is named 'RemoveGuidelinesButton' but shown as 'Remove All Guidelines' and Control Type is 1 (Button)
+      Control 2 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
+      Control 3 is named 'SnapToLeftButton' but shown as 'Snap to Left' and Control Type is 1 (Button)
+      Control 4 is named 'SnapToBottomButton' but shown as 'Snap to Bottom' and Control Type is 1 (Button)
+      Control 5 is named 'SnapToTopButton' but shown as 'Snap to Top' and Control Type is 1 (Button)
+      Control 6 is named 'SnapToRightButton' but shown as 'Snap to Right' and Control Type is 1 (Button)
+      Control 7 is named 'AlignHorizontalCenterButton' but shown as 'Align Horizontal Center' and Control Type is 1 (Button)
+      Control 8 is named 'AlignVerticalCenterButton' but shown as 'Align Vertical Center' and Control Type is 1 (Button)
+      Control 9 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
+      Control 10 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
+      Control 11 is named 'LayoutGridLinesButton' but shown as 'Grid Lines' and Control Type is 1 (Button)
+      Control 12 is named 'SnapToGridButton' but shown as 'Snap To Grid' and Control Type is 1 (Button)
+      Control 13 is named 'LayoutGridSizeStackPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
+   Tab Group 4 is named 'LayoutTools' but shown as 'Tools'
+      Control 0 is named 'LayoutSelectButton' but shown as 'Select' and Control Type is 1 (Button)
+      Control 1 is named 'LayoutZoomInButton' but shown as 'Zoom In' and Control Type is 1 (Button)
+      Control 2 is named 'LayoutZoomOutButton' but shown as 'Zoom Out' and Control Type is 1 (Button)
+      Control 3 is named 'LayoutPanButton' but shown as 'Pan' and Control Type is 1 (Button)
+   Tab Group 5 is named 'LayoutStyle' but shown as 'Style'
+      Control 0 is named 'FontFamilyButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
+      Control 1 is named 'FontStyleButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
+      Control 2 is named '' but shown as '' and Control Type is 5 (RibbonSeparator)
+      Control 3 is named 'LayoutModifyStyleSplitButton' but shown as 'Style' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'ModifyStyleMenuGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 4 Controls
+            DropDownMenu Control 0 is named 'LayoutRegionStyleButton' but shown as 'Region' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'LayoutLineStyleButton' but shown as 'Line' and Control Type is 1 (Button)
+            DropDownMenu Control 2 is named 'LayoutFrameStyleButton' but shown as 'Frame' and Control Type is 1 (Button)
+            DropDownMenu Control 3 is named 'LayoutSymbolStyleButton' but shown as 'Symbol' and Control Type is 1 (Button)
+   Tab Group 6 is named 'LayoutOutput' but shown as 'Output'
+      Control 0 is named 'PrintButton' but shown as 'Print' and Control Type is 1 (Button)
+      Control 1 is named 'PdfButton' but shown as 'Create' and Control Type is 1 (Button)
+      Control 2 is named 'ExportImgButton' but shown as 'Save' and Control Type is 1 (Button)
+--------------------------------------------------------------
+Tab 5 is named 'TabTools' but shown as 'TOOLS'
+   Tab Group 0 is named 'RibbonExample' but shown as 'RibbonExample'
+      Control 0 is named 'showTablesInfo' but shown as 'Table Info' and Control Type is 1 (Button)
+      Control 1 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
+      Control 2 is named 'showBrowserInfo' but shown as 'Browser Info' and Control Type is 1 (Button)
+      Control 3 is named 'separator1' but shown as '' and Control Type is 5 (RibbonSeparator)
+      Control 4 is named 'allInfoToolsSplitButton' but shown as 'Info Tools' and Control Type is 10 (SplitButton)
+      SplitButton has 1 Groups/controls
+         SplitButton Control 0 is named 'allInfoToolsGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDownMenu Control 0 is named 'showTablesInfo' but shown as 'Table Info' and Control Type is 1 (Button)
+            DropDownMenu Control 1 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
+      Control 5 is named 'allInfoToolsDropDButton' but shown as 'Info Tools' and Control Type is 9 (DropDownButton)
+      DropDownButton has 1 Groups/controls
+         DropDownButton Control 0 is named 'allInfoToolsDropDownGroup' but shown as '' and Control Type is 11 (DropDownMenuGroup)
+            DropDownMenu Control has 2 Controls
+            DropDown Control 0 is named 'showTablesInfo' but shown as 'Table Info' and Control Type is 1 (Button)
+            DropDown Control 1 is named 'showMapperInfo' but shown as 'Mapper Info' and Control Type is 1 (Button)
+   Map MiniToolBar: Number of Controls 7
+      MiniToolBar Control 0 is named 'MapTools0' but shown as '' and Control Type is 22 (StackPanel)
+         StackPanel Control 0 is named 'MapSelectionToolsSplitButton' but shown as '' and Control Type is 10 (SplitButton)
+         StackPanel Control 1 is named 'PanButton' but shown as '' and Control Type is 1 (Button)
+      MiniToolBar Control 1 is named 'MapTools1' but shown as '' and Control Type is 22 (StackPanel)
+         StackPanel Control 0 is named 'SelectionClearButton' but shown as '' and Control Type is 1 (Button)
+         StackPanel Control 1 is named 'LabelToolButton' but shown as '' and Control Type is 1 (Button)
+      MiniToolBar Control 2 is named 'MapTools2' but shown as '' and Control Type is 22 (StackPanel)
+         StackPanel Control 0 is named 'ZoomInButton' but shown as '' and Control Type is 1 (Button)
+         StackPanel Control 1 is named 'ZoomOutButton' but shown as '' and Control Type is 1 (Button)
+      MiniToolBar Control 3 is named 'RibbonSeparator0' but shown as '' and Control Type is 5 (RibbonSeparator)
+      MiniToolBar Control 4 is named 'FontTools' but shown as '' and Control Type is 22 (StackPanel)
+         StackPanel Control 0 is named 'FontStylePanel' but shown as '' and Control Type is 22 (StackPanel)
+         StackPanel Control 1 is named 'FontButtonPanel' but shown as '' and Control Type is 4 (RibbonButtonPanel)
+      MiniToolBar Control 5 is named 'RibbonSeparator1' but shown as '' and Control Type is 5 (RibbonSeparator)
+      MiniToolBar Control 6 is named 'MapTools3' but shown as '' and Control Type is 22 (StackPanel)
+         StackPanel Control 0 is named 'AddNodeButton' but shown as '' and Control Type is 1 (Button)
+         StackPanel Control 1 is named 'ReShapeModeButton' but shown as '' and Control Type is 1 (Button)
+   Map Context Menu: Number of Controls 14
+      Map Context Menu Control 0 is named 'MenuItem_5' but shown as 'Find Selection' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 1 is named 'MenuItem_6' but shown as 'Select All from Selection Layer' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 2 is named 'MenuItem_7' but shown as 'Make Selection Editable' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 3 is named 'Separator_8' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+      Map Context Menu Control 4 is named 'MenuItem_9' but shown as 'Clear Cosmetic Layer' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 5 is named 'MenuItem_10' but shown as 'Save Cosmetic Objects...' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 6 is named 'Separator_11' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+      Map Context Menu Control 7 is named 'MenuItem_12' but shown as 'Previous View' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 8 is named 'MenuItem_13' but shown as 'View Entire Layer' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 9 is named 'MenuItem_14' but shown as 'View Entire Selection Layer' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 10 is named 'MenuItem_15' but shown as 'Change View' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 11 is named 'MenuItem_16' but shown as 'Nearest Tile Server Level' and Control Type is 6 (ContextMenuItem)
+      Map Context Menu Control 12 is named 'Separator_17' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+      Map Context Menu Control 13 is named 'MenuItem_18' but shown as 'Get Info...' and Control Type is 6 (ContextMenuItem)
+   Browser Context Menu: Number of Controls 5
+      Browser Context Menu Control 0 is named 'MenuItem_19' but shown as 'Sort Ascending' and Control Type is 6 (ContextMenuItem)
+      Browser Context Menu Control 1 is named 'MenuItem_20' but shown as 'Sort Descending' and Control Type is 6 (ContextMenuItem)
+      Browser Context Menu Control 2 is named 'Separator_21' but shown as '' and Control Type is 7 (ContextMenuSeparator)
+      Browser Context Menu Control 3 is named 'MenuItem_22' but shown as 'Filter' and Control Type is 6 (ContextMenuItem)
+      Browser Context Menu Control 4 is named 'MenuItem_23' but shown as 'Clear Filter' and Control Type is 6 (ContextMenuItem)
+   Statusbar: Number of Controls 12
+      Statusbar Control 0 is named 'StMapperView' but shown as 'D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.MBX' and Control Type is 16 (TextBlock)
+      Statusbar Control 1 is named 'StMapperPopUpImage' but shown as '' and Control Type is 23 (Unknown)
+      Statusbar Control 2 is named 'StMapperLayer' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 3 is named 'StEditLayerPopUpImage' but shown as '' and Control Type is 23 (Unknown)
+      Statusbar Control 4 is named 'StSelected' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 5 is named 'StProjection' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 6 is named 'StDigitizer' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 7 is named 'StSnap' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 8 is named 'StAutotrace' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 9 is named 'StAutonode' but shown as '' and Control Type is 16 (TextBlock)
+      Statusbar Control 10 is named 'CurrentWorkSpacePanel' but shown as '' and Control Type is 22 (StackPanel)
+      Statusbar Control 11 is named 'StBackgroundTsk' but shown as '' and Control Type is 16 (TextBlock)

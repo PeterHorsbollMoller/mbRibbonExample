@@ -17,7 +17,7 @@ Include "Library\MI_ICONS_X64.def"
 
 Define xProgram 		"RibbonExample"
 Define xProgramMenu		"RibbonExample"
-Define xVersion 		"0.9.4"
+Define xVersion 		"1.0.1"
 Define xYear			"2015"
 
 Define FILE_INI			ApplicationDirectory$() & xProgram & ".ini"
@@ -444,6 +444,29 @@ OnError GoTo ErrorOccured
 		'Set Custom MapBasic Handle to the button
 		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "RBNLoop")
 	End If
+	nCtrlIdx	= RBNToolContextMenuAddMenuItem("createRibbonMBStatements", "Create MB Ribbon Statements", "L")
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Loop Ribbon and create MapBasic Ribbon statements"
+									, "This will loop thru the Ribbon elements and create MapBasic Ribbon statements"
+									, "")
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0)
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "RBNLoopCreateRibbonStatements")
+	End If
+
+	'**Adding a menu item as the first menu item on the Mapper Context menu
+	nCtrlIdx = RBNCntxtMenuInsertMenuItem(MenuId_MapperShortcut, "mapCntxtShowMapperInfo", "Mapper Info", "", 0)
+	If nCtrlIdx > 0 Then
+		'Create & Set the button tooltip
+		Call RBNControlSetToolTipIdx(nCtrlIdx, "Mapper Info", "This will give you some basic information about a mapper window", "Make a mapper window active to use this feature")
+		'Set the button icon
+		Call RBNControlSetIconsIdx(nCtrlIdx, CONTROL_SIZE_SMALL, "", PATH_IMAGES & "Mapper_Info_16x16.png")
+		Call RBNControlSetLeftMarginIdx(nCtrlIdx, 0)
+		'Set Custom MapBasic Handle to the button
+		Call RBNControlSetCustomMBXHandlerIdx(nCtrlIdx, "MENUShowMapperInfo")
+	End If
+	nCtrlIdx = RBNCntxtMenuInsertMenuItem(MenuId_MapperShortcut, "mapCntxtShowMapperInfo", "(-", "", 1)
 
 	Exit Sub
 '-------------------------

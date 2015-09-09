@@ -1,23 +1,114 @@
-15:30:47    RBNTabGetGroupIndexThs: Number of Tab Groups 1
-15:30:47    RBNTabGetGroupIndexThs: Looking for RibbonExample rbnTab = 517
-15:30:47    RBNTabGetGroupIndexThs: Number of Tab Groups 1
-11:49:13 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
-11:51:02 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
-08:40:03 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
-08:40:05 Adding base maps: Basemap
-08:40:05 Adding base maps: Subdued
-08:40:05 Adding base maps: Grey
-08:41:33 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
-08:41:34 Adding base maps: Basemap
-08:41:34 Adding base maps: Subdued
-08:41:34 Adding base maps: Grey
-11:24:47 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
-11:24:48 Adding base maps: Basemap
-11:24:48 Adding base maps: Subdued
-11:24:48 Adding base maps: Grey
-11:25:35 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
-11:25:35 Adding base maps: Basemap
-11:25:35 Adding base maps: Subdued
-11:25:35 Adding base maps: Grey
-11:26:11 Searching for language files in: 'D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\'
-11:26:11 Found no string files!
+14:58:00    1 Tab: TabTools | Group:  | SplitButton:  | SplitButtonGroup:  | Control: 
+14:44:22 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+14:44:22 Adding base maps: Basemap
+14:44:22 Adding base maps: Subdued
+14:44:22 Adding base maps: Grey
+14:44:28 --------------------------------------------------------------
+14:44:28 Tab 0 is named 'TabHome' but shown as 'START'
+14:44:28 --------------------------------------------------------------
+14:44:28 Tab 1 is named 'TabTable' but shown as 'TABEL'
+14:44:28 --------------------------------------------------------------
+14:44:28 Tab 2 is named 'TabMap' but shown as 'KORT'
+14:44:28 --------------------------------------------------------------
+14:44:28 Tab 3 is named 'TabSpatial' but shown as 'SPATIAL'
+14:44:29 --------------------------------------------------------------
+14:44:29 Tab 4 is named 'TabLayout' but shown as 'LAYOUT'
+14:44:29 --------------------------------------------------------------
+14:44:29 Tab 5 is named 'rasterTab' but shown as 'RASTER'
+14:44:29 --------------------------------------------------------------
+14:44:29 Tab 6 is named 'TabTools' but shown as 'TOOLS'
+14:44:29    Map MiniToolBar: Number of Controls 8
+14:44:29    Map Context Menu: Number of Controls 14
+14:46:50 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+14:46:50 Adding base maps: Basemap
+14:46:50 Adding base maps: Subdued
+14:46:50 Adding base maps: Grey
+14:46:55 --------------------------------------------------------------
+14:46:55 Tab 0 is named 'TabHome' but shown as 'START'
+14:46:55 --------------------------------------------------------------
+14:46:55 Tab 1 is named 'TabTable' but shown as 'TABEL'
+14:46:55 --------------------------------------------------------------
+14:46:55 Tab 2 is named 'TabMap' but shown as 'KORT'
+14:46:55 --------------------------------------------------------------
+14:46:55 Tab 3 is named 'TabSpatial' but shown as 'SPATIAL'
+14:46:55 --------------------------------------------------------------
+14:46:55 Tab 4 is named 'TabLayout' but shown as 'LAYOUT'
+14:46:56 --------------------------------------------------------------
+14:46:56 Tab 5 is named 'rasterTab' but shown as 'RASTER'
+14:46:56 --------------------------------------------------------------
+14:46:56 Tab 6 is named 'TabTools' but shown as 'TOOLS'
+14:46:56    Map MiniToolBar: Number of Controls 8
+14:46:56    Map Context Menu: Number of Controls 14
+14:49:37 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+14:49:38 Adding base maps: Basemap
+14:49:38 Adding base maps: Subdued
+14:49:38 Adding base maps: Grey
+14:49:44 --------------------------------------------------------------
+14:49:44 Tab 0 is named 'TabHome' but shown as 'START'
+14:49:44 --------------------------------------------------------------
+14:49:44 Tab 1 is named 'TabTable' but shown as 'TABEL'
+14:49:45 --------------------------------------------------------------
+14:49:45 Tab 2 is named 'TabMap' but shown as 'KORT'
+14:49:45 --------------------------------------------------------------
+14:49:45 Tab 3 is named 'TabSpatial' but shown as 'SPATIAL'
+14:49:45 --------------------------------------------------------------
+14:49:45 Tab 4 is named 'TabLayout' but shown as 'LAYOUT'
+14:49:45 --------------------------------------------------------------
+14:49:45 Tab 5 is named 'rasterTab' but shown as 'RASTER'
+14:49:45 --------------------------------------------------------------
+14:49:45 Tab 6 is named 'TabTools' but shown as 'TOOLS'
+14:49:45    Map MiniToolBar: Number of Controls 8
+14:49:45    Map Context Menu: Number of Controls 14
+14:49:45    Browser Context Menu: Number of Controls 5
+14:51:17 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+14:51:17 Adding base maps: Basemap
+14:51:17 Adding base maps: Subdued
+14:51:17 Adding base maps: Grey
+14:51:24 --------------------------------------------------------------
+14:51:24 Tab 0 is named 'TabHome' but shown as 'HOME'
+14:51:24 --------------------------------------------------------------
+14:51:24 Tab 1 is named 'TabTable' but shown as 'TABLE'
+14:51:24 --------------------------------------------------------------
+14:51:24 Tab 2 is named 'TabMap' but shown as 'MAP'
+14:51:24 --------------------------------------------------------------
+14:51:24 Tab 3 is named 'TabSpatial' but shown as 'SPATIAL'
+14:51:25 --------------------------------------------------------------
+14:51:25 Tab 4 is named 'TabLayout' but shown as 'LAYOUT'
+14:51:25 --------------------------------------------------------------
+14:51:25 Tab 5 is named 'TabTools' but shown as 'TOOLS'
+14:51:25    Map MiniToolBar: Number of Controls 7
+14:51:25    Map Context Menu: Number of Controls 14
+14:51:25    Browser Context Menu: Number of Controls 5
+15:18:37 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+15:18:37 Adding base maps: Basemap
+15:18:37 Adding base maps: Subdued
+15:18:37 Adding base maps: Grey
+15:18:51 MENUTableOpenedHandler:
+15:18:51    Table Opened: BingRoads
+15:18:52 WinFocusChangedHandler
+15:18:52 WinFocusChangedHandler
+15:18:52    Front Window Changed: BingRoads Kort
+15:18:52 WinFocusChangedHandler
+15:30:42    26RBNCntxtMenuRemoveMenuItem: Control Removed Result: 26
+15:31:24 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+15:31:25 Adding base maps: Basemap
+15:31:25 Adding base maps: Subdued
+15:31:25 Adding base maps: Grey
+15:31:26    Window Activated: BingRoads Kort
+15:32:18    26RBNCntxtMenuRemoveMenuItem: Control Removed Result: 26
+15:32:27 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+15:32:28 Adding base maps: Basemap
+15:32:28 Adding base maps: Subdued
+15:32:28 Adding base maps: Grey
+15:48:36    26RBNCntxtMenuRemoveMenuItem: Control Removed Result: 26
+15:48:51 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+15:48:52 Adding base maps: Basemap
+15:48:52 Adding base maps: Subdued
+15:48:52 Adding base maps: Grey
+15:48:54    Window Activated: BingRoads Kort
+15:49:40    27RBNCntxtMenuRemoveControl: Control Removed Result: 26
+15:49:40    26RBNCntxtMenuRemoveControl: Control Removed Result: 26
+15:49:49 MENUReadConfigFile:D:\Dropbox (Horsboll-Moller)\3. MB_Kode\mbRibbonExample\RibbonExample.ini
+15:49:50 Adding base maps: Basemap
+15:49:50 Adding base maps: Subdued
+15:49:50 Adding base maps: Grey
